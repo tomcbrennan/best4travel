@@ -28,7 +28,7 @@ jobs:
 
       - name: 🔨 Build Project
         run: |
-          cd startdigital
+          cd best4travel
           npm install
           npm run build
           composer install
