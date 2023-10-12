@@ -32,7 +32,7 @@ main section {
 header {
 	&:before {
 		content: '';
-		@apply bg-white absolute top-0 left-0 w-full h-0 duration-700 ease-in-out rounded-b-[35px] lg:rounded-b-[75px];
+		@apply bg-white absolute top-0 left-0 w-full h-0 duration-700 ease-in-out;
 	}
 
 	.logo {

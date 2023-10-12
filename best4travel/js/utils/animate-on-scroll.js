@@ -11,7 +11,7 @@ export default function animateOnScroll() {
 
 	window.addEventListener('scroll', () => {
 		const scrollPosition = window.scrollY
-		if (scrollPosition > 0) {
+		if (scrollPosition > 25) {
 			header.classList.add('scrolling')
 		} else {
 			header.classList.remove('scrolling')
