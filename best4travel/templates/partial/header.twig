@@ -1,10 +1,11 @@
-<header class="transition-all duration-300 fixed w-screen top-0 left-0 bg-white z-50 py-4">
+<header class="transition-all duration-300 fixed w-screen top-0 left-0 bg-transparent z-50 py-4">
 	<div data-navigation class="container z-20 w-full flex items-center justify-between transition-all duration-300">
-		<a href="{{ site.url }}" rel="home">{% include 'icons/logo.twig' %}</a>
-		<nav id="nav-main" role="navigation" class="max-lg:h-6">
+		<a href="{{ site.url }}" rel="home">{% include 'icons/logo.twig' with { class: "logo z-20 relative max-sm:!w-36 max-lg:!w-48 duration-100" } %}</a>
+		<nav id="nav-main" role="navigation" class="relative max-lg:h-6">
 			{% include 'menu.twig' with {
 				items: menu.get_items
 			} %}
 		</nav>
+		<a class="button relative z-10 delay-200 duration-200 round arrow menu-button max-lg:hidden" href="">Contact Us</a>
 	</div>
 </header>

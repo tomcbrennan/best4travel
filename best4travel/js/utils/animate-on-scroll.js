@@ -5,6 +5,20 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function animateOnScroll() {
 	/**
+	 * ANIMATE HEADER ON SCROLL
+	 */
+	const header = document.querySelector('header')
+
+	window.addEventListener('scroll', () => {
+		const scrollPosition = window.scrollY
+		if (scrollPosition > 0) {
+			header.classList.add('scrolling')
+		} else {
+			header.classList.remove('scrolling')
+		}
+	})
+
+	/**
 	 * SINGLE ELEMENT SELECTORS
 	 * Apply these data attributes DIRECTLY to desired elements :~)
 	 */

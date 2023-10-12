@@ -13,13 +13,12 @@ module.exports = {
 			colors: {
 				white: '#FFFFFF',
 				black: '#000000',
-				// brand:
-				// brandLight:
-				// brandDark:
+				brandBlueLight: '#0AAFE2',
+				brandBlueDark: '#1773AE',
 			},
 			fontFamily: {
-				heading: ['Roboto', 'sans-serif'],
-				body: ['Inter', 'sans-serif'],
+				heading: ['Cormorant', 'serif'],
+				body: ['Work Sans', 'sans-serif'],
 			},
 			screens: {
 				sm: '640px',

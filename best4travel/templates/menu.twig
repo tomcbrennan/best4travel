@@ -3,7 +3,7 @@
 	<ul class="relative z-10 items-center hidden lg:flex">
 		{% for item in items %}
 			<li class="{{ item.classes|join(' ') }} relative flex items-center gap-1 group p-6">
-				<a target="{{ item.target }}" href="{{ item.link }}" class="border-b-2 border-transparent transition-all duration-200 ease">
+				<a target="{{ item.target }}" href="{{ item.link }}" class="uppercase font-light tracking-wider text-white text-base 2xl:text-lg transition-all duration-200 ease">
 					{{ item.title }}
 				</a>
 				{% if item.children %}

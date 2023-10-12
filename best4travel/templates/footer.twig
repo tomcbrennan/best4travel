@@ -1,14 +1,39 @@
-<footer class="bg-slate-400">
-	<div class="container py-12">
-		Footer
+<footer class="bg-brandBlueDark text-white">
+	<div class="container-small py-12 block-content items-center">
+		<span class="mb-2 uppercase font-light">Proudly West Australian</span>
 	</div>
-	<div class="bg-white py-4">
-		<div class="container text-xs flex gap-2 md:items-center max-md:flex-col md:justify-between">
-			<span>
+	<div class="container">
+		<div class="w-full h-[1px] bg-white opacity-25"></div>
+	</div>
+	<div class="container-small py-12">
+		<div class="grid grid-cols-3">
+			<div class="flex flex-col gap-3">
+				<span class="mb-2 uppercase font-medium">Navigation</span>
+				{% for item in footer_menu.get_items %}
+					<a href="{{ item.link }}" class="font-heading text-2xl tracking-wider font-light">{{ item.title }}</a>
+				{% endfor %}
+			</div>
+			<div class="flex flex-col gap-3">
+				<span class="mb-2 uppercase font-medium">Get in touch</span>
+
+			</div>
+			<div class="flex flex-col gap-3">
+				<span class="mb-2 uppercase font-medium">Open Hours</span>
+
+			</div>
+		</div>
+	</div>
+	<div class="bg-white text-black py-4">
+		<div class="container opacity-50 text-xs flex gap-2 md:items-center max-md:flex-col md:justify-between max-md:justify-center max-md:text-center">
+			<span class="uppercase">
 				&copy;
 				{{ 'now'|date('Y') }}
-				TomDotCom. All Rights Reserved.</span>
-        <a href="https://tomdotcom.au" target="_blank">Built by Tom</a>
+				Best 4 Travel</span>
+			<div class="flex items-center max-md:justify-center max-sm:flex-wrap gap-5">
+				<a href="#">Terms & Conditions</a>
+				<a href="#">Privacy Policy</a>
+				<a href="https://tomdotcom.au" target="_blank">Built by Tom</a>
+			</div>
 		</div>
 	</div>
 </footer>

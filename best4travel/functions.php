@@ -1,19 +1,5 @@
 <?php
 
-/**
- * Timber starter-theme
- * https://github.com/timber/starter-theme
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since   Timber 0.1
- */
-
-/**
- * If you are installing Timber as a Composer dependency in your theme, you'll need this block
- * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
- * plug-in, you can safely delete this block.
- */
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if (file_exists($composer_autoload)) {
 	require_once $composer_autoload;
@@ -128,11 +114,8 @@ class TomDotCom extends Timber\Site
 		if (function_exists('get_fields')) {
             $context['options'] = get_fields('options');
         }
-        // Default menu
-		$context['menu']  = new Timber\Menu();
-
-        // Other menu's - pass the slug to the Menu(). Eg.
-        // $context['footer_menu'] = new Timber\Menu('footer_menu');
+		$context['menu']  = new Timber\Menu('primary');
+        $context['footer_menu'] = new Timber\Menu('footer');
 
 		$context['site']  = $this;
 
@@ -163,6 +146,7 @@ class TomDotCom extends Timber\Site
 		register_nav_menus(
 			array(
 				'primary' => __('Primary Menu', 'tomdotcom'),
+				'footer' => __('Footer Menu', 'tomdotcom'),
 			)
 		);
 
