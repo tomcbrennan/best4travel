@@ -6,7 +6,7 @@ body {
 }
 
 body {
-	@apply leading-relaxed 2xl:text-lg 2xl:leading-normal;
+	@apply leading-normal 2xl:text-lg 2xl:leading-normal;
 }
 
 h1,
@@ -57,9 +57,13 @@ h6,
 	@apply leading-tight text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl;
 }
 
+.supertitle, .is-supertitle {
+	@apply max-md:text-sm font-normal tracking-wide uppercase;
+}
+
 /* List styles inside WYSIWYG editors */
 .block-content {
-	@apply flex flex-col gap-4 md:gap-6;
+	@apply flex flex-col gap-3 md:gap-6;
 }
 
 .block-content :is(ol, ul) {

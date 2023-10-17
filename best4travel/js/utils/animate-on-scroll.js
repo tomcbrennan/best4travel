@@ -8,10 +8,11 @@ export default function animateOnScroll() {
 	 * ANIMATE HEADER ON SCROLL
 	 */
 	const header = document.querySelector('header')
+	const destinationsMenu = document.querySelector('.destinations-menu')
 
 	window.addEventListener('scroll', () => {
 		const scrollPosition = window.scrollY
-		if (scrollPosition > 25) {
+		if (scrollPosition > 25 && !destinationsMenu.classList.contains('active')) {
 			header.classList.add('scrolling')
 		} else {
 			header.classList.remove('scrolling')
@@ -58,7 +59,7 @@ export default function animateOnScroll() {
 	const staggerProperties = {
 		autoAlpha: 0,
 		delay: 0.2,
-		stagger: 0.15,
+		stagger: 0.2,
 	}
 
 	/**

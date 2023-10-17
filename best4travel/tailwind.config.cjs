@@ -15,6 +15,7 @@ module.exports = {
 				black: '#000000',
 				brandBlueLight: '#0AAFE2',
 				brandBlueDark: '#1773AE',
+				brandBackground: '#FFF9F6',
 			},
 			fontFamily: {
 				heading: ['Cormorant', 'serif'],

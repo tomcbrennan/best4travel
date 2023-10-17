@@ -11,6 +11,7 @@
 		"browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"best4travel.test\" --host=\"best4travel.test\" --no-inject-changes --files=\"./\""
 	},
 	"dependencies": {
+		"@studio-freight/lenis": "^1.0.27",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"autoprefixer": "^10.4.13",
 		"browser-sync": "^2.27.7",
@@ -22,6 +23,7 @@
 		"postcss-cli": "^10.0.0",
 		"postcss-import": "^15.0.0",
 		"postcss-nested": "^6.0.0",
+		"split-type": "^0.3.3",
 		"swiper": "^10.2.0"
 	},
 	"devDependencies": {

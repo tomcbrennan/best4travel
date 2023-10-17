@@ -3,61 +3,80 @@
 {% block content %}
 
 	{# HOME BANNER EXAMPLE #}
-	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[750px] 2xl:h-[850px]">
+	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[900px]">
 		<video class="absolute top-0 left-0 z-10 h-full object-cover w-full" preload="auto" loop autoplay muted playsinline>
 			<source class="absolute top-0 left-0 h-full w-full" src="{{ fields.home_banner.background_video_link }}" type="video/mp4" poster="{{ fields.home_banner.video_poster.url }}">
 			Your browser does not support the video tag.
 		</video>
 		<div class="absolute z-10 top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
 		<div class="relative z-20 container flex items-center justify-center h-full text-white mt-5">
-			<div class="block-content items-center text-center">
+			<div data-animate-stagger-down class="block-content items-center text-center">
 				<h1>{{ fields.home_banner.heading }}</h1>
 				<h2 class="is-h4">{{ fields.home_banner.subheading }}</h2>
-				<a class="button banner-button !p-0 !text-base md:!text-xl tracking-wider" href="#">Get started</a>
+				<a class="button banner-button !p-0 !text-base md:!text-xl tracking-wider mt-3 md:mt-6" href="/destinations">Get started</a>
 			</div>
 		</div>
 	</section>
 
-	{# STANDARD SECTION EXAMPLE #}
-	<section class="bg-slate-100">
-		<div class="container">
-			<h2>Heading 2</h2>
-			<h3>Heading 3</h3>
-			<h4>Heading 4</h4>
-			<h5>Heading 5</h5>
-			<h6>Heading 6</h6>
+	<section class="bg-white">
+		<div class="container !max-w-[830px]">
+			<div class="block-content items-center text-center">
+				{% include "icons/logo-icon.twig" with { class: "opacity-30 max-md:w-20" } %}
+				<h4 data-fade-down>Our local Perth experts will help shape your ideal getaway filled with breathtaking locations, and timeless memories to cherish.</h4>
+			</div>
 		</div>
 	</section>
 
-	{# SLIDER SECTION EXAMPLE #}
-
-	<section class="bg-slate-300">
-		<div class="container">
-			<div class="simple-slider px-6 overflow-hidden">
+	<section class="bg-gradient-to-br from-[#1B629F] to-[#00C2F3] text-white -mb-20 lg:-mb-40 overflow-x-hidden">
+		<div class="flex flex-col gap-10 relative z-10">
+			<div class="container-small block-content text-center items-center">
+				<span class="supertitle">Start exploring</span>
+				<h3>Build your holiday</h3>
+				<p class="max-w-[350px] w-full">Check out our latest offers and get packing on your next adventure.</p>
+			</div>
+			<div class="destinations-slider">
 				<div class="swiper-wrapper">
-					{% for item in 0..2 %}
-						<div class="swiper-slide">
-							<div class="block-content text-center">
-								<h3>Swipey Swipe 👉</h3>
-								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus temporibus, fugit fugiat ab laudantium sint cumque quasi repellat tempora reprehenderit nobis earum amet dicta veritatis facilis saepe molestiae odio libero.</p>
-							</div>
+					{% for item in 0..20 %}
+						<div class="swiper-slide aspect-5/7 bg-white w-full">
 						</div>
 					{% endfor %}
 				</div>
 			</div>
-			<div class="swiper-pagination !relative !mt-6"></div>
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
 		</div>
 	</section>
 
-	{# ROUNDED TOP SECTION EXAMPLE #}
-	<div class="bg-slate-300">
-		<section class="bg-slate-200 rounded-top">
-			<div class="container">
-				{% include "components/accordion.twig" %}
+	<section class="bg-brandBackground !pb-0">
+		<div class="pt-10">
+			<div class="border-t border-t-[#1C63A0] border-opacity-30">
+				<section>
+					<div class="container">
+						<div class="grid grid-cols-5 gap-5 lg:gap-10">
+							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+								<span class="font-heading text-2xl">International</span>
+							</a>
+							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+								<span class="font-heading text-2xl">Domestic</span>
+							</a>
+							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+								<span class="font-heading text-2xl">Corporate</span>
+							</a>
+							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+								<span class="font-heading text-2xl">Groups</span>
+							</a>
+							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+								<span class="font-heading text-2xl">WA Regional Events</span>
+							</a>
+						</div>
+					</div>
+				</section>
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
+
+	<section class="bg-white">
+		<div class="container">
+			hello
+		</div>
+	</section>
 
 {% endblock %}

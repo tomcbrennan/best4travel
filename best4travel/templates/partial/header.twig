@@ -1,4 +1,4 @@
-<header class="transition-all duration-300 fixed w-screen top-0 left-0 bg-transparent z-50 py-4">
+<header class="transition-all duration-300 fixed w-screen top-0 left-0 bg-transparent z-[100000] py-4">
 	<div data-navigation class="container z-20 w-full flex items-center justify-between transition-all duration-300">
 		<a href="{{ site.url }}" rel="home">{% include 'icons/logo.twig' with { class: "logo z-20 relative max-sm:!w-36 max-lg:!w-48 duration-100" } %}</a>
 		<nav id="nav-main" role="navigation" class="relative max-lg:h-6">
@@ -6,6 +6,24 @@
 				items: menu.get_items
 			} %}
 		</nav>
-		<a class="button relative z-10 delay-200 duration-200 round arrow menu-button max-lg:hidden" href="">Contact Us</a>
+		<a class="button relative z-10 duration-200 round arrow menu-button max-lg:hidden" href="/contact-us">
+			<span>Contact Us</span>
+			<svg width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
+				<path d="M27.1768 19.1768C27.2744 19.0791 27.2744 18.9209 27.1768 18.8232L25.5858 17.2322C25.4882 17.1346 25.3299 17.1346 25.2322 17.2322C25.1346 17.3299 25.1346 17.4882 25.2322 17.5858L26.6464 19L25.2322 20.4142C25.1346 20.5118 25.1346 20.6701 25.2322 20.7678C25.3299 20.8654 25.4882 20.8654 25.5858 20.7678L27.1768 19.1768ZM9 19.25L27 19.25V18.75L9 18.75V19.25Z" fill="white"/>
+			</svg>
+		</a>
 	</div>
 </header>
+<div class="destinations-menu pt-[104px] pb-20 duration-1000 ease-in-out origin-top fixed top-0 left-0 bg-brandBlueLight w-screen h-0 z-[1000] pointer-events-none opacity-0">
+	<div class="container w-full h-full block-content justify-end">
+		<h5>Our favourite destinations</h5>
+		<div class="grid grid-cols-3 gap-4 w-full">
+			{% for item in 0..5 %}
+				<div class="aspect-16/9 bg-brandBlueDark w-full flex items-end justify-start p-3">
+					<h5 class="text-white">place</h5>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

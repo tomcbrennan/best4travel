@@ -1,14 +1,19 @@
 // import AjaxContent from '../ajax/ajax'
+import initLenis from './utils/lenis'
+import initSplitText from './utils/split-text'
 import animateOnScroll from './utils/animate-on-scroll'
 import initAccordions from './components/accordions'
 import initSliders from './components/sliders'
 
 document.addEventListener('DOMContentLoaded', () => {
+	initLenis()
+	initSplitText()
 	toggleMenu()
 	toggleMobileSubMenu()
 	animateOnScroll()
 	loadAjaxPosts()
 	initSliders()
+	toggleDestinations()
 
 	if (document.querySelector('.scrolling-text')) {
 		scrollingText()
@@ -80,6 +85,23 @@ const toggleMenu = () => {
 		if (e.key === 'Escape' && document.body.classList.contains('menuIsOpen')) {
 			closeMenu()
 		}
+	})
+}
+
+const toggleDestinations = () => {
+	const destinationsLink = document.querySelectorAll('.menu-link')[0]
+	const destinationsMenu = document.querySelector('.destinations-menu')
+	const header = document.querySelector('header')
+
+	destinationsLink.addEventListener('click', (e) => {
+		destinationsMenu.classList.toggle('active')
+		destinationsMenu.classList.toggle('opacity-0')
+		destinationsMenu.classList.toggle('pointer-events-none')
+		destinationsMenu.classList.toggle('h-0')
+		destinationsMenu.classList.toggle('opacity-100')
+		destinationsMenu.classList.toggle('h-screen')
+		document.documentElement.classList.toggle('overflow-hidden')
+		header.classList.remove('scrolling')
 	})
 }
 

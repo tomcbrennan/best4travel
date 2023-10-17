@@ -1,25 +1,56 @@
 <footer class="bg-brandBlueDark text-white">
 	<div class="container-small py-12 block-content items-center">
-		<span class="mb-2 uppercase font-light">Proudly West Australian</span>
+		<span class="mb-2 uppercase font-normal">Proudly West Australian</span>
+		<div class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 place-items-center">
+			{% for item in options.accreditations %}
+				<img src="{{ item.accreditation.url }}" alt="{{ item.accreditation.alt }}" class="h-14">
+			{% endfor %}
+		</div>
 	</div>
 	<div class="container">
 		<div class="w-full h-[1px] bg-white opacity-25"></div>
 	</div>
 	<div class="container-small py-12">
-		<div class="grid grid-cols-3">
+		<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
 			<div class="flex flex-col gap-3">
-				<span class="mb-2 uppercase font-medium">Navigation</span>
-				{% for item in footer_menu.get_items %}
-					<a href="{{ item.link }}" class="font-heading text-2xl tracking-wider font-light">{{ item.title }}</a>
-				{% endfor %}
+				<span class="uppercase font-medium tracking-wide">Navigation</span>
+				<div class="flex flex-col gap-2">
+					{% for item in footer_menu.get_items %}
+						<a href="{{ item.link }}" class="font-heading text-2xl tracking-wider font-light duration-100 hover:opacity-75">{{ item.title }}</a>
+					{% endfor %}
+				</div>
 			</div>
-			<div class="flex flex-col gap-3">
-				<span class="mb-2 uppercase font-medium">Get in touch</span>
-
+			<div class="flex flex-col gap-4">
+				<span class="uppercase font-medium tracking-wide">Get in touch</span>
+				<div class="flex flex-col gap-5">
+					{% if options.company_details.phone %}
+						<div class="flex flex-col gap-1">
+							<span class="tracking-wide text-sm font-heading uppercase font-semibold">Call us</span>
+							<a href="tel:{{ options.company_details.phone }}" class="duration-100 w-fit border-b border-b-[#07C0F1] border-opacity-50 hover:!border-opacity-100">{{ options.company_details.phone }}</a>
+						</div>
+					{% endif %}
+					{% if options.company_details.email %}
+						<div class="flex flex-col gap-1">
+							<span class="tracking-wide text-sm font-heading uppercase font-semibold">Send an email</span>
+							<a href="mailto:{{ options.company_details.email }}" class="duration-100 w-fit border-b border-b-[#07C0F1] border-opacity-50 hover:!border-opacity-100">{{ options.company_details.email }}</a>
+						</div>
+					{% endif %}
+				</div>
 			</div>
-			<div class="flex flex-col gap-3">
-				<span class="mb-2 uppercase font-medium">Open Hours</span>
-
+			<div class="flex flex-col gap-4">
+				<span class="uppercase font-medium tracking-wide">Open Hours</span>
+				<div class="flex flex-col gap-4">
+					<div class="flex flex-col gap-1">
+						<span class="tracking-wide text-sm font-heading uppercase font-semibold">All Week</span>
+						<span>7AM - 7PM</span>
+					</div>
+					<div class="flex items-center gap-4">
+						<svg width="6" height="6" viewbox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="active-icon">
+							<path d="M6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3Z" fill="#00FF00"/>
+						</svg>
+						<span class="text-sm">Plus after hours assistance</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

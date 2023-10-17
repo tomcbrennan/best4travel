@@ -7,6 +7,28 @@
 @import './buttons.css';
 @import 'swiper/swiper-bundle.css';
 
+/* LENIS */
+
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+}
+
 @layer components {
 	.container {
 		@apply max-w-[1440px] 2xl:max-w-[1600px] w-full mx-auto px-6 md:px-10;
@@ -55,7 +77,7 @@ header.scrolling {
 		}
 	}
 
-	.menu-item > a {
+	.menu-item > * {
 		@apply !text-brandBlueDark delay-100;
 	}
 
@@ -65,6 +87,17 @@ header.scrolling {
 
 	.menu-button {
 		@apply border-brandBlueDark text-brandBlueDark;
+
+		svg {
+			circle,
+			path {
+				@apply stroke-brandBlueDark;
+			}
+		}
+	}
+
+	.menu-link:after {
+		@apply bg-brandBlueDark bg-opacity-50;
 	}
 }
 
@@ -87,3 +120,19 @@ header.scrolling {
 /* main > section:first-of-type {
 	@apply pt-0 lg:pt-0 xl:pt-0 2xl:pt-0;
 } */
+
+.active-icon {
+	animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.6);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
