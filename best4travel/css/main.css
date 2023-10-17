@@ -65,7 +65,7 @@ header {
 }
 
 header.scrolling {
-	@apply !py-1 md:!py-2;
+	@apply !py-1;
 
 	&:before {
 		@apply !h-full;

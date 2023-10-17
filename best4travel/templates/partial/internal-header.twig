@@ -1,6 +1,6 @@
 <div class="internal-header overflow-hidden bg-brandBlueDark relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[900px] flex items-center justify-center">
 	{% if post.thumbnail %}
-		{% include "partial/image.twig" with { image: Image(post.thumbnail).src, alt: post.thumbnail.alt, class: "absolute top-0 left-0 w-full h-full object-fit object-cover" } %}
+		{% include "partial/image.twig" with { image: Image(post.thumbnail).src, alt: post.thumbnail.alt, class: "image-parallax h-[125%] absolute -top-10 left-0 w-full h-auto object-fit object-cover" } %}
 	{% endif %}
 	<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
 	<svg width="275" height="538" viewbox="0 0 275 538" fill="none" xmlns="http://www.w3.org/2000/svg" class="draw-in absolute bottom-0 left-0">

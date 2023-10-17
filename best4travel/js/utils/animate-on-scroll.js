@@ -20,6 +20,26 @@ export default function animateOnScroll() {
 	})
 
 	/**
+	 * PARALLAX IMAGE
+	 */
+	gsap.utils.toArray('.image-parallax').forEach((image) => {
+		gsap.fromTo(
+			image,
+			{
+				y: -200,
+			},
+			{
+				scrollTrigger: {
+					trigger: image,
+					scrub: true,
+				},
+				y: 100,
+				ease: 'none',
+			}
+		)
+	})
+
+	/**
 	 * SINGLE ELEMENT SELECTORS
 	 * Apply these data attributes DIRECTLY to desired elements :~)
 	 */
