@@ -1,0 +1,17 @@
+<div class="internal-header overflow-hidden bg-brandBlueDark relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[900px] flex items-center justify-center">
+	{% if post.thumbnail %}
+		{% include "partial/image.twig" with { image: Image(post.thumbnail).src, alt: post.thumbnail.alt, class: "absolute top-0 left-0 w-full h-full object-fit object-cover" } %}
+	{% endif %}
+	<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
+	<svg width="275" height="538" viewbox="0 0 275 538" fill="none" xmlns="http://www.w3.org/2000/svg" class="draw-in absolute bottom-0 left-0">
+		<path d="M109.511 545.403L134.911 509.653L101.981 467.859L114.647 422.897L169.106 414.032L224.833 407.066L264 376L273.5 326L203.5 266L112.5 229.5L101.981 176L153 141L134.911 93.5L61.9999 72.5L-7.00011 1.14944" stroke="white" stroke-opacity="0.75" stroke-dasharray="10 10"/>
+	</svg>
+	<svg width="315" height="621" viewbox="0 0 315 621" fill="none" xmlns="http://www.w3.org/2000/svg" class="draw-in absolute bottom-0 right-0">
+		<path d="M328.938 0.214436L300.511 84.1494L228.32 122.778L201.09 198.135L218.821 276.026L263.782 332.385L254.917 388.745L213.122 448.904L163 459L123.833 490.066L68.1066 497.032L13.6467 505.897L0.981526 550.859L33.9108 592.653L8.51135 628.403" stroke="white" stroke-opacity="0.75" stroke-dasharray="10 10"/>
+	</svg>
+	<div data-animate-stagger-down class="container relative text-white block-content items-center text-center">
+		<h1 class="font-light text-base font-body normal-case">{{ post.title }}</h1>
+		<h2>{{ fields.internal_banner.heading }}</h2>
+		<h3 class="is-h4">{{ fields.internal_banner.subheading }}</h3>
+	</div>
+</div>

@@ -1,6 +1,8 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+	{% include "partial/internal-header.twig" %}
+
 	{% for block in page_builder %}
 		<div data-block="{{ block.acf_fc_layout }}">
 			{{ include("blocks/" ~ block.acf_fc_layout ~ ".twig", ignore_missing = true) }}
