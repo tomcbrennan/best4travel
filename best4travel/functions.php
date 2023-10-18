@@ -87,10 +87,26 @@ class TomDotCom extends Timber\Site
 	/** This is where you can register custom post types. */
 	public function register_post_types()
 	{
+		register_post_type( 'destinations', array(
+			'label'  => 'Destinations',
+			'public' => true,
+			'has_archive' => false,
+			'supports' => array( 'title', 'thumbnail'),
+			'menu_icon' => 'dashicons-palmtree',
+		));
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies()
 	{
+		register_taxonomy('location', 'destinations', array(
+			'labels' => array(
+				'name' => 'Locations',
+				'singular_name' => 'Location',
+			),
+			'hierachical' => true,
+			'show_in_rest' => false,
+			'show_admin_column' => true
+		));
 	}
 
     /** This is where you can register custom CSS & JS files. */

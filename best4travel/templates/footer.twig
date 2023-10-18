@@ -1,6 +1,25 @@
+<div class="footer-contact bg-brandBackground py-12">
+	<div class="container-small grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-2 max-sm:justify-center max-sm:gap-6 lg:gap-20 items-center">
+		<div class="max-sm:col-span-1 max-lg:col-span-2 flex flex-col max-sm:text-center max-sm:items-center gap-3">
+			<h6 class="font-heading uppercase font-semibold">Get in touch with our team</h6>
+			<p class="font-light">We are always prepared to help with any travel enquiries you may have.</p>
+		</div>
+		<div class="max-sm:col-span-1 max-lg:col-span-3 flex tems-center justify-center sm:justify-end gap-6">
+			<a href="tel:{{ options.company_details.phone }}" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-36 h-36 md:h-44 md:w-44 text-center p-6">
+				{% include "icons/phone.twig" with { class: "!w-8" } %}
+				<span class="max-lg:text-sm font-light">Call us during open hours</span>
+			</a>
+			<a href="/contact-us" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-36 h-36 md:h-44 md:w-44 text-center p-6">
+				{% include "icons/mail.twig" with { class: "!w-8" } %}
+				<span class="max-lg:text-sm font-light">Send us an enquiry</span>
+			</a>
+		</div>
+	</div>
+</div>
+
 <footer class="bg-brandBlueDark text-white">
 	<div class="container-small py-12 block-content items-center">
-		<span class="mb-2 uppercase font-normal">Proudly West Australian</span>
+		<span class="max-md:text-xs mb-2 uppercase font-normal">Proudly West Australian</span>
 		<div class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 place-items-center">
 			{% for item in options.accreditations %}
 				<img src="{{ item.accreditation.url }}" alt="{{ item.accreditation.alt }}" class="h-14">

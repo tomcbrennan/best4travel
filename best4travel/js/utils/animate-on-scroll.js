@@ -12,7 +12,7 @@ export default function animateOnScroll() {
 
 	window.addEventListener('scroll', () => {
 		const scrollPosition = window.scrollY
-		if (scrollPosition > 25 && !destinationsMenu.classList.contains('active')) {
+		if (scrollPosition > 75 && !destinationsMenu.classList.contains('active')) {
 			header.classList.add('scrolling')
 		} else {
 			header.classList.remove('scrolling')
@@ -37,6 +37,20 @@ export default function animateOnScroll() {
 				ease: 'none',
 			}
 		)
+	})
+
+	/**
+	 * PARALLAX TEXT
+	 */
+	gsap.utils.toArray('.text-parallax').forEach((text) => {
+		gsap.to(text, {
+			scrollTrigger: {
+				trigger: text,
+				scrub: true,
+			},
+			y: -100,
+			ease: 'none',
+		})
 	})
 
 	/**
@@ -78,7 +92,7 @@ export default function animateOnScroll() {
 
 	const staggerProperties = {
 		autoAlpha: 0,
-		delay: 0.2,
+		delay: 0.4,
 		stagger: 0.2,
 	}
 
@@ -93,7 +107,9 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			...fadeProperties,
+			autoAlpha: 0,
+			delay: 0.4,
+			duration: 2,
 		}
 
 		gsap.from(element, settings)
