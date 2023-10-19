@@ -1,4 +1,24 @@
-<div class="footer-contact bg-brandBackground py-12">
+<section class="footer-testimonials small-padding bg-white overflow-hidden">
+	<div class="container-small block-content">
+		<h4 class="font-heading uppercase font-semibold mx-auto relative">
+			<span>From our loyal clients</span>
+			<div data-animate-reveal-right class="absolute top-1/2 -translate-y-1/2 left-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
+			<div data-animate-reveal-left class="absolute top-1/2 -translate-y-1/2 right-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
+		</h4>
+		<div class="testimonials-slider">
+			<div class="swiper-wrapper">
+				{% for item in options.testimonials %}
+					<div class="swiper-slide text-center font-light !flex flex-col gap-3">
+						<p>{{ item.content }}</p>
+						<p class="font-heading text-xl">{{ item.name }}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="footer-contact small-padding bg-brandBackground">
 	<div class="container-small grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-2 max-sm:justify-center max-sm:gap-6 lg:gap-20 items-center">
 		<div class="max-sm:col-span-1 max-lg:col-span-2 flex flex-col max-sm:text-center max-sm:items-center gap-3">
 			<h6 class="font-heading uppercase font-semibold">Get in touch with our team</h6>
@@ -15,7 +35,7 @@
 			</a>
 		</div>
 	</div>
-</div>
+</section>
 
 <footer class="bg-brandBlueDark text-white">
 	<div class="container-small py-12 block-content items-center">

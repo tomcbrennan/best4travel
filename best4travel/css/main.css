@@ -51,6 +51,10 @@ main section {
 	@apply relative py-10 lg:py-20 2xl:py-32;
 }
 
+section.small-padding {
+	@apply relative py-10 lg:py-12;
+}
+
 header {
 	&:before {
 		content: '';

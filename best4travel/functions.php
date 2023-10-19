@@ -98,12 +98,12 @@ class TomDotCom extends Timber\Site
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies()
 	{
-		register_taxonomy('location', 'destinations', array(
+		register_taxonomy('locations', 'destinations', array(
 			'labels' => array(
 				'name' => 'Locations',
 				'singular_name' => 'Location',
 			),
-			'hierachical' => true,
+			'hierarchical' => true,
 			'show_in_rest' => false,
 			'show_admin_column' => true
 		));

@@ -18,10 +18,12 @@
 		</div>
 	</section>
 
-	<section class="bg-white">
+	<section class="bg-white relative">
+		<div data-animate-reveal-down class="absolute top-0 left-1/2 -translate-x-1/2 h-6 lg:h-14 w-[1px] border-r border-dashed border-r-[#0073AD] border-opacity-75"></div>
+		<div data-animate-reveal-up class="absolute bottom-0 left-1/2 -translate-x-1/2 h-6 lg:h-14 w-[1px] border-l border-dashed border-l-[#0073AD] border-opacity-75"></div>
 		<div class="container !max-w-[830px]">
 			<div class="block-content items-center text-center">
-				{% include "icons/logo-icon.twig" with { class: "opacity-30 max-md:w-20" } %}
+				{% include "icons/logo-icon.twig" with { class: "opacity-30 max-md:w-20 h-auto" } %}
 				<h4 data-fade-down>Our local Perth experts will help shape your ideal getaway filled with breathtaking locations, and timeless memories to cherish.</h4>
 			</div>
 		</div>
@@ -34,7 +36,7 @@
 				<h3>Build your holiday</h3>
 				<p class="max-w-[350px] w-full">Check out our latest offers and get packing on your next adventure.</p>
 			</div>
-			<div class="destinations-slider">
+			<div data-fade-down class="destinations-slider">
 				<div class="swiper-wrapper">
 					{% for item in 0..20 %}
 						<div class="swiper-slide aspect-5/7 bg-white w-full">

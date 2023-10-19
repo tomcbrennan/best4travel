@@ -82,6 +82,16 @@ export default function animateOnScroll() {
 	const elementsStaggerDown = document.querySelectorAll(
 		'[data-animate-stagger-down]'
 	)
+	const elementsRevealUp = document.querySelectorAll('[data-animate-reveal-up]')
+	const elementsRevealDown = document.querySelectorAll(
+		'[data-animate-reveal-down]'
+	)
+	const elementsRevealLeft = document.querySelectorAll(
+		'[data-animate-reveal-left]'
+	)
+	const elementsRevealRight = document.querySelectorAll(
+		'[data-animate-reveal-right]'
+	)
 
 	const START = 'top bottom-=10%'
 	const fadeProperties = {
@@ -100,6 +110,64 @@ export default function animateOnScroll() {
 	 * SINGLE FINS (Single Fade Ins)
 	 */
 
+	// REVEAL DOWN -------------------------------
+	elementsRevealDown.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			delay: 0.4,
+			duration: 1,
+			height: 0,
+		}
+
+		gsap.from(element, settings)
+	})
+	// REVEAL UP -------------------------------
+	elementsRevealUp.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			delay: 0.4,
+			duration: 1,
+			height: 0,
+		}
+
+		gsap.from(element, settings)
+	})
+	// REVEAL LEFT -------------------------------
+	elementsRevealLeft.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			delay: 0.4,
+			duration: 8,
+			width: 0,
+			transformOrigin: 'left',
+		}
+
+		gsap.from(element, settings)
+	})
+	// REVEAL RIGHT -------------------------------
+	elementsRevealRight.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			delay: 0.4,
+			duration: 8,
+			width: 0,
+			transformOrigin: 'right',
+		}
+
+		gsap.from(element, settings)
+	})
 	// FADE -------------------------------
 	elementsFade.forEach((element) => {
 		const settings = {
@@ -122,8 +190,10 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			...fadeProperties,
 			y: -16,
+			autoAlpha: 0,
+			delay: 0.2,
+			duration: 1,
 		}
 
 		gsap.from(element, settings)
