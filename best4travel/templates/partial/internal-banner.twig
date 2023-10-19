@@ -1,17 +1,18 @@
-<div class="internal-header overflow-hidden bg-brandBlueDark relative h-[450px] sm:h-[550px] lg:h-[650px] xl:h-[800px] 2xl:h-[900px] flex items-center justify-center">
+<div class="internal-banner overflow-hidden bg-brandBlueDark relative h-[450px] sm:h-[550px] lg:h-[650px] xl:h-[800px] 2xl:h-[900px] flex items-center justify-center">
 	{% if post.thumbnail %}
 		{% include "partial/image.twig" with { image: Image(post.thumbnail).src, alt: post.thumbnail.alt, class: "image-parallax h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto object-fit object-cover" } %}
 	{% endif %}
 	<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
 	<svg data-fade width="275" height="538" viewbox="0 0 275 538" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-md:hidden max-lg:-bottom-1/3 absolute bottom-0 left-0">
 		<animate attributename="stroke-dashoffset" values="100;0" dur="3s" calcmode="linear" repeatcount="indefinite"/>
-		<path d="M109.511 545.403L134.911 509.653L101.981 467.859L114.647 422.897L169.106 414.032L224.833 407.066L264 376L273.5 326L203.5 266L112.5 229.5L101.981 176L153 141L134.911 93.5L61.9999 72.5L-7.00011 1.14944" stroke="white" stroke-opacity="0.75" stroke-dasharray="10 10"/>
+		<path d="M109.511 545.403L134.911 509.653L101.981 467.859L114.647 422.897L169.106 414.032L224.833 407.066L264 376L273.5 326L203.5 266L112.5 229.5L101.981 176L153 141L134.911 93.5L61.9999 72.5L-7.00011 1.14944" stroke="white" stroke-opacity="0.5" stroke-dasharray="10 10"/>
 	</svg>
 	<svg data-fade width="315" height="621" viewbox="0 0 315 621" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-md:hidden max-lg:-bottom-1/3 absolute bottom-0 right-0">
 		<animate attributename="stroke-dashoffset" values="100;0" dur="3s" calcmode="linear" repeatcount="indefinite"/>
-		<path d="M328.938 0.214436L300.511 84.1494L228.32 122.778L201.09 198.135L218.821 276.026L263.782 332.385L254.917 388.745L213.122 448.904L163 459L123.833 490.066L68.1066 497.032L13.6467 505.897L0.981526 550.859L33.9108 592.653L8.51135 628.403" stroke="white" stroke-opacity="0.75" stroke-dasharray="10 10"/>
+		<path d="M328.938 0.214436L300.511 84.1494L228.32 122.778L201.09 198.135L218.821 276.026L263.782 332.385L254.917 388.745L213.122 448.904L163 459L123.833 490.066L68.1066 497.032L13.6467 505.897L0.981526 550.859L33.9108 592.653L8.51135 628.403" stroke="white" stroke-opacity="0.5" stroke-dasharray="10 10"/>
 	</svg>
-	<div data-animate-stagger-down class="container relative text-white block-content items-center text-center">
+	<div data-animate-stagger-down class="container max-2xl:!max-w-[900px] relative text-white block-content items-center text-center">
+		<div data-animate-banner-reveal-down class="absolute top-[calc(100%+20px)] left-1/2 -translate-x-1/2 h-screen w-[1px] border-l border-dashed border-l-white"></div>
 		<h1 class="font-light text-base font-body normal-case">{{ post.title }}</h1>
 		<h2>{{ fields.internal_banner.heading }}</h2>
 		<h3 class="is-h4">{{ fields.internal_banner.subheading }}</h3>

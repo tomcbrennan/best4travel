@@ -92,6 +92,9 @@ export default function animateOnScroll() {
 	const elementsRevealRight = document.querySelectorAll(
 		'[data-animate-reveal-right]'
 	)
+	const elementsBannerRevealDown = document.querySelectorAll(
+		'[data-animate-banner-reveal-down]'
+	)
 
 	const START = 'top bottom-=10%'
 	const fadeProperties = {
@@ -110,6 +113,21 @@ export default function animateOnScroll() {
 	 * SINGLE FINS (Single Fade Ins)
 	 */
 
+	// BANNER LINE REVEAL DOWN -------------------------------
+	elementsBannerRevealDown.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			delay: 1.25,
+			duration: 6,
+			height: 0,
+			transformOrigin: 'top',
+		}
+
+		gsap.from(element, settings)
+	})
 	// REVEAL DOWN -------------------------------
 	elementsRevealDown.forEach((element) => {
 		const settings = {
@@ -120,6 +138,7 @@ export default function animateOnScroll() {
 			delay: 0.4,
 			duration: 1,
 			height: 0,
+			transformOrigin: 'top',
 		}
 
 		gsap.from(element, settings)
@@ -134,6 +153,7 @@ export default function animateOnScroll() {
 			delay: 0.4,
 			duration: 1,
 			height: 0,
+			transformOrigin: 'bottom',
 		}
 
 		gsap.from(element, settings)

@@ -3,7 +3,7 @@
 {% block content %}
 
 	{# HOME BANNER EXAMPLE #}
-	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[900px]">
+	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[1050px]">
 		<video class="absolute top-0 left-0 z-10 h-full object-cover w-full" preload="auto" loop autoplay muted playsinline>
 			<source class="absolute top-0 left-0 h-full w-full" src="{{ fields.home_banner.background_video_link }}" type="video/mp4" poster="{{ fields.home_banner.video_poster.url }}">
 			Your browser does not support the video tag.
@@ -18,13 +18,14 @@
 		</div>
 	</section>
 
-	<section class="bg-white relative">
-		<div data-animate-reveal-down class="absolute top-0 left-1/2 -translate-x-1/2 h-6 lg:h-14 w-[1px] border-r border-dashed border-r-[#0073AD] border-opacity-75"></div>
-		<div data-animate-reveal-up class="absolute bottom-0 left-1/2 -translate-x-1/2 h-6 lg:h-14 w-[1px] border-l border-dashed border-l-[#0073AD] border-opacity-75"></div>
-		<div class="container !max-w-[830px]">
+	<section class="bg-white relative overflow-hidden">
+		<div class="container-small max-2xl:!max-w-[830px]">
 			<div class="block-content items-center text-center">
-				{% include "icons/logo-icon.twig" with { class: "opacity-30 max-md:w-20 h-auto" } %}
-				<h4 data-fade-down>Our local Perth experts will help shape your ideal getaway filled with breathtaking locations, and timeless memories to cherish.</h4>
+				<div data-fade-up>{% include "icons/logo-icon.twig" with { class: "opacity-30 max-md:w-20 h-auto" } %}</div>
+				<h4 data-fade-down class="relative">
+					<span>Our local Perth experts will help shape your ideal getaway filled with breathtaking locations, and timeless memories to cherish.</span>
+					<div data-animate-reveal-down class="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 h-full w-[1px] border-l border-dashed border-l-[#0073AD] border-opacity-75"></div>
+				</h4>
 			</div>
 		</div>
 	</section>

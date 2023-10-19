@@ -40,9 +40,9 @@
 <footer class="bg-brandBlueDark text-white">
 	<div class="container-small py-12 block-content items-center">
 		<span class="max-md:text-xs mb-2 uppercase font-normal">Proudly West Australian</span>
-		<div class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 place-items-center">
+		<div data-animate-stagger-up class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 place-items-center w-full">
 			{% for item in options.accreditations %}
-				<img src="{{ item.accreditation.url }}" alt="{{ item.accreditation.alt }}" class="h-14">
+				<div><img src="{{ item.accreditation.url }}" alt="{{ item.accreditation.alt }}" class="h-14"></div>
 			{% endfor %}
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 		<div class="w-full h-[1px] bg-white opacity-25"></div>
 	</div>
 	<div class="container-small py-12">
-		<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+		<div data-animate-stagger-down class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 md:place-items-center !items-start">
 			<div class="flex flex-col gap-3">
 				<span class="uppercase font-medium tracking-wide">Navigation</span>
 				<div class="flex flex-col gap-2">
@@ -100,8 +100,8 @@
 				{{ 'now'|date('Y') }}
 				Best 4 Travel</span>
 			<div class="flex items-center max-md:justify-center max-sm:flex-wrap gap-5">
-				<a href="#">Terms & Conditions</a>
-				<a href="#">Privacy Policy</a>
+				<a href="/terms-and-conditions">Terms & Conditions</a>
+				<a href="/privacy-policy">Privacy Policy</a>
 				<a href="https://tomdotcom.au" target="_blank">Built by Tom</a>
 			</div>
 		</div>
