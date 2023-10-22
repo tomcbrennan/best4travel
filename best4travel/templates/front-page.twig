@@ -42,7 +42,7 @@
 				<div class="swiper-wrapper">
 					{% for item in all_destinations %}
 						{% if item.featured_destination == true %}
-							<a href="{{ item.link }}" class="swiper-slide group overflow-hidden bg-brandBlueLight relative aspect-5/7 w-full duration-500 ease-in-out">
+							<a href="{{ item.link }}" class="swiper-slide destination-tile group overflow-hidden bg-brandBlueLight relative aspect-5/7 w-full duration-500 ease-in-out">
 								<div data-image-reveal-top class="h-full w-full absolute top-0 left-0">
 									{% if item.thumbnail %}
 										{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnail.alt, class: "image-parallax h-[120%] w-full h-full object-center object-cover pointer-events-none" } %}

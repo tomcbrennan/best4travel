@@ -48,7 +48,7 @@ html.lenis {
 }
 
 main {
-	animation: fade-in 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.2s both;
+	animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s both;
 
 	section {
 		@apply relative py-10 lg:py-20 2xl:py-32;
@@ -144,9 +144,27 @@ header.scrolling {
 	}
 }
 
+.tax-locations {
+	.tease-destination {
+		&:nth-child(2) {
+			@apply lg:mt-32;
+		}
+
+		&:nth-child(2) {
+			@apply lg:mt-32;
+		}
+
+		&:not(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(3n - 1)){
+			@apply lg:-mt-32;
+		}
+	}
+}
+
 .footer-testimonials {
-	.swiper-button-prev, .swiper-button-next {
-		svg > circle, svg > path {
+	.swiper-button-prev,
+	.swiper-button-next {
+		svg > circle,
+		svg > path {
 			@apply duration-300;
 		}
 
@@ -172,7 +190,7 @@ header.scrolling {
 	animation: pulse 3s ease-in-out infinite;
 }
 
-[data-image-reveal-left]{
+[data-image-reveal-left] {
 	@apply invisible overflow-hidden;
 
 	img {
@@ -188,7 +206,7 @@ header.scrolling {
 
 .destinations-slider > .swiper-wrapper {
 	transition-timing-function: linear;
-  }
+}
 
 @keyframes pulse {
 	0% {
@@ -204,9 +222,9 @@ header.scrolling {
 
 @keyframes fade-in {
 	0% {
-	  opacity: 0;
+		opacity: 0;
 	}
 	100% {
-	  opacity: 1;
+		opacity: 1;
 	}
-  }
+}

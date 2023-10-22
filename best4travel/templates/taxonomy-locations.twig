@@ -1,15 +1,17 @@
 {% extends "page.twig" %}
 
 {% block banner %}
-    {% include "banners/internal-banner.twig" with { custom_title: 'Locations' ~ '&nbsp; ' ~ '•' ~ ' &nbsp;' ~ post.name, custom_heading: post.name ~ ' ' ~ 'Travel' } %}
+	{% include "banners/internal-banner.twig" with { custom_title: 'Locations' ~ '&nbsp; ' ~ '•' ~ ' &nbsp;' ~ post.name, custom_heading: post.name ~ ' ' ~ 'Travel' } %}
 {% endblock %}
 
 {% block content %}
-    <section class="bg-white relative">
-        <div class="container">
-            {# {% for item in single_location %}
-                {{ fn('var_dump', item.title) }}
-            {% endfor %} #}
-        </div>
-    </section>
+	<section class="bg-white relative">
+		<div class="container">
+			<div class="grid grid-cols-3 gap-10">
+				{% for item in single_location_destinations %}
+					{% include "tease-destination.twig" %}
+				{% endfor %}
+			</div>
+		</div>
+	</section>
 {% endblock %}
