@@ -6,7 +6,7 @@ body {
 }
 
 body {
-	@apply leading-normal 2xl:text-lg 2xl:leading-normal;
+	@apply font-light leading-normal 2xl:text-lg 2xl:leading-normal;
 }
 
 h1,

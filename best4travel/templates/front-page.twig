@@ -91,7 +91,18 @@
 
 	<section class="bg-brandBlueLight">
 		<div class="container">
-			hello
+			<div class="relative flex lg:items-center max-lg:flex-col">
+				<div data-fade-down class="z-10 w-full lg:w-[475px] lg:absolute px-8 py-10 bg-brandBackground block-content">
+					<h3 class="is-h4 large-heading !font-semibold">Our experience</h3>
+					<p>Best 4 Travel has an award winning team for their unbeatable service including WA International Travellers Peoples Choice winner Office of the Year & Australian Federation of Travel Agents National Finalist Office of the Year.</p>
+					<p>During COVID-19 we have moved the business from our location at Hillarys Marina to a home based operation. We are locally owned and operated.</p>
+					<p>As the best independent agent in Australia we have access wholesale deals, online rates and special private fares.</p>
+					<a href="/about-us" class="button round bg-white">More about us</a>
+				</div>
+				<div class="aspect-16/9 lg:w-[90%] relative lg:ml-auto">
+					{% include "partial/image.twig" with { image: Image(fields.our_experience.image).src, alt: fields.our_experience.image.alt, class: "h-full w-full absolute top-0 left-0 object-center object-cover pointer-events-none" } %}
+				</div>
+			</div>
 		</div>
 	</section>
 
