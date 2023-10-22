@@ -68,25 +68,16 @@
 		<div class="pt-10">
 			<section class="relative">
 				<div data-animate-reveal-center class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[2px] border-t border-t-[#1C63A0] border-opacity-30"></div>
-				<div class="container flex flex-col gap-10 items-center">
-					<div class="grid grid-cols-5 gap-5 lg:gap-10">
-						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-							<span class="font-heading text-2xl">International</span>
-						</a>
-						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-							<span class="font-heading text-2xl">Domestic</span>
-						</a>
-						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-							<span class="font-heading text-2xl">Corporate</span>
-						</a>
-						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-							<span class="font-heading text-2xl">Groups</span>
-						</a>
-						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-							<span class="font-heading text-2xl">WA Regional Events</span>
-						</a>
+				<div class="container">
+					<div class="grid grid-cols-5 gap-5 lg:gap-10 w-full">
+						{% for item in locations %}
+							{% if item.slug != 'uncategorized' %}
+								<a href="{{ item.slug }}" class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+									<span class="font-heading text-2xl">{{ item.name }}</span>
+								</a>
+							{% endif %}
+						{% endfor %}
 					</div>
-					<a href="/destinations" class="button round">Discover more deals</a>
 				</div>
 			</section>
 		</div>

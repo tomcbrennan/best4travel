@@ -10,12 +10,14 @@
 		<animate attributename="stroke-dashoffset" values="100;0" dur="3s" calcmode="linear" repeatcount="indefinite"/>
 		<path d="M328.938 0.214436L300.511 84.1494L228.32 122.778L201.09 198.135L218.821 276.026L263.782 332.385L254.917 388.745L213.122 448.904L163 459L123.833 490.066L68.1066 497.032L13.6467 505.897L0.981526 550.859L33.9108 592.653L8.51135 628.403" stroke="white" stroke-opacity="0.5" stroke-dasharray="10 10"/>
 	</svg>
-	<div data-animate-stagger-down class="container max-2xl:!max-w-[900px] relative text-white block-content items-center text-center">
+	<div data-animate-stagger-down class="container max-2xl:!max-w-[925px] relative text-white block-content items-center text-center">
 		<div data-animate-banner-reveal-down class="absolute top-[calc(100%+20px)] left-1/2 -translate-x-1/2 h-screen w-[1px] border-l border-dashed border-l-white"></div>
-		<h1 class="font-light text-base font-body normal-case">{{ post.title }}</h1>
-		<h2>{{ fields.internal_banner.heading }}</h2>
+		<h1 class="font-light text-base font-body normal-case">{{ custom_title ?: post.title }}</h1>
+		<h2>{{ custom_heading ?: fields.internal_banner.heading }}</h2>
 		{% if fields.internal_banner.subheading %}
 			<h3 class="is-h4">{{ fields.internal_banner.subheading }}</h3>
+		{% elseif custom_subheading %}
+			<h3 class="is-h4">{{ custom_subheading }}</h3>
 		{% endif %}
 	</div>
 </div>

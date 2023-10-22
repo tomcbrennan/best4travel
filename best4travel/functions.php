@@ -105,7 +105,8 @@ class TomDotCom extends Timber\Site
 			),
 			'hierarchical' => true,
 			'show_in_rest' => false,
-			'show_admin_column' => true
+			'show_admin_column' => true,
+			'sort' => true,
 		));
 	}
 
@@ -135,6 +136,7 @@ class TomDotCom extends Timber\Site
 		$context['menu']  = new Timber\Menu('primary');
         $context['footer_menu'] = new Timber\Menu('footer');
 
+
 		// LOOPS
 		$context['all_destinations'] = Timber::get_posts(array(
 			'post_type' => 'destinations',
@@ -148,6 +150,8 @@ class TomDotCom extends Timber\Site
 			'posts_per_page' => 10,
 			'order' => 'DESC',
 		));
+
+		$context['locations'] = Timber::get_terms('locations');
 
 		// SITE
 		$context['site']  = $this;

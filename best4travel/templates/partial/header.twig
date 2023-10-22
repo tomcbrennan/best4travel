@@ -18,12 +18,12 @@
 <div class="destinations-menu pb-20 duration-1000 ease-in-out origin-top fixed top-0 left-0 bg-brandBlueLight w-screen h-0 z-[1000] pointer-events-none opacity-0">
 	<div class="container w-full h-full block-content justify-end">
 		<h5>Our favourite destinations</h5>
-		<div class="grid grid-cols-3 gap-4 w-full">
-			{% for item in all_destinations %}
-				{% if item.featured_destination == true %}
-					<div class="aspect-16/9 bg-brandBlueDark w-full flex items-end justify-start p-3">
-						<h5 class="text-white">place</h5>
-					</div>
+		<div class="grid grid-cols-5 gap-5 lg:gap-10 w-full">
+			{% for item in locations %}
+				{% if item.slug != 'uncategorized' %}
+					<a href="/locations/{{ item.slug }}" class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+						<span class="font-heading text-2xl">{{ item.name }}</span>
+					</a>
 				{% endif %}
 			{% endfor %}
 		</div>
