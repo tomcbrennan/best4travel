@@ -98,10 +98,10 @@ class TomDotCom extends Timber\Site
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies()
 	{
-		register_taxonomy('locations', 'destinations', array(
+		register_taxonomy('travel-types', 'destinations', array(
 			'labels' => array(
-				'name' => 'Locations',
-				'singular_name' => 'Location',
+				'name' => 'Travel Types',
+				'singular_name' => 'Travel Type',
 			),
 			'hierarchical' => true,
 			'show_in_rest' => false,
@@ -151,7 +151,10 @@ class TomDotCom extends Timber\Site
 			'order' => 'DESC',
 		));
 
-		$context['locations'] = Timber::get_terms('locations');
+		$context['travel_types'] = Timber::get_terms('travel-types', array(
+			'orderby' => 'menu_order',
+			'order' => 'DESC'
+		));
 
 		// SITE
 		$context['site']  = $this;

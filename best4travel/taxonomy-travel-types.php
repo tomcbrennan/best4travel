@@ -6,13 +6,13 @@ $post = get_queried_object();
 
 $context['fields'] = get_fields($post);
 
-$context['single_location_destinations'] = Timber::get_posts(array(
+$context['travel_type_destinations'] = Timber::get_posts(array(
     'post_type' => 'destinations',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'tax_query' => array(
         array(
-            'taxonomy' => 'locations',
+            'taxonomy' => 'travel-types',
             'field' => 'slug',
             'terms' => $post->slug
         )
@@ -21,4 +21,4 @@ $context['single_location_destinations'] = Timber::get_posts(array(
 
 $context['post'] = $post;
 
-Timber::render( 'taxonomy-locations.twig', $context );
+Timber::render( 'taxonomy-travel-types.twig', $context );

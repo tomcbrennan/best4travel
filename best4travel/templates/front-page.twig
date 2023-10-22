@@ -70,7 +70,7 @@
 				<div data-animate-reveal-center class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[2px] border-t border-t-[#1C63A0] border-opacity-30"></div>
 				<div class="container">
 					<div class="grid grid-cols-5 gap-5 lg:gap-10 w-full">
-						{% for item in locations %}
+						{% for item in travel_types %}
 							{% if item.slug != 'uncategorized' %}
 								<a href="{{ item.slug }}" class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
 									<span class="font-heading text-2xl">{{ item.name }}</span>

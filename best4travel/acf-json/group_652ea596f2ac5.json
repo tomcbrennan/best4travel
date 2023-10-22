@@ -103,7 +103,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "locations"
+                "value": "travel-types"
             }
         ]
     ],
@@ -116,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697988844
+    "modified": 1697993590
 }

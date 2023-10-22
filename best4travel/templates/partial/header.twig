@@ -19,9 +19,9 @@
 	<div class="container w-full h-full block-content justify-end">
 		<h5>Our favourite destinations</h5>
 		<div class="grid grid-cols-5 gap-5 lg:gap-10 w-full">
-			{% for item in locations %}
+			{% for item in travel_types %}
 				{% if item.slug != 'uncategorized' %}
-					<a href="/locations/{{ item.slug }}" class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+					<a href="/travel-types/{{ item.slug }}" class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
 						<span class="font-heading text-2xl">{{ item.name }}</span>
 					</a>
 				{% endif %}
