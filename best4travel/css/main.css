@@ -144,13 +144,51 @@ header.scrolling {
 	}
 }
 
+.footer-testimonials {
+	.swiper-button-prev, .swiper-button-next {
+		svg > circle, svg > path {
+			@apply duration-300;
+		}
+
+		&:hover {
+			svg > circle {
+				@apply fill-brandBlueLight;
+			}
+
+			svg > path {
+				@apply fill-white;
+			}
+		}
+	}
+}
+
 /* main > section:first-of-type {
 	@apply pt-0 lg:pt-0 xl:pt-0 2xl:pt-0;
 } */
 
+/* ANIMATION STUFF */
+
 .active-icon {
 	animation: pulse 3s ease-in-out infinite;
 }
+
+[data-image-reveal-left]{
+	@apply invisible overflow-hidden;
+
+	img {
+		@apply h-full w-full object-cover origin-left;
+		-o-object-fit: cover;
+	}
+}
+
+[data-image-reveal-left] img {
+	@apply h-full w-full object-cover origin-left;
+	-o-object-fit: cover;
+}
+
+.destinations-slider > .swiper-wrapper {
+	transition-timing-function: linear;
+  }
 
 @keyframes pulse {
 	0% {

@@ -54,6 +54,22 @@ export default function animateOnScroll() {
 	})
 
 	/**
+	 * OPTIONS
+	 */
+	const START = 'top bottom-=10%'
+	const fadeProperties = {
+		autoAlpha: 0,
+		delay: 0.2,
+		duration: 1,
+	}
+
+	const staggerProperties = {
+		autoAlpha: 0,
+		delay: 0.4,
+		stagger: 0.2,
+	}
+
+	/**
 	 * SINGLE ELEMENT SELECTORS
 	 * Apply these data attributes DIRECTLY to desired elements :~)
 	 */
@@ -99,21 +115,7 @@ export default function animateOnScroll() {
 		'[data-animate-banner-reveal-down]'
 	)
 	const lineArrows = document.querySelectorAll('[data-animate-line-arrow]')
-
 	const curtains = document.querySelectorAll('[data-curtain]')
-
-	const START = 'top bottom-=10%'
-	const fadeProperties = {
-		autoAlpha: 0,
-		delay: 0.2,
-		duration: 1,
-	}
-
-	const staggerProperties = {
-		autoAlpha: 0,
-		delay: 0.4,
-		stagger: 0.2,
-	}
 
 	/**
 	 * SINGLE FINS (Single Fade Ins)
@@ -284,7 +286,9 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			...fadeProperties,
+			autoAlpha: 0,
+			delay: 0.2,
+			duration: 0.6,
 			y: 16,
 		}
 
@@ -383,4 +387,43 @@ export default function animateOnScroll() {
 			y: -20,
 		})
 	})
+
+	if (document.querySelector('[data-image-reveal-left]')) {
+		const imageRevealLeft = gsap.utils.toArray('[data-image-reveal-left]')
+		imageRevealLeft.forEach((imageReveal) => {
+			let image = imageReveal.querySelector('img')
+			let tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: image,
+					start: 'top bottom-=20%',
+				},
+			})
+			tl.set(imageReveal, {
+				autoAlpha: 1,
+			})
+			tl.fromTo(
+				imageReveal,
+				{
+					xPercent: -100,
+				},
+				{
+					xPercent: 0,
+					duration: 2,
+					ease: 'power3.easeInOut',
+				}
+			)
+			tl.fromTo(
+				image,
+				{
+					xPercent: 100,
+				},
+				{
+					xPercent: 0,
+					delay: -2,
+					duration: 2,
+					ease: 'power3.easeInOut',
+				}
+			)
+		})
+	}
 }
