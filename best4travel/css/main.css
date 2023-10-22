@@ -132,13 +132,11 @@ header.scrolling {
 	}
 }
 
-.destinations-slider {
-	.swiper-slide {
-		&:hover {
-			svg {
-				> circle {
-					@apply rotate;
-				}
+.tease-destination {
+	&:hover {
+		svg {
+			> circle {
+				@apply rotate;
 			}
 		}
 	}
@@ -154,7 +152,7 @@ header.scrolling {
 			@apply lg:mt-32;
 		}
 
-		&:not(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(3n - 1)){
+		&:not(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(3n - 1)) {
 			@apply lg:-mt-32;
 		}
 	}
