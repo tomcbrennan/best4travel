@@ -1,8 +1,10 @@
 {% extends 'base.twig' %}
 
-{% block content %}
-	{% include "partial/internal-banner.twig" %}
+{% block banner %}
+	{% include "banners/internal-banner.twig" %}
+{% endblock %}
 
+{% block content %}
 	{% for block in page_builder %}
 		<div data-block="{{ block.acf_fc_layout }}">
 			{{ include("blocks/" ~ block.acf_fc_layout ~ ".twig", ignore_missing = true) }}

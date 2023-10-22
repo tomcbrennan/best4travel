@@ -1,6 +1,6 @@
 <section class="footer-testimonials small-padding bg-white overflow-hidden">
 	<div class="container-small block-content">
-		<h4 class="font-heading uppercase font-semibold mx-auto relative">
+		<h4 class="large-heading font-semibold mx-auto relative">
 			<span>From our loyal clients</span>
 			<div data-animate-reveal-right class="absolute top-1/2 -translate-y-1/2 left-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
 			<div data-animate-reveal-left class="absolute top-1/2 -translate-y-1/2 right-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
@@ -14,6 +14,20 @@
 					</div>
 				{% endfor %}
 			</div>
+			<div class="relative w-20 mx-auto mt-10">
+				<div class="swiper-button-prev after:hidden">
+					<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
+						<path d="M12 25L17 27.8867L17 22.1132L12 25ZM37 24.5L16.5 24.5L16.5 25.5L37 25.5L37 24.5Z" fill="#1C63A0"/>
+					</svg>
+				</div>
+				<div class="swiper-button-next after:hidden">
+					<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
+						<path d="M37 25L32 22.1133L32 27.8868L37 25ZM12 25.5L32.5 25.5L32.5 24.5L12 24.5L12 25.5Z" fill="#1C63A0"/>
+					</svg>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -21,7 +35,7 @@
 <section class="footer-contact small-padding bg-brandBackground">
 	<div class="container-small grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-2 max-sm:justify-center max-sm:gap-6 lg:gap-20 items-center">
 		<div class="max-sm:col-span-1 max-lg:col-span-2 flex flex-col max-sm:text-center max-sm:items-center gap-3">
-			<h6 class="font-heading uppercase font-semibold">Get in touch with our team</h6>
+			<h6 class="large-heading font-semibold">Get in touch with our team</h6>
 			<p class="font-light">We are always prepared to help with any travel enquiries you may have.</p>
 		</div>
 		<div class="max-sm:col-span-1 max-lg:col-span-3 flex tems-center justify-center sm:justify-end gap-6">
@@ -50,7 +64,7 @@
 		<div class="w-full h-[1px] bg-white opacity-25"></div>
 	</div>
 	<div class="container-small py-12">
-		<div data-animate-stagger-down class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 md:place-items-center !items-start">
+		<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 md:place-items-center !items-start">
 			<div class="flex flex-col gap-3">
 				<span class="uppercase font-medium tracking-wide">Navigation</span>
 				<div class="flex flex-col gap-2">
@@ -64,13 +78,13 @@
 				<div class="flex flex-col gap-5">
 					{% if options.company_details.phone %}
 						<div class="flex flex-col gap-1">
-							<span class="tracking-wide text-sm font-heading uppercase font-semibold">Call us</span>
+							<span class="text-sm large-heading font-semibold">Call us</span>
 							<a href="tel:{{ options.company_details.phone }}" class="duration-100 w-fit border-b border-b-[#07C0F1] border-opacity-50 hover:!border-opacity-100">{{ options.company_details.phone }}</a>
 						</div>
 					{% endif %}
 					{% if options.company_details.email %}
 						<div class="flex flex-col gap-1">
-							<span class="tracking-wide text-sm font-heading uppercase font-semibold">Send an email</span>
+							<span class="text-sm large-heading font-semibold">Send an email</span>
 							<a href="mailto:{{ options.company_details.email }}" class="duration-100 w-fit border-b border-b-[#07C0F1] border-opacity-50 hover:!border-opacity-100">{{ options.company_details.email }}</a>
 						</div>
 					{% endif %}
@@ -80,7 +94,7 @@
 				<span class="uppercase font-medium tracking-wide">Open Hours</span>
 				<div class="flex flex-col gap-4">
 					<div class="flex flex-col gap-1">
-						<span class="tracking-wide text-sm font-heading uppercase font-semibold">All Week</span>
+						<span class="text-sm large-heading font-semibold">All Week</span>
 						<span>7AM - 7PM</span>
 					</div>
 					<div class="flex items-center gap-4">

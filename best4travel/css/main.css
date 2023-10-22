@@ -47,8 +47,12 @@ html.lenis {
 	@apply translate-x-0;
 }
 
-main section {
-	@apply relative py-10 lg:py-20 2xl:py-32;
+main {
+	animation: fade-in 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.2s both;
+
+	section {
+		@apply relative py-10 lg:py-20 2xl:py-32;
+	}
 }
 
 section.small-padding {
@@ -89,7 +93,7 @@ header.scrolling {
 		@apply !fill-brandBlueDark;
 	}
 
-	.menu-button {
+	.button.arrow.round {
 		@apply border-brandBlueDark text-brandBlueDark;
 
 		svg {
@@ -121,6 +125,25 @@ header.scrolling {
 	@apply !py-0;
 }
 
+.page-contact-us {
+	.footer-testimonials,
+	.footer-contact {
+		@apply hidden;
+	}
+}
+
+.destinations-slider {
+	.swiper-slide {
+		&:hover {
+			svg {
+				> circle {
+					@apply rotate;
+				}
+			}
+		}
+	}
+}
+
 /* main > section:first-of-type {
 	@apply pt-0 lg:pt-0 xl:pt-0 2xl:pt-0;
 } */
@@ -140,3 +163,12 @@ header.scrolling {
 		transform: scale(1);
 	}
 }
+
+@keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }

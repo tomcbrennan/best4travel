@@ -92,15 +92,21 @@ export default function animateOnScroll() {
 	const elementsRevealRight = document.querySelectorAll(
 		'[data-animate-reveal-right]'
 	)
+	const elementsRevealCenter = document.querySelectorAll(
+		'[data-animate-reveal-center]'
+	)
 	const elementsBannerRevealDown = document.querySelectorAll(
 		'[data-animate-banner-reveal-down]'
 	)
+	const lineArrows = document.querySelectorAll('[data-animate-line-arrow]')
+
+	const curtains = document.querySelectorAll('[data-curtain]')
 
 	const START = 'top bottom-=10%'
 	const fadeProperties = {
 		autoAlpha: 0,
 		delay: 0.2,
-		duration: 0.6,
+		duration: 1,
 	}
 
 	const staggerProperties = {
@@ -113,6 +119,39 @@ export default function animateOnScroll() {
 	 * SINGLE FINS (Single Fade Ins)
 	 */
 
+	// LINE ARROWS --------------------------
+	lineArrows.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			autoAlpha: 0,
+			delay: 0.2,
+			duration: 1.2,
+			stagger: 0.4,
+			x: -100,
+		}
+
+		gsap.from(element, settings)
+	})
+
+	// CURTAINS --------------------------
+	curtains.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			delay: 0.2,
+			duration: 1.1,
+			height: '100%',
+			ease: 'power2.out',
+		}
+
+		gsap.from(element, settings)
+	})
+
 	// BANNER LINE REVEAL DOWN -------------------------------
 	elementsBannerRevealDown.forEach((element) => {
 		const settings = {
@@ -124,6 +163,23 @@ export default function animateOnScroll() {
 			duration: 6,
 			height: 0,
 			transformOrigin: 'top',
+			ease: 'power2.out',
+		}
+
+		gsap.from(element, settings)
+	})
+	// REVEAL CENTER -------------------------------
+	elementsRevealCenter.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: START,
+			},
+			delay: 0.4,
+			duration: 3,
+			width: 0,
+			transformOrigin: 'center',
+			ease: 'power2.out',
 		}
 
 		gsap.from(element, settings)
@@ -139,6 +195,7 @@ export default function animateOnScroll() {
 			duration: 1,
 			height: 0,
 			transformOrigin: 'top',
+			ease: 'power2.out',
 		}
 
 		gsap.from(element, settings)
@@ -154,6 +211,7 @@ export default function animateOnScroll() {
 			duration: 1,
 			height: 0,
 			transformOrigin: 'bottom',
+			ease: 'power2.out',
 		}
 
 		gsap.from(element, settings)
@@ -169,6 +227,7 @@ export default function animateOnScroll() {
 			duration: 8,
 			width: 0,
 			transformOrigin: 'left',
+			ease: 'power2.out',
 		}
 
 		gsap.from(element, settings)
@@ -184,6 +243,7 @@ export default function animateOnScroll() {
 			duration: 8,
 			width: 0,
 			transformOrigin: 'right',
+			ease: 'power2.out',
 		}
 
 		gsap.from(element, settings)
@@ -210,10 +270,8 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
+			...fadeProperties,
 			y: -16,
-			autoAlpha: 0,
-			delay: 0.2,
-			duration: 1,
 		}
 
 		gsap.from(element, settings)

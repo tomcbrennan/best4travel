@@ -6,7 +6,7 @@
 				items: menu.get_items
 			} %}
 		</nav>
-		<a class="button relative z-10 duration-200 round arrow menu-button max-lg:hidden" href="/contact-us">
+		<a class="button relative z-10 duration-200 round arrow max-lg:hidden" href="/contact-us">
 			<span>Contact Us</span>
 			<svg width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
@@ -19,10 +19,12 @@
 	<div class="container w-full h-full block-content justify-end">
 		<h5>Our favourite destinations</h5>
 		<div class="grid grid-cols-3 gap-4 w-full">
-			{% for item in 0..5 %}
-				<div class="aspect-16/9 bg-brandBlueDark w-full flex items-end justify-start p-3">
-					<h5 class="text-white">place</h5>
-				</div>
+			{% for item in all_destinations %}
+				{% if item.featured_destination == true %}
+					<div class="aspect-16/9 bg-brandBlueDark w-full flex items-end justify-start p-3">
+						<h5 class="text-white">place</h5>
+					</div>
+				{% endif %}
 			{% endfor %}
 		</div>
 	</div>

@@ -1,1 +1,27 @@
-/* Form styles go here */
+.gform_wrapper {
+    @apply font-body max-w-2xl w-full;
+
+    .gform_fields {
+        @apply !gap-y-8;
+
+        label {
+            @apply uppercase !font-normal;
+        }
+
+        input, textarea {
+            @apply duration-200 border-b border-b-brandBlueDark border-opacity-25 outline-none;
+
+            &:focus {
+                @apply !border-opacity-100;
+            }
+        }
+    }
+
+    .gform_button {
+        @apply !text-black !border !border-black !border-opacity-25 rounded-full cursor-pointer font-light;
+    }
+}
+
+.gform_required_legend {
+    @apply hidden;
+}

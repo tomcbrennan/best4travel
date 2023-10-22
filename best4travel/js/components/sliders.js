@@ -6,11 +6,11 @@ export default function initSliders() {
 			const destinationsSlider = new Swiper(slider, {
 				direction: 'horizontal',
 				loop: true,
-				speed: 750,
+				speed: 1000,
 				slidesPerView: 2,
 				spaceBetween: 20,
+				touchRatio: 0.75,
 				centeredSlides: true,
-				touchRatio: 0.3,
 				breakpoints: {
 					768: {
 						slidesPerView: 3,
@@ -32,15 +32,17 @@ export default function initSliders() {
 				fadeEffect: {
 					crossFade: true,
 				},
-				autoplay: {
-					delay: 7000,
-				},
 				loop: true,
 				direction: 'horizontal',
 				speed: 1000,
 				slidesPerView: 1,
 				spaceBetween: 20,
 				centeredSlides: true,
+				autoHeight: true,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
 			})
 		})
 	}

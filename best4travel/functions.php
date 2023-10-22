@@ -130,9 +130,26 @@ class TomDotCom extends Timber\Site
 		if (function_exists('get_fields')) {
             $context['options'] = get_fields('options');
         }
+
+		// MENUS
 		$context['menu']  = new Timber\Menu('primary');
         $context['footer_menu'] = new Timber\Menu('footer');
 
+		// LOOPS
+		$context['all_destinations'] = Timber::get_posts(array(
+			'post_type' => 'destinations',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+			'order' => 'DESC',
+		));
+		$context['home_destinations'] = Timber::get_posts(array(
+			'post_type' => 'destinations',
+			'post_status' => 'publish',
+			'posts_per_page' => 10,
+			'order' => 'DESC',
+		));
+
+		// SITE
 		$context['site']  = $this;
 
 		return $context;
@@ -180,6 +197,18 @@ function disable_embeds_filter_oembed_response_data_( $data ) {
     unset($data['author_url']);
     unset($data['author_name']);
     return $data;
+}
+
+// GRAVITY FORM BUTTON CUSTOM
+
+add_filter('gform_submit_button', 'form_submit_button', 10, 2);
+function form_submit_button($button, $form)
+{
+    return "<button class='button relative z-10 duration-200 round arrow gform_button' id='gform_submit_button_{$form['id']}'><span>Submit</span>
+	<svg width='37' height='37' viewbox='0 0 37 37' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<circle cx='18.5' cy='18.5' r='18' stroke='black' stroke-dasharray='2 2'/>
+		<path d='M27.1768 19.1768C27.2744 19.0791 27.2744 18.9209 27.1768 18.8232L25.5858 17.2322C25.4882 17.1346 25.3299 17.1346 25.2322 17.2322C25.1346 17.3299 25.1346 17.4882 25.2322 17.5858L26.6464 19L25.2322 20.4142C25.1346 20.5118 25.1346 20.6701 25.2322 20.7678C25.3299 20.8654 25.4882 20.8654 25.5858 20.7678L27.1768 19.1768ZM9 19.25L27 19.25V18.75L9 18.75V19.25Z' fill='black'/>
+	</svg></button>";
 }
 
 // ADD CUSTOM LOGO TO ADMIN LOGIN SCREEN

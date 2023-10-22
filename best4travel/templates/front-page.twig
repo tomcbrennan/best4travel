@@ -1,9 +1,8 @@
 {% extends "page.twig" %}
 
-{% block content %}
-
-	{# HOME BANNER EXAMPLE #}
+{% block banner %}
 	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[1050px]">
+		<div data-curtain class="absolute bottom-0 left-0 z-[1000000] w-screen h-0 bg-white pointer-events-none"></div>
 		<video class="absolute top-0 left-0 z-10 h-full object-cover w-full" preload="auto" loop autoplay muted playsinline>
 			<source class="absolute top-0 left-0 h-full w-full" src="{{ fields.home_banner.background_video_link }}" type="video/mp4" poster="{{ fields.home_banner.video_poster.url }}">
 			Your browser does not support the video tag.
@@ -13,16 +12,18 @@
 			<div data-animate-stagger-down class="text-parallax block-content items-center text-center">
 				<h1>{{ fields.home_banner.heading }}</h1>
 				<h2 class="is-h4">{{ fields.home_banner.subheading }}</h2>
-				<a class="button banner-button !p-0 !text-base md:!text-xl tracking-wider mt-3 md:mt-6" href="/destinations">Get started</a>
+				{% include "buttons/line-button.twig" with { href: "/destinations", title: "Get Started", class: 'mt-8 md:mt-12' } %}
 			</div>
 		</div>
 	</section>
+{% endblock %}
 
+{% block content %}
 	<section class="bg-white relative overflow-hidden">
 		<div class="container-small max-2xl:!max-w-[830px]">
 			<div class="block-content items-center text-center">
-				<div data-fade-up>{% include "icons/logo-icon.twig" with { class: "opacity-30 max-md:w-20 h-auto" } %}</div>
-				<h4 data-fade-down class="relative">
+				{% include "icons/logo-icon.twig" with { class: "opacity-30 max-md:w-20 h-auto" } %}
+				<h4 class="relative">
 					<span>Our local Perth experts will help shape your ideal getaway filled with breathtaking locations, and timeless memories to cherish.</span>
 					<div data-animate-reveal-down class="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 h-full w-[1px] border-l border-dashed border-l-[#0073AD] border-opacity-75"></div>
 				</h4>
@@ -32,16 +33,29 @@
 
 	<section class="bg-gradient-to-br from-[#1B629F] to-[#00C2F3] text-white -mb-20 lg:-mb-40 overflow-x-hidden">
 		<div class="flex flex-col gap-10 relative z-10">
-			<div class="container-small block-content text-center items-center">
+			<div data-animate-stagger-down class="container-small block-content text-center items-center">
 				<span class="supertitle">Start exploring</span>
 				<h3>Build your holiday</h3>
 				<p class="max-w-[350px] w-full">Check out our latest offers and get packing on your next adventure.</p>
 			</div>
-			<div data-fade-down class="destinations-slider">
+			<div class="destinations-slider">
 				<div class="swiper-wrapper">
-					{% for item in 0..20 %}
-						<div class="swiper-slide aspect-5/7 bg-white w-full">
-						</div>
+					{% for item in all_destinations %}
+						{% if item.featured_destination == true %}
+							<a href="{{ item.link }}" class="swiper-slide group overflow-hidden bg-brandBlueLight relative aspect-5/7 w-full duration-500 ease-in-out hover:scale-[1.025]">
+								{% if item.thumbnail %}
+									{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnail.alt, class: "image-parallax h-[120%] absolute top-0 left-0 w-full h-full object-center object-cover pointer-events-none" } %}
+								{% endif %}
+								<div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent"></div>
+								<div class="flex p-6 2xl:p-8 h-full items-end">
+									<h3 class="is-h5 relative text-white large-heading pr-24">{{ item.title }}</h3>
+									<svg width="177" height="168" viewbox="0 0 177 168" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute -bottom-20 -right-20 duration-500 group-hover:scale-110">
+										<circle cx="93" cy="84" r="83.5" stroke="white" stroke-dasharray="2 2"/>
+										<path d="M64 46.4148L59 43.528L59 49.3016L64 46.4148ZM-6.73355e-08 46.9148L59.5 46.9148L59.5 45.9148L6.73355e-08 45.9148L-6.73355e-08 46.9148Z" fill="white"/>
+									</svg>
+								</div>
+							</a>
+						{% endif %}
 					{% endfor %}
 				</div>
 			</div>
@@ -50,33 +64,32 @@
 
 	<section class="bg-brandBackground !pb-0">
 		<div class="pt-10">
-			<div class="border-t border-t-[#1C63A0] border-opacity-30">
-				<section>
-					<div class="container">
-						<div class="grid grid-cols-5 gap-5 lg:gap-10">
-							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-								<span class="font-heading text-2xl">International</span>
-							</a>
-							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-								<span class="font-heading text-2xl">Domestic</span>
-							</a>
-							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-								<span class="font-heading text-2xl">Corporate</span>
-							</a>
-							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-								<span class="font-heading text-2xl">Groups</span>
-							</a>
-							<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-								<span class="font-heading text-2xl">WA Regional Events</span>
-							</a>
-						</div>
+			<section class="relative">
+				<div data-animate-reveal-center class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[2px] border-t border-t-[#1C63A0] border-opacity-30"></div>
+				<div class="container">
+					<div class="grid grid-cols-5 gap-5 lg:gap-10">
+						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+							<span class="font-heading text-2xl">International</span>
+						</a>
+						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+							<span class="font-heading text-2xl">Domestic</span>
+						</a>
+						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+							<span class="font-heading text-2xl">Corporate</span>
+						</a>
+						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+							<span class="font-heading text-2xl">Groups</span>
+						</a>
+						<a class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
+							<span class="font-heading text-2xl">WA Regional Events</span>
+						</a>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
 		</div>
 	</section>
 
-	<section class="bg-white">
+	<section class="bg-brandBlueLight">
 		<div class="container">
 			hello
 		</div>
