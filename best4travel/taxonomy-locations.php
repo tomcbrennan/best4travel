@@ -4,6 +4,8 @@ $timber_post     = new Timber\Post();
 
 $post = get_queried_object();
 
+$context['fields'] = get_fields($post);
+
 $context['single_location_destinations'] = Timber::get_posts(array(
     'post_type' => 'destinations',
     'post_status' => 'publish',

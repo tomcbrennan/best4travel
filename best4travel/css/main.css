@@ -178,6 +178,10 @@ header.scrolling {
 	}
 }
 
+li.menu-item.hide-desktop {
+	@apply md:hidden;
+}
+
 /* main > section:first-of-type {
 	@apply pt-0 lg:pt-0 xl:pt-0 2xl:pt-0;
 } */
