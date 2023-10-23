@@ -158,6 +158,22 @@ header.scrolling {
 	}
 }
 
+[data-block="team_members"]{
+	.tease-team-member {
+		&:nth-child(2) {
+			@apply lg:mt-32;
+		}
+
+		&:nth-child(2) {
+			@apply lg:mt-32;
+		}
+
+		&:not(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(3n - 1)) {
+			@apply lg:-mt-32;
+		}
+	}
+}
+
 .footer-testimonials {
 	.swiper-button-prev,
 	.swiper-button-next {
@@ -206,8 +222,16 @@ li.menu-item.hide-desktop {
 	-o-object-fit: cover;
 }
 
-.destinations-slider > .swiper-wrapper {
-	transition-timing-function: linear;
+.destinations-slider {
+	&:active {
+		.swiper-slide {
+			@apply scale-[0.98];
+		}
+	}
+	> .swiper-wrapper {
+		transition-timing-function: linear;
+
+	}
 }
 
 @keyframes pulse {

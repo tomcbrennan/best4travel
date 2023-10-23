@@ -1,0 +1,12 @@
+<section class="relative bg-white overflow-hidden">
+	<div class="container-small text-center block-content items-center">
+		<div class="large-heading font-semibold mx-auto relative">
+			<h3>{{ block.heading }}</h3>
+			<div data-animate-reveal-right class="absolute top-1/2 -translate-y-1/2 left-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
+			<div data-animate-reveal-left class="absolute top-1/2 -translate-y-1/2 right-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
+		</div>
+        <div class="block-content md:w-[85%]">
+            {{ block.content }}
+        </div>
+	</div>
+</section>

@@ -40,6 +40,26 @@ export default function animateOnScroll() {
 	})
 
 	/**
+	 * PARALLAX IMAGE - SMALL
+	 */
+	gsap.utils.toArray('.image-parallax-small').forEach((image) => {
+		gsap.fromTo(
+			image,
+			{
+				y: -75,
+			},
+			{
+				scrollTrigger: {
+					trigger: image,
+					scrub: true,
+				},
+				y: 0,
+				ease: 'none',
+			}
+		)
+	})
+
+	/**
 	 * PARALLAX TEXT
 	 */
 	gsap.utils.toArray('.text-parallax').forEach((text) => {
@@ -75,6 +95,7 @@ export default function animateOnScroll() {
 	 */
 	const elementsFadeDown = document.querySelectorAll('[data-fade-down]')
 	const elementsFadeUp = document.querySelectorAll('[data-fade-up]')
+	const elementsFadeUpFast = document.querySelectorAll('[data-fade-up-fast]')
 	const elementsFadeLeft = document.querySelectorAll('[data-fade-left]')
 	const elementsFadeRight = document.querySelectorAll('[data-fade-right]')
 	const elementsFade = document.querySelectorAll('[data-fade]')
@@ -289,6 +310,22 @@ export default function animateOnScroll() {
 			autoAlpha: 0,
 			delay: 0.2,
 			duration: 0.6,
+			y: 16,
+		}
+
+		gsap.from(element, settings)
+	})
+
+	// FADE UP FAST ----------------------------
+	elementsFadeUpFast.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: 'top bottom-=5%',
+			},
+			autoAlpha: 0,
+			delay: 0.2,
+			duration: 0.4,
 			y: 16,
 		}
 

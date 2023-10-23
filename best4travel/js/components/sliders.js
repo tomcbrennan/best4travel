@@ -6,16 +6,15 @@ export default function initSliders() {
 			const destinationsSlider = new Swiper(slider, {
 				direction: 'horizontal',
 				loop: true,
-				autoplay: {
-					delay: 1,
-					pauseOnMouseEnter: true,
-				},
-				mousewheelControl: true,
-				speed: 3000,
+				speed: 1000,
 				slidesPerView: 2,
 				spaceBetween: 20,
-				touchRatio: 0.75,
+				touchRatio: 0.9,
 				centeredSlides: true,
+				resistance: false,
+				freemode: true,
+				freeModeMomentum: true,
+				freeModeMomentumRatio: 0.25,
 				breakpoints: {
 					768: {
 						slidesPerView: 3,

@@ -32,6 +32,11 @@ function sd_allow_custom_classes_to_be_applied_to_headings($init_array) {
         'selector' => 'a',
         'attributes' => array('class' => 'is-button')
     );
+    $style_formats[] = array(
+        'title' => "Heading Style",
+        'selector' => 'h4, h5, h6',
+        'attributes' => array('class' => 'large-heading')
+    );
 
     // Insert the array, JSON ENCODED, into 'style_formats'
     $init_array['style_formats'] = json_encode( $style_formats );

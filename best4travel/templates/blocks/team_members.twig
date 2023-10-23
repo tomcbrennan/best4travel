@@ -1,0 +1,10 @@
+<section class="bg-white">
+	<div class="container-small flex flex-col gap-10 lg:gap-20">
+		<h3 data-fade-up class="mx-auto text-center">Meet the team</h3>
+		<div class="grid grid-cols-2 lg:grid-cols-3 gap-10">
+			{% for item in all_team_members %}
+				{% include "tease-team-member.twig" %}
+			{% endfor %}
+		</div>
+	</div>
+</section>

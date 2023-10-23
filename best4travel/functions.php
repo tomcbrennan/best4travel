@@ -94,6 +94,14 @@ class TomDotCom extends Timber\Site
 			'supports' => array( 'title', 'thumbnail'),
 			'menu_icon' => 'dashicons-palmtree',
 		));
+
+		register_post_type( 'team-members', array(
+			'label'  => 'Team Members',
+			'public' => true,
+			'has_archive' => false,
+			'supports' => array( 'title', 'thumbnail'),
+			'menu_icon' => 'dashicons-nametag',
+		));
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies()
@@ -142,19 +150,21 @@ class TomDotCom extends Timber\Site
 			'post_type' => 'destinations',
 			'post_status' => 'publish',
 			'posts_per_page' => -1,
-			'order' => 'DESC',
 		));
+
+		$context['all_team_members'] = Timber::get_posts(array(
+			'post_type' => 'team-members',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+		));
+
 		$context['home_destinations'] = Timber::get_posts(array(
 			'post_type' => 'destinations',
 			'post_status' => 'publish',
-			'posts_per_page' => 10,
-			'order' => 'DESC',
+			'posts_per_page' => 14,
 		));
 
-		$context['travel_types'] = Timber::get_terms('travel-types', array(
-			'orderby' => 'menu_order',
-			'order' => 'DESC'
-		));
+		$context['travel_types'] = Timber::get_terms('travel-types');
 
 		// SITE
 		$context['site']  = $this;

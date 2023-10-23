@@ -19,7 +19,7 @@ h3,
 }
 
 .large-heading {
-	@apply !tracking-wide !uppercase !font-heading;
+	@apply !tracking-wide !uppercase !font-heading font-semibold;
 }
 
 h4,
@@ -28,7 +28,7 @@ h5,
 .is-h5,
 h6,
 .is-h6 {
-	@apply font-body font-extralight normal-case;
+	@apply font-body normal-case;
 }
 
 h1,
@@ -43,22 +43,22 @@ h2,
 
 h3,
 .is-h3 {
-	@apply leading-tight text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl;
+	@apply leading-tight text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl;
 }
 
 h4,
 .is-h4 {
-	@apply leading-tight text-[1.25rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem] 2xl:text-[3rem];
+	@apply font-extralight leading-tight text-[1.25rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem] 2xl:text-[3rem];
 }
 
 h5,
 .is-h5 {
-	@apply leading-tight text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2rem];
+	@apply leading-tight font-normal text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2rem];
 }
 
 h6,
 .is-h6 {
-	@apply leading-tight text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem];
+	@apply leading-tight font-normal text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem];
 }
 
 .supertitle,
@@ -68,7 +68,7 @@ h6,
 
 /* List styles inside WYSIWYG editors */
 .block-content {
-	@apply flex flex-col gap-3 md:gap-6;
+	@apply flex flex-col gap-4 md:gap-7;
 }
 
 .block-content :is(ol, ul) {

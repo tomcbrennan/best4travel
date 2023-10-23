@@ -1,0 +1,16 @@
+<div class="tease-team-member block-content">
+	<div class="relative bg-brandBackground aspect-1/1 ">
+		{% if item.thumbnail %}
+			{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnaik.alt, class: "absolute top-0 left-0 w-full h-full object-center object-cover pointer-events-none" } %}
+		{% endif %}
+	</div>
+	<div class="flex flex-col gap-2">
+		<h5>{{ item.title }}</h5>
+		{% if item.role %}
+			<p>{{ item.role }}</p>
+		{% endif %}
+		{% if item.linkedin_profile %}
+			<a href="{{ item.linkedin_profile }}" target="_blank">{% include "icons/linkedin.twig" with { class: "grayscale opacity-50" } %}</a>
+		{% endif %}
+	</div>
+</div>
