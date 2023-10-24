@@ -463,4 +463,30 @@ export default function animateOnScroll() {
 			)
 		})
 	}
+
+	// GSAP HELPER FOR RESPONSIVENESS
+	let mediaSize = gsap.matchMedia()
+
+	const zoomElement = document.querySelectorAll('.zoom-element')
+
+	mediaSize.add('(min-width: 768px)', () => {
+		// ZOOM AS YOU SCROLL SCROLL
+		zoomElement.forEach((element) => {
+			const tl = gsap.timeline()
+
+			tl.fromTo(
+				element,
+				{ scale: '0.9', opacity: 0 },
+				{ scale: '1', opacity: 1 }
+			)
+
+			ScrollTrigger.create({
+				trigger: element,
+				start: 'top bottom',
+				end: 'bottom bottom',
+				animation: tl,
+				scrub: 1,
+			})
+		})
+	})
 }

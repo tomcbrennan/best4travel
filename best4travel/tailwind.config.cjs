@@ -21,6 +21,7 @@ module.exports = {
 			fontFamily: {
 				heading: ['Cormorant', 'serif'],
 				body: ['Work Sans', 'sans-serif'],
+				script: ['Birthstone', 'cursive'],
 			},
 			screens: {
 				sm: '640px',

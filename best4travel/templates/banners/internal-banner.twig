@@ -1,4 +1,4 @@
-<div class="internal-banner overflow-hidden bg-brandBlueDark relative h-[450px] sm:h-[550px] lg:h-[650px] xl:h-[800px] 2xl:h-[900px] flex items-center justify-center">
+<div class="internal-banner overflow-hidden bg-brandBlueDark relative h-[450px] sm:h-[550px] lg:h-[650px] xl:h-[750px] 2xl:h-[1000px] flex items-center justify-center">
 	<div data-curtain class="absolute bottom-0 left-0 z-[1000000] w-screen h-0 bg-white pointer-events-none"></div>
 	{% include "partial/image.twig" with { image: Image(fields.internal_banner.background ?: post.thumbnail ?: null).src, alt: fields.internal_banner.background.alt ?: post.thumbnail.alt ?: null , class: "image-parallax h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto object-center object-cover" } %}
 	<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
