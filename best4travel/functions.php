@@ -234,7 +234,7 @@ function custom_login_logo()
 {
     echo '<style type="text/css">
         body.login div#login h1 a {
-            background-image: url(' . get_theme_file_uri('static/best4travel-admin.png') . ');
+            background-image: url(/wp-content/uploads/2023/10/cropped-Best4Travel-Logo-Favicon.png);
         }
     </style>';
 }
