@@ -1,18 +1,23 @@
 {% extends "page.twig" %}
 
 {% block banner %}
-	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[1100px]">
+	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[1100px] overflow-hidden">
 		<div data-curtain class="absolute bottom-0 left-0 z-[1000000] w-screen h-0 bg-white pointer-events-none"></div>
 		<video class="absolute top-0 left-0 z-10 h-full object-cover w-full" preload="auto" loop autoplay muted playsinline>
 			<source class="absolute top-0 left-0 h-full w-full" src="{{ fields.home_banner.background_video_link }}" type="video/mp4" poster="{{ fields.home_banner.video_poster.url }}">
 			Your browser does not support the video tag.
 		</video>
 		<div class="absolute z-10 top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
-		<div class="relative z-20 container flex items-center justify-center h-full text-white mt-14">
-			<div data-animate-stagger-down class="text-parallax block-content items-center text-center">
-				<h1>{{ fields.home_banner.heading }}</h1>
-				<h2 class="is-h4">{{ fields.home_banner.subheading }}</h2>
-				{% include "buttons/line-button.twig" with { href: "/travel-types", title: "Get Started", class: 'mt-8 md:mt-12' } %}
+		<div class="h-full flex items-center justify-center">
+			<div class="relative z-20 container flex items-center justify-center text-white mt-28">
+				<div data-animate-stagger-down class="text-parallax block-content items-center text-center">
+					<h1>{{ fields.home_banner.heading }}</h1>
+					<h2 class="is-h4">{{ fields.home_banner.subheading }}</h2>
+					<div>
+						<a href="/travel-types" class="button !border-white round mt-3 relative !bg-transparent hover:!bg-brandBlueLight hover:!bg-opacity-50">Get started</a>
+					</div>
+				</div>
+				<div data-animate-banner-reveal-down class="absolute z-10 top-full left-1/2 -translate-x-1/2 h-screen w-[1px] border-l border-dashed border-l-white"></div>
 			</div>
 		</div>
 	</section>
