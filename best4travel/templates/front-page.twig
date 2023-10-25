@@ -58,7 +58,7 @@
 					<div class="grid grid-cols-2 md:grid-cols-5 gap-5 lg:gap-10 w-full">
 						{% for item in travel_types %}
 							{% if item.slug != 'uncategorized' %}
-								<a href="{{ item.slug }}" class="hover-spin hover:!bg-brandBlueDark !duration-500 group max-md:last-of-type:mx-auto max-md:last-of-type:col-span-2 hover:before:!border-white max-md:last-of-type:w-1/2 rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 bg-white overflow-hidden">
+								<a href="/travel-types/{{ item.slug }}" class="hover-spin hover:!bg-brandBlueDark !duration-500 group max-md:last-of-type:mx-auto max-md:last-of-type:col-span-2 hover:before:!border-white max-md:last-of-type:w-1/2 rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 bg-white overflow-hidden">
 									{% include "partial/image.twig" with { image: Image(item.internal_banner.background.url), alt: item.internal_banner.background.alt, class: "opacity-0 duration-500 group-hover:opacity-25 h-full w-full absolute top-0 left-0 object-center object-cover pointer-events-none rounded-full" } %}
 									<span class="font-heading text-xl md:text-2xl relative duration-200 group-hover:text-white">{{ item.name }}</span>
 								</a>
