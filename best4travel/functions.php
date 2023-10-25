@@ -99,6 +99,7 @@ class TomDotCom extends Timber\Site
 			'label'  => 'Team Members',
 			'public' => true,
 			'has_archive' => false,
+			'publicly_queryable' => false,
 			'supports' => array( 'title', 'thumbnail'),
 			'menu_icon' => 'dashicons-nametag',
 		));
