@@ -393,6 +393,15 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_6539276828b29": {
+                    "key": "layout_6539276828b29",
+                    "name": "travel_types",
+                    "label": "Travel Types",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -428,5 +437,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698162956
+    "modified": 1698244464
 }
