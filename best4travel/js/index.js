@@ -103,6 +103,11 @@ const toggleDestinations = () => {
 		destinationsMenu.classList.toggle('h-screen')
 		document.documentElement.classList.toggle('overflow-hidden')
 		header.classList.toggle('scrolling')
+		if (document.documentElement.classList.contains('overflow-hidden')) {
+			lenis.stop()
+		} else {
+			lenis.start()
+		}
 	})
 }
 
