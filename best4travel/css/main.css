@@ -43,6 +43,14 @@ html.lenis {
 	@apply translate-x-full;
 }
 
+.destinations-toggle > a {
+	@apply cursor-pointer;
+}
+
+.destinations-menu.active {
+	@apply !pointer-events-auto !opacity-100 !h-screen;
+}
+
 .menuIsOpen [data-menu] {
 	@apply translate-x-0;
 }
@@ -192,14 +200,6 @@ header.scrolling {
 		}
 	}
 }
-
-li.menu-item.hide-desktop {
-	@apply md:hidden;
-}
-
-/* main > section:first-of-type {
-	@apply pt-0 lg:pt-0 xl:pt-0 2xl:pt-0;
-} */
 
 /* ANIMATION STUFF */
 

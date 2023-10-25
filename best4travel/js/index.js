@@ -13,7 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	animateOnScroll()
 	loadAjaxPosts()
 	initSliders()
-	toggleDestinations()
+
+	// TOGGLE DESTINATIONS MENU ON MENU ITEM CLICK
+	document
+		.querySelector('.destinations-toggle > a')
+		.addEventListener('click', () => {
+			toggleDestinations()
+		})
 
 	if (document.querySelector('.scrolling-text')) {
 		scrollingText()
@@ -89,26 +95,21 @@ const toggleMenu = () => {
 }
 
 const toggleDestinations = () => {
-	const destinationsLink = document.querySelectorAll('.menu-link')[0]
+	const destinationsLink = document.querySelector('.destinations-toggle')
 	const destinationsMenu = document.querySelector('.destinations-menu')
 	const header = document.querySelector('header')
 
-	destinationsLink.addEventListener('click', (e) => {
-		destinationsLink.classList.toggle('active')
-		destinationsMenu.classList.toggle('active')
-		destinationsMenu.classList.toggle('opacity-0')
-		destinationsMenu.classList.toggle('pointer-events-none')
-		destinationsMenu.classList.toggle('h-0')
-		destinationsMenu.classList.toggle('opacity-100')
-		destinationsMenu.classList.toggle('h-screen')
-		document.documentElement.classList.toggle('overflow-hidden')
-		header.classList.toggle('scrolling')
-		if (document.documentElement.classList.contains('overflow-hidden')) {
-			lenis.stop()
-		} else {
-			lenis.start()
-		}
-	})
+	destinationsLink.classList.toggle('active')
+	destinationsMenu.classList.toggle('active')
+	document.documentElement.classList.toggle('overflow-hidden')
+	header.classList.toggle('scrolling')
+
+	// STOP PAGE SCROLLING IF ACTIVE
+	if (document.documentElement.classList.contains('overflow-hidden')) {
+		lenis.stop()
+	} else {
+		lenis.start()
+	}
 }
 
 /**
