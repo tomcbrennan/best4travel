@@ -94,6 +94,7 @@ const toggleDestinations = () => {
 	const header = document.querySelector('header')
 
 	destinationsLink.addEventListener('click', (e) => {
+		destinationsLink.classList.toggle('active')
 		destinationsMenu.classList.toggle('active')
 		destinationsMenu.classList.toggle('opacity-0')
 		destinationsMenu.classList.toggle('pointer-events-none')
@@ -101,7 +102,7 @@ const toggleDestinations = () => {
 		destinationsMenu.classList.toggle('opacity-100')
 		destinationsMenu.classList.toggle('h-screen')
 		document.documentElement.classList.toggle('overflow-hidden')
-		header.classList.remove('scrolling')
+		header.classList.toggle('scrolling')
 	})
 }
 

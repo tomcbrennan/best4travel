@@ -85,7 +85,7 @@ export default function animateOnScroll() {
 
 	const staggerProperties = {
 		autoAlpha: 0,
-		delay: 0.4,
+		delay: 0.2,
 		stagger: 0.2,
 	}
 
@@ -198,7 +198,7 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			delay: 0.4,
+			delay: 0.2,
 			duration: 3,
 			width: 0,
 			transformOrigin: 'center',
@@ -214,7 +214,7 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			delay: 0.4,
+			delay: 0.2,
 			duration: 1,
 			height: 0,
 			transformOrigin: 'top',
@@ -230,7 +230,7 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			delay: 0.4,
+			delay: 0.2,
 			duration: 1,
 			height: 0,
 			transformOrigin: 'bottom',
@@ -246,7 +246,7 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			delay: 0.4,
+			delay: 0.2,
 			duration: 8,
 			width: 0,
 			transformOrigin: 'left',
@@ -262,7 +262,7 @@ export default function animateOnScroll() {
 				trigger: element,
 				start: START,
 			},
-			delay: 0.4,
+			delay: 0.2,
 			duration: 8,
 			width: 0,
 			transformOrigin: 'right',
@@ -279,7 +279,7 @@ export default function animateOnScroll() {
 				start: START,
 			},
 			autoAlpha: 0,
-			delay: 0.4,
+			delay: 0.2,
 			duration: 2,
 		}
 

@@ -73,7 +73,6 @@ header {
 }
 
 header.scrolling {
-	@apply !py-1;
 
 	&:before {
 		@apply !h-full;

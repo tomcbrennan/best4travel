@@ -70,10 +70,18 @@
 	}
 }
 
+.menu-link.active {
+	&:after {
+		content: '';
+		@apply duration-[0.4s] ease-in-out absolute left-1/2 -translate-x-1/2 bg-white bg-opacity-50 -bottom-1 !w-full h-[1px] origin-center;
+	}
+}
+
 .rotate {
 	animation: rotate 12s linear infinite;
 	@apply origin-center;
 }
+
 
 @keyframes rotate {
 	0% {

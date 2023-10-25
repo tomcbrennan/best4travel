@@ -1,4 +1,4 @@
-<header class="transition-all duration-300 fixed w-screen top-0 left-0 bg-transparent z-[100000] py-3">
+<header class="transition-all duration-300 fixed w-screen top-0 left-0 bg-transparent z-[100000] py-1">
 	<div data-navigation class="container z-20 w-full flex items-center justify-between transition-all duration-300">
 		<a href="{{ site.url }}" rel="home">{% include 'icons/logo.twig' with { class: "logo z-20 relative max-sm:!w-36 max-lg:!w-48 max-2xl:w-[195px] duration-100" } %}</a>
 		<nav id="nav-main" role="navigation" class="relative max-lg:h-6">
@@ -15,17 +15,23 @@
 		</a>
 	</div>
 </header>
-<div class="destinations-menu pb-20 duration-1000 ease-in-out origin-top fixed top-0 left-0 bg-brandBlueDark w-screen h-0 z-[1000] pointer-events-none opacity-0">
-	<div class="container w-full h-full block-content justify-end">
-		<h5>Our favourite destinations</h5>
-		<div class="grid grid-cols-5 gap-5 lg:gap-10 w-full">
-			{% for item in travel_types %}
-				{% if item.slug != 'uncategorized' %}
-					<a href="/travel-types/{{ item.slug }}" class="rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 border border-black border-opacity-50 border-dashed bg-white">
-						<span class="font-heading text-2xl">{{ item.name }}</span>
-					</a>
-				{% endif %}
-			{% endfor %}
-		</div>
+<div class="destinations-menu max-lg:hidden pb-20 duration-1000 ease-in-out origin-top fixed top-0 left-0 bg-brandBlueDark w-screen h-0 z-[1000] pointer-events-none opacity-0">
+	<div class="flex w-full h-full mt-20 border-t border-t-white border-opacity-25">
+		{% for item in travel_types %}
+			{% if item.slug != 'uncategorized' %}
+				<a href="/travel-types/{{ item.slug }}" class="relative group h-full overflow-hidden w-full hover:w-[200%] flex items-center justify-center text-center border-l border-l-white border-opacity-25 bg-brandBlueDark duration-700 first-of-type:border-l-0">
+					{% if item.internal_banner.background %}
+						{% include "partial/image.twig" with { image: Image(item.internal_banner.background.url), alt: item.internal_banner.background.alt, class: "h-full z-20 w-full absolute top-0 left-0 object-center object-cover pointer-events-none" } %}
+					{% endif %}
+					<div class="absolute duration-500 w-full h-full z-30 top-0 left-0 bg-black bg-opacity-50 group-hover:bg-opacity-20"></div>
+					<span class="font-heading text-4xl text-white z-40">
+						{{ item.name }}
+						<div class="absolute apsect-1/1 w-full top-1/2 left-1/2 -translate-x-[35%] -translate-y-1/2">
+							<div class="origin-center rotate aspect-1/1 rounded-full h-full w-[70%] border border-white border-dashed border-opacity-0 delay-50 duration-1000 ease-in-out group-hover:border-opacity-100"></div>
+						</div>
+					</span>
+				</a>
+			{% endif %}
+		{% endfor %}
 	</div>
 </div>
