@@ -9,23 +9,23 @@
 		<div class="container">
 			<div class="container bg-white -mt-[250px]">
 				<div class="relative overflow-hidden">
-					<div class="container-small flex items-center justify-center gap-10 py-14">
-						<a href="tel:{{ options.company_details.phone }}" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-36 h-36 md:h-44 md:w-44 text-center p-6">
+					<div class="container-small flex items-center justify-center flex-wrap gap-x-2 sm:gap-x-5 gap-y-0 md:gap-10 py-7 md:py-14">
+						<a href="tel:{{ options.company_details.phone }}" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-28 h-28 md:h-44 md:w-44 text-center p-6">
 							{% include "icons/phone.twig" with { class: "!w-8" } %}
-							<span class="max-lg:text-sm font-light">Call us during open hours</span>
+							<span class="max-lg:text-xs font-light">Call us</span>
 						</a>
-						<a href="mailto:{{ options.company_details.email }}" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-36 h-36 md:h-44 md:w-44 text-center p-6">
+						<a href="mailto:{{ options.company_details.email }}" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-28 h-28 md:h-44 md:w-44 text-center p-6">
 							{% include "icons/mail.twig" with { class: "!w-8" } %}
-							<span class="max-lg:text-sm font-light">Email us an enquiry</span>
+							<span class="max-lg:text-xs font-light">Email us an enquiry</span>
 						</a>
-						<span class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-36 h-36 md:h-44 md:w-44 text-center p-6">
-							{% include "icons/mail.twig" with { class: "!w-8" } %}
-							<span class="max-lg:text-sm font-light">Chat with us</span>
+						<span class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-28 h-28 md:h-44 md:w-44 text-center p-6">
+							{% include "icons/chat.twig" with { class: "!w-8" } %}
+							<span class="max-lg:text-xs font-light">Chat with us</span>
 						</span>
 					</div>
 					<div data-animate-reveal-center class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[2px] border-t border-t-[#1C63A0] border-opacity-30"></div>
 				</div>
-				<div class="container-small flex flex-col gap-8 md:gap-14 md:items-center pt-14 pb-6 md:py-14">
+				<div class="container-small flex flex-col gap-8 md:gap-14 md:items-center pt-7 pb-6 md:py-14">
 					<h5 class="large-heading font-medium">Or submit an enquiry below</h5>
                     {{ function('do_shortcode', '[gravityform id="1" title="false" description="false" ajax="true"]') }}
 				</div>
