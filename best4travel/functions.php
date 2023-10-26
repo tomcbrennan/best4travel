@@ -236,6 +236,7 @@ function custom_login_logo()
     echo '<style type="text/css">
         body.login div#login h1 a {
             background-image: url(' . get_site_icon_url() . ');
+			pointer-events: none;
         }
     </style>';
 }
