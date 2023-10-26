@@ -4,6 +4,11 @@
 
 	&.round {
 		@apply bg-white font-light rounded-full border border-black border-opacity-25;
+
+	}
+
+	&.banner-button {
+		@apply relative border rounded-full !border-white mt-3 !bg-transparent hover:!bg-brandBlueLight hover:!bg-opacity-50;
 	}
 
 	&.arrow.round {
@@ -13,12 +18,12 @@
 			@apply overflow-hidden;
 		}
 
-		svg circle, svg path {
+		svg circle,
+		svg path {
 			@apply duration-300 origin-center;
 		}
 
 		&:hover {
-
 			svg circle {
 				animation: rotate 3s linear infinite;
 			}
@@ -29,7 +34,7 @@
 		}
 	}
 
-	&.round:not(.arrow){
+	&.round:not(.arrow) {
 		&:hover {
 			@apply border-opacity-100 border-brandBlueDark;
 		}
@@ -81,7 +86,6 @@
 	animation: rotate 12s linear infinite;
 	@apply origin-center;
 }
-
 
 @keyframes rotate {
 	0% {

@@ -36,6 +36,9 @@ export default function initSliders() {
 				fadeEffect: {
 					crossFade: true,
 				},
+				autoplay: {
+					delay: 6000,
+				},
 				loop: true,
 				direction: 'horizontal',
 				speed: 1000,

@@ -10,6 +10,8 @@ $context['travel_type_destinations'] = Timber::get_posts(array(
     'post_type' => 'destinations',
     'post_status' => 'publish',
     'posts_per_page' => -1,
+    'orderby' => 'title',
+    'order'   => 'ASC',
     'tax_query' => array(
         array(
             'taxonomy' => 'travel-types',

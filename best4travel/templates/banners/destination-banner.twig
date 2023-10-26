@@ -12,7 +12,11 @@
 	</svg>
 	<div data-animate-stagger-down class="container max-2xl:!max-w-[925px] relative text-white block-content items-center text-center">
 		<div data-animate-banner-reveal-down class="absolute top-[calc(100%+20px)] left-1/2 -translate-x-1/2 h-screen w-[1px] border-l border-dashed border-l-white"></div>
-		<span class="font-light text-base font-body normal-case">Destinations &nbsp;•&nbsp; {{ post.terms('travel-types')[0].name }}</span>
-		<h1>Discover {{ post.title }}</h1>
+		<span class="font-light text-base font-body normal-case">Destinations &nbsp;•&nbsp;
+			{{ post.terms('travel-types')[0].name }}</span>
+		<h1>{{ post.title }}</h1>
+		<div>
+			<a href="/contact-us" class="button banner-button">Enquire now</a>
+		</div>
 	</div>
 </div>

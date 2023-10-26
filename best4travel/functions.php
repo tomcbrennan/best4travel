@@ -162,7 +162,7 @@ class TomDotCom extends Timber\Site
 		$context['home_destinations'] = Timber::get_posts(array(
 			'post_type' => 'destinations',
 			'post_status' => 'publish',
-			'posts_per_page' => 14,
+			'posts_per_page' => -1,
 		));
 
 		$context['travel_types'] = Timber::get_terms('travel-types');
