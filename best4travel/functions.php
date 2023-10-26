@@ -151,16 +151,12 @@ class TomDotCom extends Timber\Site
 			'post_type' => 'destinations',
 			'post_status' => 'publish',
 			'posts_per_page' => -1,
+			'orderby' => 'title',
+    		'order'   => 'ASC',
 		));
 
 		$context['all_team_members'] = Timber::get_posts(array(
 			'post_type' => 'team-members',
-			'post_status' => 'publish',
-			'posts_per_page' => -1,
-		));
-
-		$context['home_destinations'] = Timber::get_posts(array(
-			'post_type' => 'destinations',
 			'post_status' => 'publish',
 			'posts_per_page' => -1,
 		));
