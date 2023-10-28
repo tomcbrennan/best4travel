@@ -1,4 +1,4 @@
-// import AjaxContent from '../ajax/ajax'
+import gsap from 'gsap'
 import initLenis from './utils/lenis'
 import initSplitText from './utils/split-text'
 import animateOnScroll from './utils/animate-on-scroll'
@@ -55,24 +55,35 @@ const toggleMenu = () => {
 	const staggerContainers = document.querySelectorAll(
 		'[data-animate-stagger-menu]'
 	)
+	const header = document.querySelector('header')
 
 	menuButtons.forEach((btn) => {
 		btn.addEventListener('click', () => {
 			document.body.classList.toggle('menuIsOpen')
 			document.documentElement.classList.toggle('overflow-hidden')
+			document.querySelector('.hamburger').classList.toggle('is-active')
 
 			if (document.body.classList.contains('menuIsOpen')) {
+				lenis.stop()
+				header.classList.add('scrolling')
 				staggerContainers.forEach((stagger) => {
 					const elementsStagger = gsap.utils.toArray(stagger.children)
 
 					gsap.from(elementsStagger, {
-						y: 20,
+						y: -20,
 						opacity: 0,
-						delay: 0.5,
+						delay: 0.4,
 						stagger: 0.1,
 					})
 				})
+			} else if (
+				document.body.classList.contains('menuIsOpen') &&
+				header.classList.contains('scrolling')
+			) {
+				header.classList.add('scrolling')
 			}
+
+			lenis.start()
 		})
 	})
 

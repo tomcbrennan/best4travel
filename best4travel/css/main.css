@@ -5,6 +5,7 @@
 @import './typography.css';
 @import './forms.css';
 @import './buttons.css';
+@import './hamburger.css';
 @import 'swiper/swiper-bundle.css';
 
 /* LENIS */
@@ -40,7 +41,7 @@ html.lenis {
 }
 
 [data-menu] {
-	@apply translate-x-full;
+	@apply fixed top-0 left-0 w-screen h-0 opacity-0 pointer-events-none;
 }
 
 .destinations-toggle > a {
@@ -52,7 +53,7 @@ html.lenis {
 }
 
 .menuIsOpen [data-menu] {
-	@apply translate-x-0;
+	@apply h-screen opacity-100 pointer-events-auto;
 }
 
 main {
@@ -107,6 +108,19 @@ header.scrolling {
 			circle,
 			path {
 				@apply stroke-brandBlueDark;
+			}
+		}
+	}
+
+	.hamburger {
+		.hamburger-inner {
+			@apply !bg-brandBlueDark;
+
+			&:before {
+				@apply !bg-brandBlueDark;
+			}
+			&:after {
+				@apply !bg-brandBlueDark;
 			}
 		}
 	}

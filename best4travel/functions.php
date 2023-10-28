@@ -143,6 +143,7 @@ class TomDotCom extends Timber\Site
 
 		// MENUS
 		$context['menu']  = new Timber\Menu('primary');
+		$context['mobile_menu']  = new Timber\Menu('mobile-menu');
         $context['footer_menu'] = new Timber\Menu('footer');
 
 
@@ -195,6 +196,7 @@ class TomDotCom extends Timber\Site
 		register_nav_menus(
 			array(
 				'primary' => __('Primary Menu', 'tomdotcom'),
+				'mobile-menu' => __('Mobile Menu', 'tomdotcom'),
 				'footer' => __('Footer Menu', 'tomdotcom'),
 			)
 		);

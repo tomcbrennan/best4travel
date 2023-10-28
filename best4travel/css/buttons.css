@@ -8,7 +8,7 @@
 	}
 
 	&.banner-button {
-		@apply relative border rounded-full !border-white mt-3 !bg-transparent hover:!bg-brandBlueLight hover:!bg-opacity-50;
+		@apply relative border rounded-full !border-white mt-3 !bg-transparent hover:!bg-white hover:!text-brandBlueDark;
 	}
 
 	&.arrow.round {
