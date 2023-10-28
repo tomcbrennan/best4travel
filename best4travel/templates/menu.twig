@@ -22,11 +22,7 @@
 		{% endfor %}
 	</ul>
 	{# Mobile #}
-	<button data-toggle-menu class="hamburger hamburger--spin lg:hidden" type="button">
-		<span class="hamburger-box">
-			<span class="hamburger-inner"></span>
-		</span>
-	</button>
+	{% include "icons/hamburger.twig" %}
 	<ul data-menu class="mt-[63px] bg-white flex flex-col gap-6 p-12 z-30 duration-700 ease lg:hidden">
 		<div data-animate-stagger-menu class="flex-grow flex flex-col">
 			{% for item in mobile_menu.get_items %}

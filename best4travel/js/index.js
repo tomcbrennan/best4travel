@@ -76,14 +76,9 @@ const toggleMenu = () => {
 						stagger: 0.1,
 					})
 				})
-			} else if (
-				document.body.classList.contains('menuIsOpen') &&
-				header.classList.contains('scrolling')
-			) {
-				header.classList.add('scrolling')
+			} else {
+				lenis.start()
 			}
-
-			lenis.start()
 		})
 	})
 
