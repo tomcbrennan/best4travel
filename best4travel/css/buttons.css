@@ -1,9 +1,9 @@
 .button,
 .is-button {
-	@apply text-base duration-200 ease-in-out font-normal w-fit tracking-wider py-2 px-6 flex items-center gap-4 uppercase 2xl:text-lg;
+	@apply max-sm:text-sm text-base duration-200 ease-in-out font-normal w-fit tracking-wider py-2 px-6 flex items-center gap-4 uppercase 2xl:text-lg;
 
 	&.round {
-		@apply bg-white font-light rounded-full border border-black border-opacity-25;
+		@apply bg-white rounded-full border border-black border-opacity-25;
 
 	}
 
