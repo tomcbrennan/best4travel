@@ -2,7 +2,7 @@ import Lenis from '@studio-freight/lenis'
 
 export default function initLenis() {
 	const lenis = new Lenis({
-		lerp: 0.075,
+		lerp: 0.175,
 	})
 
 	window.lenis = lenis

@@ -425,6 +425,11 @@
                 "param": "page",
                 "operator": "!=",
                 "value": "39"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "280"
             }
         ]
     ],
@@ -437,5 +442,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698244464
+    "modified": 1698464772
 }

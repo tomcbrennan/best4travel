@@ -1,13 +1,13 @@
-<div class="internal-banner overflow-hidden bg-brandBlueBanner relative flex items-center justify-center pt-28 md:pt-56 pb-[300px]">
+<div class="minimal-banner overflow-hidden bg-brandBlueBanner relative flex items-center justify-center pt-28 md:pt-56 pb-[300px]">
 	{% if post.thumbnail %}
 		{% include "partial/image.twig" with { image: Image(post.thumbnail).src, alt: post.thumbnail.alt, class: "image-parallax h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto object-center object-cover" } %}
 	{% endif %}
 	<div data-animate-stagger-down class="container max-2xl:!max-w-[925px] relative text-white block-content items-center text-center">
-		<div data-animate-banner-reveal-down class="absolute top-[calc(100%+20px)] left-1/2 -translate-x-1/2 h-screen w-[1px] border-l border-dashed border-l-white"></div>
+		<div data-animate-banner-reveal-down class="absolute top-[calc(100%+20px)] left-1/2 -translate-x-1/2 h-screen w-[1px] border-l md:border-dashed border-l-white"></div>
 		<h1 class="font-light text-base font-body normal-case">{{ custom_title ?: post.title }}</h1>
-		<h2>{{ custom_heading ?: fields.internal_banner.heading }}</h2>
-		{% if fields.internal_banner.subheading %}
-			<h3 class="is-h4">{{ fields.internal_banner.subheading }}</h3>
+		<h2>{{ custom_heading ?: fields.minimal_banner.heading }}</h2>
+		{% if fields.minimal_banner.subheading %}
+			<h3 class="is-h4">{{ fields.minimal_banner.subheading }}</h3>
 		{% elseif custom_subheading %}
 			<h3 class="is-h4">{{ custom_subheading }}</h3>
 		{% endif %}

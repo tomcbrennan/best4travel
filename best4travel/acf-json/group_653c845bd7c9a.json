@@ -1,11 +1,11 @@
 {
-    "key": "group_652ea596f2ac5",
-    "title": "Internal Banner",
+    "key": "group_653c845bd7c9a",
+    "title": "Minimal Banner",
     "fields": [
         {
-            "key": "field_652ea597a12de",
-            "label": "Internal Banner",
-            "name": "internal_banner",
+            "key": "field_653c845bdbaea",
+            "label": "Minimal Banner",
+            "name": "minimal_banner",
             "aria-label": "",
             "type": "group",
             "instructions": "Page title is placed above heading automatically.",
@@ -19,7 +19,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_652ea5cc86490",
+                    "key": "field_653c845bdca39",
                     "label": "Heading",
                     "name": "heading",
                     "aria-label": "",
@@ -39,7 +39,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_652ea5d386491",
+                    "key": "field_653c845bdca40",
                     "label": "Subheading",
                     "name": "subheading",
                     "aria-label": "",
@@ -57,31 +57,6 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
-                },
-                {
-                    "key": "field_6534c4cf89041",
-                    "label": "Background",
-                    "name": "background",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "If no background is set, the page thumbnail will be used. If neither are set, the banner will be blank.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "medium"
                 }
             ]
         }
@@ -89,31 +64,16 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page",
                 "operator": "==",
-                "value": "page"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
-            },
-            {
-                "param": "page",
-                "operator": "!=",
                 "value": "39"
-            },
-            {
-                "param": "page",
-                "operator": "!=",
-                "value": "280"
             }
         ],
         [
             {
-                "param": "taxonomy",
+                "param": "page",
                 "operator": "==",
-                "value": "travel-types"
+                "value": "280"
             }
         ]
     ],
@@ -126,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698464986
+    "modified": 1698464918
 }
