@@ -4,6 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function animateOnScroll() {
+	// GSAP HELPER FOR RESPONSIVENESS
+	let mediaSize = gsap.matchMedia()
+
 	/**
 	 * ANIMATE HEADER ON SCROLL
 	 */
@@ -95,7 +98,9 @@ export default function animateOnScroll() {
 	 */
 	const elementsFadeDown = document.querySelectorAll('[data-fade-down]')
 	const elementsFadeUp = document.querySelectorAll('[data-fade-up]')
-	const elementsFadeUpFast = document.querySelectorAll('[data-fade-up-fast]')
+	const elementsFadeUpDestination = document.querySelectorAll(
+		'[data-fade-up-destination]'
+	)
 	const elementsFadeLeft = document.querySelectorAll('[data-fade-left]')
 	const elementsFadeRight = document.querySelectorAll('[data-fade-right]')
 	const elementsFade = document.querySelectorAll('[data-fade]')
@@ -316,8 +321,8 @@ export default function animateOnScroll() {
 		gsap.from(element, settings)
 	})
 
-	// FADE UP FAST ----------------------------
-	elementsFadeUpFast.forEach((element) => {
+	// FADE UP Destination ----------------------------
+	elementsFadeUpDestination.forEach((element) => {
 		const settings = {
 			scrollTrigger: {
 				trigger: element,
@@ -328,8 +333,9 @@ export default function animateOnScroll() {
 			duration: 0.4,
 			y: 16,
 		}
-
-		gsap.from(element, settings)
+		mediaSize.add('(min-width: 1024px)', () => {
+			gsap.from(element, settings)
+		})
 	})
 
 	// FADE LEFT --------------------------
@@ -463,9 +469,6 @@ export default function animateOnScroll() {
 			)
 		})
 	}
-
-	// GSAP HELPER FOR RESPONSIVENESS
-	let mediaSize = gsap.matchMedia()
 
 	const zoomElement = document.querySelectorAll('.zoom-element')
 
