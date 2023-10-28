@@ -34,7 +34,7 @@ function sd_allow_custom_classes_to_be_applied_to_headings($init_array) {
     );
     $style_formats[] = array(
         'title' => "Heading Style",
-        'selector' => 'h4, h5, h6',
+        'selector' => 'h4, h5, h6, p',
         'attributes' => array('class' => 'large-heading')
     );
 

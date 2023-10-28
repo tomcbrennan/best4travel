@@ -3,3 +3,11 @@
 {% block banner %}
 	{% include "banners/destination-banner.twig" %}
 {% endblock %}
+
+{% block content %}
+	<section class="relative">
+		<div class="container items-center">
+			<a href="/travel-types/{{ post.terms('travel-types')[0].slug }}" class="button round mx-auto">Back to {{ post.terms('travel-types')[0].name }} Travel</a>
+		</div>
+	</section>
+{% endblock %}
