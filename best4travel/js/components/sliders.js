@@ -6,13 +6,13 @@ export default function initSliders() {
 			const destinationsSlider = new Swiper(slider, {
 				direction: 'horizontal',
 				loop: true,
-				speed: 750,
 				slidesPerView: 2,
 				spaceBetween: 20,
 				centeredSlides: true,
 				breakpoints: {
 					768: {
 						slidesPerView: 3.5,
+						speed: 750,
 					},
 					1024: {
 						slidesPerView: 4,
