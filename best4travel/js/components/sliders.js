@@ -12,11 +12,11 @@ export default function initSliders() {
 				breakpoints: {
 					768: {
 						slidesPerView: 3.5,
-						speed: 750,
 					},
 					1024: {
 						slidesPerView: 4,
 						slidesPerGroup: 2,
+						speed: 750,
 					},
 					1600: {
 						slidesPerView: 5,
