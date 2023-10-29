@@ -238,7 +238,7 @@ header.scrolling {
 .destinations-slider {
 	&:active {
 		.swiper-slide {
-			@apply scale-[0.98];
+			@apply lg:scale-[0.96];
 		}
 	}
 	> .swiper-wrapper {
