@@ -25,21 +25,23 @@ export default function animateOnScroll() {
 	/**
 	 * PARALLAX IMAGE
 	 */
-	gsap.utils.toArray('.image-parallax').forEach((image) => {
-		gsap.fromTo(
-			image,
-			{
-				y: -200,
-			},
-			{
-				scrollTrigger: {
-					trigger: image,
-					scrub: true,
+	mediaSize.add('(min-width: 1024px)', () => {
+		gsap.utils.toArray('.image-parallax').forEach((image) => {
+			gsap.fromTo(
+				image,
+				{
+					y: -200,
 				},
-				y: 100,
-				ease: 'none',
-			}
-		)
+				{
+					scrollTrigger: {
+						trigger: image,
+						scrub: true,
+					},
+					y: 100,
+					ease: 'none',
+				}
+			)
+		})
 	})
 
 	/**
