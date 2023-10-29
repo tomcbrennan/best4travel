@@ -156,6 +156,21 @@ class TomDotCom extends Timber\Site
     		'order'   => 'ASC',
 		));
 
+		$context['all_local_destinations'] = Timber::get_posts(array(
+			'post_type' => 'destinations',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+			'orderby' => 'title',
+			'order' => 'ASC',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'travel-types',
+					'field' => 'slug',
+					'terms' => 'regional-wa',
+				),
+			),
+		));
+
 		$context['all_team_members'] = Timber::get_posts(array(
 			'post_type' => 'team-members',
 			'post_status' => 'publish',

@@ -179,6 +179,16 @@ header.scrolling {
 	}
 }
 
+.local-getaways {
+	.tease-destination {
+		&:first-of-type {
+			@apply md:col-span-3;
+		}
+
+		@apply md:col-span-2;
+	}
+}
+
 .tax-travel-types {
 	.tease-destination {
 		&:nth-child(2) {

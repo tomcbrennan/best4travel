@@ -15,11 +15,11 @@ h2,
 .is-h2,
 h3,
 .is-h3 {
-	@apply font-heading uppercase font-semibold;
+	@apply font-heading uppercase font-semibold tracking-wide;
 }
 
 .large-heading {
-	@apply !tracking-wide !uppercase !font-heading font-semibold;
+	@apply !tracking-wide !uppercase !font-heading !font-semibold;
 }
 
 h4,
@@ -63,7 +63,7 @@ h6,
 
 .supertitle,
 .is-supertitle {
-	@apply max-md:text-sm font-normal tracking-wide uppercase;
+	@apply max-md:text-sm font-body font-normal tracking-wide uppercase;
 }
 
 /* List styles inside WYSIWYG editors */

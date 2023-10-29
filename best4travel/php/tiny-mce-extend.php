@@ -26,16 +26,15 @@ function sd_allow_custom_classes_to_be_applied_to_headings($init_array) {
         );
     }
 
-    // Also add one for buttons
+    $style_formats[] = array(
+        'title' => "Large Heading",
+        'selector' => 'h4,h5,h6,p',
+        'attributes' => array('class' => 'large-heading')
+    );
     $style_formats[] = array(
         'title' => "Button",
         'selector' => 'a',
-        'attributes' => array('class' => 'is-button')
-    );
-    $style_formats[] = array(
-        'title' => "Heading Style",
-        'selector' => 'h4, h5, h6, p',
-        'attributes' => array('class' => 'large-heading')
+        'attributes' => array('class' => 'is-button round')
     );
 
     // Insert the array, JSON ENCODED, into 'style_formats'

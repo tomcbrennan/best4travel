@@ -1,12 +1,12 @@
-<a href="{{ item.link }}" class="tease-destination group overflow-hidden bg-brandBlueLight relative aspect-5/7 w-full duration-500 ease-in-out {{ class }}">
-	<div class="h-full w-full absolute -top-14 sm:top-0 left-0">
+<a href="{{ item.link }}" class="tease-destination relative aspect-16/9 h-full w-full group overflow-hidden bg-brandBlueLight {{ class }}">
+	<div class="h-full w-full absolute top-0 left-0">
 		{% if item.thumbnail %}
-			{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnail.alt, class: "image-parallax max-md:h-[150%] h-[120%] w-full h-full object-center object-cover" } %}
+			{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnail.alt, class: "w-full h-full object-center object-cover" } %}
 		{% endif %}
 	</div>
 	<div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent"></div>
 	<div class="flex p-5 md:p-6 2xl:p-8 h-full items-end">
-		<h3 data-fade-up-destination class="text-xl tracking-wide lg:text-2xl xl:text-3xl relative text-white !font-normal pr-12 sm:pr-24">{{ item.title }}</h3>
+		<h3 class="tracking-wide text-2xl xl:text-3xl relative text-white !font-normal pr-12 sm:pr-24">{{ item.name }}</h3>
 		<svg width="177" height="168" viewbox="0 0 177 168" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-md:hidden absolute -bottom-20 -right-20 duration-500 group-hover:scale-110">
 			<circle cx="93" cy="84" r="83.5" stroke="white" stroke-dasharray="2 2"/>
 			<path d="M64 46.4148L59 43.528L59 49.3016L64 46.4148ZM-6.73355e-08 46.9148L59.5 46.9148L59.5 45.9148L6.73355e-08 45.9148L-6.73355e-08 46.9148Z" fill="white"/>
