@@ -1,17 +1,14 @@
 import gsap from 'gsap'
 import initLenis from './utils/lenis'
-import initSplitText from './utils/split-text'
 import animateOnScroll from './utils/animate-on-scroll'
 import initAccordions from './components/accordions'
 import initSliders from './components/sliders'
 
 document.addEventListener('DOMContentLoaded', () => {
 	initLenis()
-	initSplitText()
 	toggleMenu()
 	toggleMobileSubMenu()
 	animateOnScroll()
-	loadAjaxPosts()
 	initSliders()
 
 	// TOGGLE DESTINATIONS MENU ON MENU ITEM CLICK
@@ -137,40 +134,6 @@ const toggleMobileSubMenu = () => {
 			}
 
 			subMenu.classList.toggle('hidden')
-		})
-	})
-}
-
-/**
- * Load posts via ajax into a container
- */
-function loadAjaxPosts() {
-	if (!document.querySelector('[data-posts-container]')) {
-		return
-	}
-
-	const posts = new AjaxContent({
-		container: '[data-posts-container]',
-		item_template: 'ajax/post.twig',
-		query: {
-			post_type: 'post',
-			post_status: 'publish',
-			posts_per_page: 5,
-		},
-	})
-
-	document.querySelectorAll('[data-category]').forEach((button) => {
-		const category = button.getAttribute('data-category')
-		button.addEventListener('click', () => {
-			posts.update({
-				tax_query: {
-					0: {
-						taxonomy: 'category',
-						field: 'slug',
-						terms: category,
-					},
-				},
-			})
 		})
 	})
 }
