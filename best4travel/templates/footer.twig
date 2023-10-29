@@ -56,7 +56,7 @@
 		<span class="max-md:text-xs mb-2 uppercase font-normal">Proudly West Australian</span>
 		<div data-animate-stagger-up class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 place-items-center w-full">
 			{% for item in options.accreditations %}
-				<div><img src="{{ item.accreditation.url }}" alt="{{ item.accreditation.alt }}" class="h-14"></div>
+				<div><img src="{{ item.accreditation.url }}" alt="{{ item.accreditation.alt }}" class="h-14 object-contain"></div>
 			{% endfor %}
 		</div>
 	</div>
