@@ -74,15 +74,14 @@
 
 	<section class="local-getaways bg-white">
 		<div class="container">
-			<div data-animate-stagger-fade class="grid md:grid-cols-6 gap-5">
+			<div data-animate-stagger-fade class="grid md:grid-cols-6 gap-3 md:gap-5">
 				<div class="md:col-span-3 bg-brandBlueDark block-content p-7 md:p-10 text-white">
-					<span class="supertitle">Deals from your backyard</span>
-					<h4 class="large-heading">The best local getaways</h4>
-					<p>We live for the thrill of uncovering hidden gems and sharing unforgettable experiences right in your backyard. We believe everyone deserves awesome adventures, and we're here to make it happen. Click on one of our special local deals to find out more information and uncover the beauty of WA.</p>
-					<a href="/travel-types/regional-wa" class="button round">View all</a>
+					{{ fields.local_getaways.content }}
 				</div>
 				{% for item in all_local_destinations %}
-					{% include "tease-local-destination.twig" %}
+					{% if item.featured_local_getaway == true %}
+						{% include "tease-local-destination.twig" %}
+					{% endif %}
 				{% endfor %}
 			</div>
 		</div>

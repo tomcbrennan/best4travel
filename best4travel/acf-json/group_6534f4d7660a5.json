@@ -8,7 +8,27 @@
             "name": "featured_destination",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "This will add the destination to all features sliders and blocks across the website.",
+            "instructions": "This will add the destination to all featured sliders and blocks across the website.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_653fc752bf0e9",
+            "label": "Featured Local Getaway",
+            "name": "featured_local_getaway",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "WARNING: ONLY USE FOR LOCAL DESTINATIONS <br\/>\r\nThis will add the destination to all featured local getaway blocks across the website.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -309,5 +329,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698590396
+    "modified": 1698678713
 }
