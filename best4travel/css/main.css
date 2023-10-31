@@ -285,8 +285,12 @@ header.scrolling {
 }
 
 /* CHATBOT */
-.ht_ctc_style.ht_ctc_chat_style > button {
-	@apply max-sm:text-sm tracking-wide rounded-full px-[20px] py-[15px] font-medium uppercase font-body border border-brandBlueDark;
+#ht-ctc-chat {
+	@apply duration-200;
+
+	.ht_ctc_style.ht_ctc_chat_style > button {
+		@apply max-sm:text-sm tracking-wide rounded-full px-[20px] py-[15px] font-medium uppercase font-body border border-brandBlueDark;
+	}
 }
 
 @keyframes pulse {

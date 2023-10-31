@@ -12,13 +12,27 @@ export default function animateOnScroll() {
 	 */
 	const header = document.querySelector('header')
 	const destinationsMenu = document.querySelector('.destinations-menu')
+	const chatbot = document.querySelector('#ht-ctc-chat')
 
 	window.addEventListener('scroll', () => {
 		const scrollPosition = window.scrollY
+		const windowHeight = window.innerHeight
+		const documentHeight = document.documentElement.scrollHeight
+
 		if (scrollPosition > 75 && !destinationsMenu.classList.contains('active')) {
 			header.classList.add('scrolling')
 		} else {
 			header.classList.remove('scrolling')
+		}
+
+		if (documentHeight - scrollPosition - windowHeight < 100) {
+			// HIDE CHATBOT
+			chatbot.style.pointerEvents = 'none'
+			chatbot.style.opacity = '0'
+		} else {
+			// SHOW CHATBOT
+			chatbot.style.pointerEvents = 'auto'
+			chatbot.style.opacity = '1'
 		}
 	})
 
