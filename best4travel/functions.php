@@ -283,7 +283,7 @@ function send_data_to_api($entry, $form) {
         array(
             'method' => 'POST',
             'headers' => $headers,
-            'body' => wp_json_encode($data), // Convert data to JSON format
+            'body' => wp_json_encode($data),
         )
     );
 
