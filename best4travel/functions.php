@@ -260,41 +260,33 @@ add_action('login_enqueue_scripts', 'custom_login_logo');
 
 // POST SUBSCRIBE FORM DATA TO GENESYS
 
-function send_data_to_api($entry, $form) {
+add_action( 'gform_after_submission_2', 'post_to_third_party', 10, 2 );
 
-    $api_url = 'https://portal.genesysmarketing.com/api/subscribe';
+function post_to_third_party( $entry, $form ) {
+
+    $endpoint_url = 'https://portal.genesysmarketing.com/api/subscribe';
     $headers = array(
-        'Client' => '0fe9a19cd2b611e8aee6736572766572',
-        'Key' => 'dEad513c30rc1c11e7a856365',
+        'client_id' => '0fe9a19cd2b611e8aee6736572766572',
+        'api_key' => 'dEad513c30rc1c11e7a856365',
     );
-    $first_name = rgar($entry, 2);
-    $last_name = rgar($entry, 3);
-    $email = rgar($entry, 1);
-
-    $data = array(
+    $body = array(
         'list_id' => '7e44adb89df94b7daf8c9488b4d0b236',
-        'email' => $email,
-        'first_name' => $first_name,
-        'last_name' => $last_name,
+        'first_name' => rgar($entry, 2),
+        'last_name' => rgar($entry, 3),
+        'email' => rgar($entry, 1),
     );
 
-    $response = wp_remote_request(
-        $api_url,
-        array(
-            'method' => 'POST',
-            'headers' => $headers,
-            'body' => wp_json_encode($data),
-        )
+    $request_args = array(
+        'headers' => $headers,
+        'body' => $body
     );
 
-    if (is_wp_error($response)) {
-        error_log('API request failed: ' . $response->get_error_message());
-    } else {
-        error_log('API response: ' . wp_remote_retrieve_body($response));
-    }
+    GFCommon::log_debug( 'gform_after_submission: body => ' . print_r( $body, true ) );
+
+    $response = wp_remote_request( $endpoint_url, $request_args );
+    GFCommon::log_debug( 'gform_after_submission: response => ' . print_r( $response, true ) );
 }
 
-add_action('gform_after_submission_2', 'send_data_to_api', 10, 2);
 
 
 new TomDotCom();
