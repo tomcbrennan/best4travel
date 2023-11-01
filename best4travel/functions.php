@@ -274,7 +274,7 @@ function send_data_to_api($entry, $form) {
     $email = rgar($entry, 1);
 
     $data = array(
-        'list_id' => '7e44adb89df94b7daf8c9488b4d0b236',
+        'list' => '7e44adb89df94b7daf8c9488b4d0b236',
         'email' => $email,
         'first_name' => $first_name,
         'last_name' => $last_name,
