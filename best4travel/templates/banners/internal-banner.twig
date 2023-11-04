@@ -12,7 +12,7 @@
 	</svg>
 	<div data-animate-stagger-down class="container max-2xl:!max-w-[925px] relative text-white block-content items-center text-center">
 		<div data-animate-banner-reveal-down class="absolute top-[calc(100%+20px)] left-1/2 -translate-x-1/2 h-screen w-[1px] border-l md:border-dashed border-l-white"></div>
-		<span class="font-light text-base font-body normal-case">{{ custom_title ?: post.title }}</span>
+		<span class="font-light text-base font-body uppercase tracking-wide">{{ custom_title ?: post.title }}</span>
 		<h1 class="is-h2">{{ fields.internal_banner.heading ?: custom_heading }}</h1>
 		{% if fields.internal_banner.subheading %}
 			<h3 class="is-h4">{{ fields.internal_banner.subheading }}</h3>

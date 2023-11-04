@@ -1,7 +1,7 @@
 {% extends "page.twig" %}
 
 {% block banner %}
-	<section class="home-banner relative h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] 2xl:h-[1100px] overflow-hidden">
+	<section class="home-banner relative h-[650px] lg:h-[800px] 2xl:h-[1100px] overflow-hidden">
 		<div data-curtain class="absolute bottom-0 left-0 z-[1000000] w-screen h-0 bg-white pointer-events-none"></div>
 		<video class="absolute top-0 left-0 z-10 h-full object-cover w-full" preload="auto" loop autoplay muted playsinline>
 			<source class="absolute top-0 left-0 h-full w-full" src="{{ fields.home_banner.background_video_link }}" type="video/mp4" poster="{{ fields.home_banner.video_poster.url }}">
@@ -25,13 +25,13 @@
 
 {% block content %}
 	{% if fields.short_statement %}
-		<section class="bg-white relative overflow-hidden">
+		<section class="bg-white relative overflow-hidden py-20 lg:py-24 2xl:py-32">
 			<div class="container-small max-2xl:!max-w-[830px]">
 				<div class="block-content items-center text-center">
 					{% include "icons/logo-icon.twig" with { class: "max-md:w-20 h-auto" } %}
 					<div class="relative">
 						<h4>{{ fields.short_statement }}</h4>
-						<div data-animate-reveal-down class="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 h-full w-[1px] border-l md:border-dashed border-l-[#0073AD] border-opacity-75"></div>
+						<div data-animate-reveal-down class="absolute top-[calc(100%+35px)] left-1/2 -translate-x-1/2 h-full w-[1px] border-l md:border-dashed border-l-[#0073AD] border-opacity-75"></div>
 					</div>
 				</div>
 			</div>
