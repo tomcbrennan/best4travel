@@ -290,7 +290,7 @@ header.scrolling {
 
 /* CHATBOT */
 #ht-ctc-chat {
-	@apply duration-500;
+	@apply duration-200;
 
 	.ht_ctc_style.ht_ctc_chat_style > button {
 		@apply text-sm tracking-wide rounded-full px-[20px] py-[12px] font-medium uppercase duration-200 font-body border border-brandBlueDark hover:!bg-brandBackground;

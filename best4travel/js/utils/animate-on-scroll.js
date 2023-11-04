@@ -28,15 +28,11 @@ export default function animateOnScroll() {
 		if (documentHeight - scrollPosition - windowHeight < 100) {
 			// HIDE CHATBOT
 			chatbot.style.pointerEvents = 'none'
-			chatbot.style.transform = 'translateX(200px)'
-
-			// SHOW SCROLL TO TOP
+			chatbot.style.opacity = '0'
 		} else {
 			// SHOW CHATBOT
 			chatbot.style.pointerEvents = 'auto'
-			chatbot.style.transform = 'translateX(0)'
-
-			// HIDE SCROLL TO TOP
+			chatbot.style.opacity = '1'
 		}
 	})
 
