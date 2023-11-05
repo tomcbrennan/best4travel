@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			toggleDestinations()
 		})
 
+	if (document.querySelector('.about-destination-content')) {
+		toggleDestinationContent()
+	}
+
 	if (document.querySelector('.scrolling-text')) {
 		scrollingText()
 	}
@@ -136,4 +140,46 @@ const toggleMobileSubMenu = () => {
 			subMenu.classList.toggle('hidden')
 		})
 	})
+}
+
+const toggleDestinationContent = () => {
+	const destinationContent = document.querySelector(
+		'.about-destination-content'
+	)
+	const paragraphs = destinationContent.querySelectorAll('p')
+	const maxParagraphs = 3
+
+	if (paragraphs.length > maxParagraphs) {
+		// CREATE READ MORE BUTTON + APPEND
+		const readMoreBtn = document.createElement('div')
+		readMoreBtn.innerHTML =
+			'<button class="button border round">Show more</button>'
+		destinationContent.appendChild(readMoreBtn)
+
+		let isExpanded = false
+
+		const toggleContent = () => {
+			paragraphs.forEach((paragraph, index) => {
+				if (index >= maxParagraphs) {
+					paragraph.classList.toggle('hidden')
+				}
+			})
+		}
+
+		toggleContent()
+
+		readMoreBtn.addEventListener('click', () => {
+			isExpanded = !isExpanded
+			destinationContent.classList.toggle('content-expanded')
+			toggleContent()
+
+			if (isExpanded) {
+				readMoreBtn.innerHTML =
+					'<button class="button border round">Show less</button>'
+			} else {
+				readMoreBtn.innerHTML =
+					'<button class="button border round">Show more</button>'
+			}
+		})
+	}
 }

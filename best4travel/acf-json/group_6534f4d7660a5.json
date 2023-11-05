@@ -269,6 +269,26 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_654795da24d09",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_653e6dac95327",
                     "label": "Content",
                     "name": "content",
@@ -355,5 +375,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698767292
+    "modified": 1699190248
 }
