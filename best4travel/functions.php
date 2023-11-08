@@ -273,9 +273,9 @@ function send_data_to_api($entry, $form) {
 
     $body = array(
         'list' => '7e44adb89df94b7daf8c9488b4d0b236',
-        'first_name' => rgar($entry, '2'),
-        'last_name' => rgar($entry, '3'),
-        'email' => rgar($entry, '1'),
+        'first_name' => rgar($entry, 2),
+        'last_name' => rgar($entry, 3),
+        'email' => rgar($entry, 1),
     );
 
     $response = wp_remote_request(
