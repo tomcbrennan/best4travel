@@ -25,3 +25,7 @@
 .gform_required_legend {
     @apply hidden;
 }
+
+.gform_confirmation_wrapper {
+    @apply !-mt-12;
+}
