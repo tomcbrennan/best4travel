@@ -8,6 +8,10 @@
 @import './hamburger.css';
 @import 'swiper/swiper-bundle.css';
 
+#wpadminbar {
+	@apply z-[10000000];
+}
+
 html, body {
 	@apply scroll-smooth;
 }
