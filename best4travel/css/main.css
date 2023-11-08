@@ -8,11 +8,12 @@
 @import './hamburger.css';
 @import 'swiper/swiper-bundle.css';
 
-/* LENIS */
-
 html, body {
 	@apply scroll-smooth;
 }
+
+
+/* LENIS */
 
 html.lenis {
 	height: auto;
@@ -183,7 +184,7 @@ header.scrolling {
 	}
 }
 
-.local-getaways {
+/* .local-getaways {
 	.tease-destination {
 		&:first-of-type {
 			@apply md:col-span-3;
@@ -191,7 +192,7 @@ header.scrolling {
 
 		@apply md:col-span-2;
 	}
-}
+} */
 
 .tax-travel-types {
 	.tease-destination {

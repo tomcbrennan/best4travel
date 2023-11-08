@@ -147,13 +147,15 @@ const toggleDestinationContent = () => {
 		'.about-destination-content'
 	)
 	const paragraphs = destinationContent.querySelectorAll('p')
-	const maxParagraphs = 3
+	const maxParagraphs = 2
 
 	if (paragraphs.length > maxParagraphs) {
 		// CREATE READ MORE BUTTON + APPEND
-		const readMoreBtn = document.createElement('div')
-		readMoreBtn.innerHTML =
-			'<button class="button border round">Show more</button>'
+		const readMoreBtn = document.createElement('button')
+		readMoreBtn.classList.add('button')
+		readMoreBtn.classList.add('border')
+		readMoreBtn.classList.add('round')
+		readMoreBtn.innerHTML = 'Show more'
 		destinationContent.appendChild(readMoreBtn)
 
 		let isExpanded = false
@@ -174,11 +176,9 @@ const toggleDestinationContent = () => {
 			toggleContent()
 
 			if (isExpanded) {
-				readMoreBtn.innerHTML =
-					'<button class="button border round">Show less</button>'
+				readMoreBtn.innerHTML = 'Show less'
 			} else {
-				readMoreBtn.innerHTML =
-					'<button class="button border round">Show more</button>'
+				readMoreBtn.innerHTML = 'Show more'
 			}
 		})
 	}
