@@ -260,38 +260,78 @@ add_action('login_enqueue_scripts', 'custom_login_logo');
 
 // POST SUBSCRIBE FORM DATA TO GENESYS
 
-add_action('gform_after_submission_2', 'send_data_to_api', 10, 2);
+// add_action('gform_after_submission_2', 'send_data_to_api', 10, 2);
 
-function send_data_to_api($entry, $form) {
+// function send_data_to_api($entry, $form) {
 
-    $api_url = 'https://portal.genesysmarketing.com/api/subscribe';
+//     $api_url = 'https://portal.genesysmarketing.com/api/subscribe';
 
-	$headers = array(
-        'Client' => '0fe9a19cd2b611e8aee6736572766572',
-        'Key' => 'dEad513c30rc1c11e7a856365',
+// 	$headers = array(
+//         'Client' => '0fe9a19cd2b611e8aee6736572766572',
+//         'Key' => 'dEad513c30rc1c11e7a856365',
+//     );
+
+//     $body = array(
+//         'list' => '7e44adb89df94b7daf8c9488b4d0b236',
+//         'first_name' => rgar($entry, 2),
+//         'last_name' => rgar($entry, 3),
+//         'email' => rgar($entry, 1),
+//     );
+
+//     $response = wp_remote_request(
+//         $api_url,
+//         array(
+//             'method' => 'POST',
+//             'headers' => $headers,
+//             'body' => $body,
+//         )
+//     );
+
+//     if (is_wp_error($response)) {
+//         error_log('API request failed: ' . $response->get_error_message());
+//     } else {
+//         error_log('API response: ' . wp_remote_retrieve_body($response));
+//     }
+// }
+
+add_action( 'gform_after_submission_2', 'post_to_third_party', 10, 2 );
+
+function post_to_third_party( $entry, $form ) {
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://portal.genesysmarketing.com/api/subscribe',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'PUT',
+        CURLOPT_POSTFIELDS => '{
+            "list": "7e44adb89df94b7daf8c9488b4d0b236",
+            "first_name": "' . rgar( $entry, 2 ) . '",
+            "last_name": "' . rgar( $entry, 3 ) . '",
+            "email": "' . rgar( $entry, 1 ) . '"
+        }',
+        CURLOPT_HTTPHEADER => array(
+            'Client: 0fe9a19cd2b611e8aee6736572766572',
+            'Key: dEad513c30rc1c11e7a856365',
+            'Content-Type: application/json'
+        ),
     );
 
-    $body = array(
-        'list' => '7e44adb89df94b7daf8c9488b4d0b236',
-        'first_name' => rgar($entry, 2),
-        'last_name' => rgar($entry, 3),
-        'email' => rgar($entry, 1),
-    );
+    $response = curl_exec($curl);
 
-    $response = wp_remote_request(
-        $api_url,
-        array(
-            'method' => 'POST',
-            'headers' => $headers,
-            'body' => $body,
-        )
-    );
+    curl_close($curl);
 
-    if (is_wp_error($response)) {
-        error_log('API request failed: ' . $response->get_error_message());
+    if ($response === false) {
+        error_log('cURL request failed: ' . curl_error($curl));
     } else {
-        error_log('API response: ' . wp_remote_retrieve_body($response));
+        // Check the API response as needed
+        error_log('API response: ' . $response);
     }
 }
+
 
 new TomDotCom();
