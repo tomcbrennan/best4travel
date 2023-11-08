@@ -314,15 +314,16 @@ function post_to_third_party( $entry, $form ) {
         'email' => rgar( $entry, '1' ),
         );
 
-    GFCommon::log_debug( 'gform_after_submission: headers => ' . print_r( $headers, true ) );
-    GFCommon::log_debug( 'gform_after_submission: body => ' . print_r( $body, true ) );
-
     $response = wp_remote_post( $endpoint_url, array(
 		'headers' => $headers,
 		'body' => $body
 	) );
 
-    GFCommon::log_debug( 'gform_after_submission: response => ' . print_r( $response, true ) );
+	if (is_wp_error($response)) {
+		error_log('API request failed: ' . $response->get_error_message());
+	} else {
+		error_log('API response: ' . wp_remote_retrieve_body($response));
+	}
 }
 
 new TomDotCom();
