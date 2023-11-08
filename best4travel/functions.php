@@ -288,7 +288,7 @@ function send_data_to_api($entry, $form) {
     );
 
     if (is_wp_error($response)) {
-        error_log('API request failed: ' . $response->get_error_message() . $body);
+        error_log('API request failed: ' . $response->get_error_message());
     } else {
         error_log('API response: ' . wp_remote_retrieve_body($response));
     }
