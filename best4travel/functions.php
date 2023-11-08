@@ -266,15 +266,15 @@ function send_data_to_api($entry, $form) {
 
     $api_url = 'https://portal.genesysmarketing.com/api/subscribe';
     $headers = array(
-        'client_id' => '0fe9a19cd2b611e8aee6736572766572',
-        'api_key' => 'dEad513c30rc1c11e7a856365',
+        'Client' => '0fe9a19cd2b611e8aee6736572766572',
+        'Key' => 'dEad513c30rc1c11e7a856365',
     );
     $first_name = rgar($entry, 2);
     $last_name = rgar($entry, 3);
     $email = rgar($entry, 1);
 
     $data = array(
-        'list_id' => '7e44adb89df94b7daf8c9488b4d0b236',
+        'list' => '7e44adb89df94b7daf8c9488b4d0b236',
         'email' => $email,
         'first_name' => $first_name,
         'last_name' => $last_name,
