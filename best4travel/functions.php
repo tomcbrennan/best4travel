@@ -319,7 +319,7 @@ function post_to_third_party( $entry, $form ) {
             'Key: dEad513c30rc1c11e7a856365',
             'Content-Type: application/json'
         ),
-    );
+    ));
 
     $response = curl_exec($curl);
 
