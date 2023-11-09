@@ -3,6 +3,23 @@
     "title": "Destinations",
     "fields": [
         {
+            "key": "field_654cbf292bfbd",
+            "label": "Destination Options",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
             "key": "field_6534fcc084f78",
             "label": "Featured Destination",
             "name": "featured_destination",
@@ -43,11 +60,11 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_653e6d6f95324",
+            "key": "field_654cbf372bfbe",
             "label": "Banner",
             "name": "",
             "aria-label": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,8 +73,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -104,11 +120,11 @@
             ]
         },
         {
-            "key": "field_653e6dbc95328",
+            "key": "field_654cbf442bfbf",
             "label": "Deals",
             "name": "",
             "aria-label": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -117,8 +133,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -165,6 +180,25 @@
                     "parent_repeater": "field_653e6def9532b"
                 },
                 {
+                    "key": "field_654cc3194ba52",
+                    "label": "Deal Details",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0,
+                    "parent_repeater": "field_653e6def9532b"
+                },
+                {
                     "key": "field_653e6e539532d",
                     "label": "Price",
                     "name": "price",
@@ -186,11 +220,11 @@
                     "parent_repeater": "field_653e6def9532b"
                 },
                 {
-                    "key": "field_653e6e5c9532e",
-                    "label": "When",
-                    "name": "when",
+                    "key": "field_654cbfa174772",
+                    "label": "Details",
+                    "name": "details",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -200,10 +234,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
                     "parent_repeater": "field_653e6def9532b"
                 },
                 {
@@ -235,11 +269,11 @@
             ]
         },
         {
-            "key": "field_653e6d9695325",
+            "key": "field_654cbf562bfc0",
             "label": "About the Destination",
             "name": "",
             "aria-label": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -248,8 +282,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -315,7 +348,7 @@
             "label": "Gallery",
             "name": "",
             "aria-label": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -324,8 +357,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -375,5 +407,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699190248
+    "modified": 1699542258
 }

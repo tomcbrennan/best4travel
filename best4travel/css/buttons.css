@@ -1,22 +1,17 @@
 .button,
 .is-button {
-	@apply max-md:text-sm text-base duration-200 ease-in-out font-normal w-fit tracking-wider py-2 px-6 flex items-center gap-4 uppercase 2xl:text-lg;
-
-	&.round {
-		@apply bg-white text-black rounded-full border border-black border-opacity-25;
-
-	}
+	@apply bg-white text-black rounded-full border border-black border-opacity-25 max-md:text-sm text-base duration-200 ease-in-out font-normal w-fit tracking-wider py-2 px-6 flex items-center gap-4 uppercase 2xl:text-lg;
 
 	&.header-button {
 		@apply !bg-transparent relative z-10 duration-200 ml-[35px] max-lg:hidden;
 	}
 
 	&.banner-button {
-		@apply relative border rounded-full !border-white mt-3 !bg-transparent hover:!bg-white hover:!text-brandBlueDark;
+		@apply relative text-white border rounded-full !border-white mt-3 !bg-transparent hover:!bg-white hover:!text-brandBlueDark;
 	}
 
-	&.arrow.round {
-		@apply border-white text-white !pr-2;
+	&.arrow {
+		@apply border-white !bg-transparent text-white !pr-2;
 
 		svg {
 			@apply overflow-hidden;
@@ -38,15 +33,12 @@
 		}
 	}
 
-	&.round:not(.arrow) {
+	&:not(.arrow) {
 		&:hover {
 			@apply border-opacity-100 border-brandBlueDark;
 		}
 	}
 
-	&.line-arrow {
-		@apply !p-0 !text-base md:!text-xl tracking-wider duration-300 hover:!gap-6;
-	}
 }
 
 .menu-link {

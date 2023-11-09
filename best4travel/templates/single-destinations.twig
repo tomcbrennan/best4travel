@@ -5,6 +5,56 @@
 {% endblock %}
 
 {% block content %}
+	{% if fields.deals %}
+		<section class="deals relative bg-brandBackground overflow-hidden">
+			<div class="container">
+				<div class="flex lg:items-end max-lg:flex-col gap-6 md:gap-12 lg:gap-[150px]">
+					<div data-animate-stagger-down class="deals-content flex flex-col gap-4 md:gap-6 lg:w-1/4 duration-[0.4s] ease-in-out">
+						<span class="supertitle">Our offers</span>
+						<h3>Current Deals</h3>
+						<p class="block-content">Check out our latest offers and get in touch with us to begin packing for your next adventure.</p>
+					</div>
+					<div class="w-full lg:w-1/2">
+						<div data-fade-left class="deals-slider">
+							<div class="swiper-wrapper cursor-grab !h-[450px] 2xl:!h-[550px]">
+								{% for item in fields.deals %}
+									<div class="swiper-slide !flex !items-end bg-cover bg-bottom duration-500 bg-[#b1b1b1]" style="background-image:url({{ item.thumbnail }})">
+										<div class="w-full px-6 py-7 block-content text-white">
+											<div class="flex flex-col gap-3">
+												<h6 class="large-heading">{{ item.title }}</h6>
+												<p>{{ item.price }}</p>
+											</div>
+											<button class="button arrow">
+												<span>View details</span>
+												<svg width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
+													<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
+												</svg>
+											</button>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% else %}
+		<section class="relative bg-brandBackground">
+			<div class="container">
+				<div class="block-content items-center text-center">
+					<h3 class="is-h4">We have no deals for
+						{{ post.title }}
+						available right now.</h3>
+					<h6>Please get in touch to discover what's on offer.</h6>
+					<a href="/contact-us" class="button">Contact Us</a>
+				</div>
+			</div>
+		</section>
+	{% endif %}
+
+
 	{% if fields.about.content %}
 		<section class="relative">
 			<div class="container">
@@ -20,9 +70,21 @@
 		</section>
 	{% endif %}
 
+	{% if fields.gallery %}
+		<section class="relative !pt-0">
+			<div class="container">
+				<div class="destination-gallery-grid grid grid-cols-2 gap-3 md:gap-5">
+					{% for item in fields.gallery %}
+						{% include "partial/image.twig" with { image: Image(item).src, alt: item.alt, attributes:'data-fade', class: "destination-gallery-image w-full aspect-16/9 md:aspect-[16/9] object-center object-cover" } %}
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	{% endif %}
+
 	<section class="relative !py-10">
 		<div class="container items-center">
-			<a href="/travel-types/{{ post.terms('travel-types')[0].slug }}" class="button round mx-auto">Back to
+			<a href="/travel-types/{{ post.terms('travel-types')[0].slug }}" class="button mx-auto">Back to
 				{{ post.terms('travel-types')[0].name }}
 				Travel</a>
 		</div>

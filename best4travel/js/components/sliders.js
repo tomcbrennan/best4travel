@@ -52,4 +52,41 @@ export default function initSliders() {
 			})
 		})
 	}
+
+	if (document.querySelector('.deals-slider')) {
+		const dealsSlider = new Swiper('.deals-slider', {
+			direction: 'horizontal',
+			loop: false,
+			speed: 500,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			breakpoints: {
+				640: {
+					slidesPerView: 1.75,
+				},
+				768: {
+					slidesPerView: 2.5,
+				},
+				1024: {
+					slidesPerView: 1.75,
+				},
+				1200: {
+					slidesPerView: 2,
+				},
+			},
+		})
+
+		// HIDE TEXT NEXT TO SLIDER ON DESKTOP ON SLIDE CHANGE
+		if (window.innerWidth > 1024) {
+			const dealsContent = document.querySelector('.deals-content')
+
+			dealsSlider.on('slideChange', function () {
+				if (dealsSlider.activeIndex === 0) {
+					dealsContent.classList.remove('hide')
+				} else {
+					dealsContent.classList.add('hide')
+				}
+			})
+		}
+	}
 }

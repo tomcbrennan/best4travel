@@ -34,7 +34,7 @@ function sd_allow_custom_classes_to_be_applied_to_headings($init_array) {
     $style_formats[] = array(
         'title' => "Button",
         'selector' => 'a',
-        'attributes' => array('class' => 'is-button round')
+        'attributes' => array('class' => 'is-button')
     );
 
     // Insert the array, JSON ENCODED, into 'style_formats'

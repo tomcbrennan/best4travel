@@ -16,7 +16,6 @@ html, body {
 	@apply scroll-smooth;
 }
 
-
 /* LENIS */
 
 html.lenis {
@@ -126,7 +125,7 @@ header.scrolling {
 		@apply !fill-brandBlueDark;
 	}
 
-	.button.arrow.round {
+	.button {
 		@apply border-brandBlueDark text-brandBlueDark;
 
 		svg {
@@ -188,6 +187,10 @@ header.scrolling {
 	}
 }
 
+.hide {
+	@apply opacity-0 -translate-x-3;
+}
+
 /* .local-getaways {
 	.tease-destination {
 		&:first-of-type {
@@ -247,6 +250,12 @@ header.scrolling {
 				@apply fill-white;
 			}
 		}
+	}
+}
+
+.destination-gallery-grid {
+	.destination-gallery-image:nth-child(3n) {
+		@apply col-span-2 md:aspect-[16/8];
 	}
 }
 

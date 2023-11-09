@@ -260,39 +260,70 @@ add_action('login_enqueue_scripts', 'custom_login_logo');
 
 // POST SUBSCRIBE FORM DATA TO GENESYS
 
-add_action('gform_after_submission_2', 'send_data_to_api', 10, 2);
+// Add a custom action to run after Gravity Forms submission
+add_action('gform_after_submission_2', 'run_curl_after_submission', 10, 2);
 
-function send_data_to_api($entry, $form) {
+function run_curl_after_submission($entry, $form) {
+    // Extract values from the Gravity Forms entry
+    $first_name = rgar($entry, 2);
+    $last_name = rgar($entry, 3);
+    $email = rgar($entry, 1);
 
-    $api_url = 'https://portal.genesysmarketing.com/api/subscribe';
+    // Build the cURL command
+    $curl_command = "curl -X POST \
+        -H 'Client: 0fe9a19cd2b611e8aee6736572766572' \
+        -H 'Key: dEad513c30rc1c11e7a856365' \
+        -d 'list=7e44adb89df94b7daf8c9488b4d0b236' \
+        -d 'first_name=$first_name' \
+        -d 'last_name=$last_name' \
+        -d 'email=$email' \
+        https://portal.genesysmarketing.com/api/subscribe";
 
-	$headers = array(
-        'Client' => '0fe9a19cd2b611e8aee6736572766572',
-        'Key' => 'dEad513c30rc1c11e7a856365',
-    );
+    // Execute the cURL command
+    exec($curl_command, $output, $return_var);
 
-    $body = array(
-        'list' => '7e44adb89df94b7daf8c9488b4d0b236',
-        'first_name' => rgar($entry, 2),
-        'last_name' => rgar($entry, 3),
-        'email' => rgar($entry, 1),
-    );
-
-    $response = wp_remote_request(
-        $api_url,
-        array(
-            'method' => 'POST',
-            'headers' => $headers,
-            'body' => $body,
-        )
-    );
-
-    if (is_wp_error($response)) {
-        error_log('API request failed: ' . $response->get_error_message());
+    // Log the result
+    if ($return_var !== 0) {
+        error_log('cURL command failed with error code: ' . $return_var);
     } else {
-        error_log('API response: ' . wp_remote_retrieve_body($response));
+        error_log('cURL command executed successfully. Output: ' . implode("\n", $output));
     }
 }
+
+
+// add_action('gform_after_submission_2', 'send_data_to_api', 10, 2);
+
+// function send_data_to_api($entry, $form) {
+
+//     $api_url = 'https://portal.genesysmarketing.com/api/subscribe';
+
+// 	$headers = array(
+//         'Client' => '0fe9a19cd2b611e8aee6736572766572',
+//         'Key' => 'dEad513c30rc1c11e7a856365',
+//     );
+
+//     $body = array(
+//         'list' => '7e44adb89df94b7daf8c9488b4d0b236',
+//         'first_name' => rgar($entry, 2),
+//         'last_name' => rgar($entry, 3),
+//         'email' => rgar($entry, 1),
+//     );
+
+//     $response = wp_remote_request(
+//         $api_url,
+//         array(
+//             'method' => 'POST',
+//             'headers' => $headers,
+//             'body' => $body,
+//         )
+//     );
+
+//     if (is_wp_error($response)) {
+//         error_log('API request failed: ' . $response->get_error_message());
+//     } else {
+//         error_log('API response: ' . wp_remote_retrieve_body($response));
+//     }
+// }
 
 
 new TomDotCom();

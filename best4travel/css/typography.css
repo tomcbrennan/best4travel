@@ -33,17 +33,17 @@ h6,
 
 h1,
 .is-h1 {
-	@apply text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[6rem] leading-none;
+	@apply text-[2.5rem] md:text-[3.5rem] xl:text-[4.5rem] 2xl:text-[5.5rem] leading-none;
 }
 
 h2,
 .is-h2 {
-	@apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl xl:leading-tight;
+	@apply text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl xl:leading-tight;
 }
 
 h3,
 .is-h3 {
-	@apply leading-tight text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl;
+	@apply leading-tight text-3xl xl:text-4xl 2xl:text-5xl;
 }
 
 h4,
@@ -58,7 +58,7 @@ h5,
 
 h6,
 .is-h6 {
-	@apply leading-tight font-normal text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem];
+	@apply leading-tight font-normal text-[1.5rem] 2xl:text-[1.75rem];
 }
 
 .supertitle,
