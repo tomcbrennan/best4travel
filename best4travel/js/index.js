@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleDestinationContent()
 	}
 
-	if (document.querySelector('.scrolling-text')) {
-		scrollingText()
+	if (document.querySelector('.toggle-deal-modal')) {
+		toggleDealModal()
 	}
 
 	if (document.querySelector('.accordion')) {
@@ -98,6 +98,24 @@ const toggleMenu = () => {
 		if (e.key === 'Escape' && document.body.classList.contains('menuIsOpen')) {
 			closeMenu()
 		}
+	})
+}
+
+const toggleDealModal = () => {
+	const toggleModal = document.querySelectorAll('.toggle-deal-modal')
+	const dealModal = document.querySelector('.deal-modal')
+
+	toggleModal.forEach((toggle) => {
+		toggle.addEventListener('click', () => {
+			dealModal.classList.toggle('active')
+			document.querySelector('.ht-ctc').classList.toggle('hidden')
+
+			if (dealModal.classList.contains('active')) {
+				lenis.stop()
+			} else {
+				lenis.start()
+			}
+		})
 	})
 }
 

@@ -259,6 +259,10 @@ header.scrolling {
 	}
 }
 
+.deal-modal.active {
+	@apply !opacity-100 !pointer-events-auto !translate-y-0 !z-[100000000];
+}
+
 /* ANIMATION STUFF */
 
 .active-icon {

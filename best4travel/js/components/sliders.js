@@ -58,10 +58,10 @@ export default function initSliders() {
 			direction: 'horizontal',
 			loop: false,
 			speed: 500,
-			slidesPerView: 1,
+			slidesPerView: 1.1,
 			spaceBetween: 20,
 			breakpoints: {
-				640: {
+				540: {
 					slidesPerView: 1.75,
 				},
 				768: {

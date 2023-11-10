@@ -9,10 +9,14 @@
 		<section class="deals relative bg-brandBackground overflow-hidden">
 			<div class="container">
 				<div class="flex lg:items-end max-lg:flex-col gap-6 md:gap-12 lg:gap-[150px]">
-					<div data-animate-stagger-down class="deals-content flex flex-col gap-4 md:gap-6 lg:w-1/4 duration-[0.4s] ease-in-out">
+					<div class="deals-content lg:mb-6 flex flex-col gap-4 md:gap-6 max-lg:max-w-lg lg:w-1/4 duration-[0.4s] ease-in-out">
 						<span class="supertitle">Our offers</span>
 						<h3>Current Deals</h3>
 						<p class="block-content">Check out our latest offers and get in touch with us to begin packing for your next adventure.</p>
+						<div class="max-lg:hidden w-fit relative">
+							<p class="italic opacity-50 font-heading uppercase">Drag to view</p>
+							<div data-animate-reveal-right class="absolute top-1/2 -translate-y-1/2 left-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
+						</div>
 					</div>
 					<div class="w-full lg:w-1/2">
 						<div data-fade-left class="deals-slider">
@@ -24,7 +28,7 @@
 												<h6 class="large-heading">{{ item.title }}</h6>
 												<p>{{ item.price }}</p>
 											</div>
-											<button class="button arrow">
+											<button class="toggle-deal-modal button arrow">
 												<span>View details</span>
 												<svg width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
@@ -89,4 +93,19 @@
 				Travel</a>
 		</div>
 	</section>
+
+	<div class="deal-modal bg-black bg-opacity-75 fixed top-0 left-0 w-full h-full opacity-0 translate-y-4 pointer-events-none duration-500 -z-50">
+		<div class="bg-white absolute mt-20 lg:mt-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:aspect-16/9 w-[95%] max-lg:h-full md:w-4/5">
+			<div class="toggle-deal-modal absolute top-2 right-4 p-4 flex items-center gap-2 cursor-pointer">
+				{% include "icons/cross.twig" with { class: "stroke-white" } %}
+				<span class="text-black">Close</span>
+			</div>
+			<div class="py-20 container">
+				<div class="block-content items-center">
+					<h3>Deal name</h3>
+					<p class="text-lg">from $2000 per person</p>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
