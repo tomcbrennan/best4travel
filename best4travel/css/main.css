@@ -8,12 +8,18 @@
 @import './hamburger.css';
 @import 'swiper/swiper-bundle.css';
 
-#wpadminbar {
-	@apply z-[10000000];
+@layer components {
+	.container {
+		@apply max-w-[1440px] 2xl:max-w-[1600px] w-full mx-auto px-6 md:px-10;
+	}
+
+	.container-small {
+		@apply max-w-[1000px] 2xl:max-w-[1200px] w-full mx-auto px-6 md:px-10;
+	}
 }
 
-html, body {
-	@apply scroll-smooth;
+#wpadminbar {
+	@apply z-[10000000];
 }
 
 /* LENIS */
@@ -36,16 +42,6 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
 	pointer-events: none;
-}
-
-@layer components {
-	.container {
-		@apply max-w-[1440px] 2xl:max-w-[1600px] w-full mx-auto px-6 md:px-10;
-	}
-
-	.container-small {
-		@apply max-w-[1000px] 2xl:max-w-[1200px] w-full mx-auto px-6 md:px-10;
-	}
 }
 
 [data-menu] {
