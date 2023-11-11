@@ -160,7 +160,7 @@
 			{% for item in fields.deals %}
 				<div data-lenis-prevent data-deal-content="{{ loop.index }}" class="deal-content block-content items-center !hidden mx-auto h-full overflow-y-scroll">
 					{% if item.background %}
-						{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "w-full aspect-[5/1] object-center object-cover pointer-events-none" } %}
+						{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "w-full aspect-[4/1] object-center object-cover pointer-events-none" } %}
 					{% endif %}
 					<div class="block-content items-center text-center max-w-[900px]">
 						<h3>{{ item.title }}</h3>
