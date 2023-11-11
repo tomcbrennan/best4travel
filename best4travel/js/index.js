@@ -102,21 +102,38 @@ const toggleMenu = () => {
 }
 
 const toggleDealModal = () => {
-	const toggleModal = document.querySelectorAll('.toggle-deal-modal')
 	const dealModal = document.querySelector('.deal-modal')
+	const toggleModalButton = document.querySelectorAll('.toggle-deal-modal')
 
-	toggleModal.forEach((toggle) => {
-		toggle.addEventListener('click', () => {
-			dealModal.classList.toggle('active')
-			document.querySelector('.ht-ctc').classList.toggle('hidden')
-
-			if (dealModal.classList.contains('active')) {
-				lenis.stop()
-			} else {
-				lenis.start()
-			}
+	toggleModalButton.forEach((toggle) => {
+		toggle.addEventListener('click', (e) => {
+			toggleDeal(e)
 		})
 	})
+
+	const toggleDeal = (e) => {
+		dealModal.classList.toggle('active')
+
+		const selectedDeal = e.target.getAttribute('data-deal-button')
+		const allDealsContent = document.querySelectorAll('.deal-content')
+		const chatbot = document.querySelector('.ht-ctc')
+
+		allDealsContent.forEach((dealContent) => {
+			if (dealContent.getAttribute('data-deal-content') === selectedDeal) {
+				dealContent.classList.toggle('!hidden')
+			} else {
+				dealContent.classList.add('!hidden')
+			}
+		})
+
+		chatbot.classList.toggle('hidden')
+
+		if (dealModal.classList.contains('active')) {
+			lenis.stop()
+		} else {
+			lenis.start()
+		}
+	}
 }
 
 const toggleDestinations = () => {

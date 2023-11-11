@@ -263,6 +263,11 @@ header.scrolling {
 	@apply !opacity-100 !pointer-events-auto !translate-y-0 !z-[100000000];
 }
 
+.deals:before {
+	content: '';
+	@apply bg-brandBackground h-[80%] w-full absolute top-0 left-0;
+}
+
 /* ANIMATION STUFF */
 
 .active-icon {

@@ -6,9 +6,9 @@
 
 {% block content %}
 	{% if fields.deals %}
-		<section class="deals relative bg-brandBackground overflow-hidden">
+		<section class="deals relative bg-white overflow-hidden">
 			<div class="container">
-				<div class="flex lg:items-end max-lg:flex-col gap-6 md:gap-12 lg:gap-[150px]">
+				<div class="relative flex lg:items-center max-lg:flex-col gap-6 md:gap-12 lg:gap-[150px]">
 					<div class="deals-content lg:mb-6 flex flex-col gap-4 md:gap-6 max-lg:max-w-lg lg:w-1/4 duration-[0.4s] ease-in-out">
 						<span class="supertitle">Our offers</span>
 						<h3>Current Deals</h3>
@@ -28,9 +28,9 @@
 												<h6 class="large-heading">{{ item.title }}</h6>
 												<p>{{ item.price }}</p>
 											</div>
-											<button class="toggle-deal-modal button arrow">
-												<span>View details</span>
-												<svg width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<button data-deal-button="{{ loop.index }}" class="toggle-deal-modal button arrow">
+												<span class="pointer-events-none">View details</span>
+												<svg class="pointer-events-none" width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
 													<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
 												</svg>
@@ -79,7 +79,7 @@
 			<div class="container">
 				<div class="destination-gallery-grid grid grid-cols-2 gap-3 md:gap-5">
 					{% for item in fields.gallery %}
-						{% include "partial/image.twig" with { image: Image(item).src, alt: item.alt, attributes:'data-fade', class: "destination-gallery-image w-full aspect-16/9 md:aspect-[16/9] object-center object-cover" } %}
+						{% include "partial/image.twig" with { image: Image(item).src, alt: item.alt, attributes:'data-fade', class: "destination-gallery-image w-full aspect-16/9 md:aspect-[16/9] object-center object-cover pointer-events-none" } %}
 					{% endfor %}
 				</div>
 			</div>
@@ -94,17 +94,21 @@
 		</div>
 	</section>
 
-	<div class="deal-modal bg-black bg-opacity-75 fixed top-0 left-0 w-full h-full opacity-0 translate-y-4 pointer-events-none duration-500 -z-50">
-		<div class="bg-white absolute mt-20 lg:mt-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:aspect-16/9 w-[95%] max-lg:h-full md:w-4/5">
+	<div class="deal-modal bg-black bg-opacity-75 fixed top-0 left-0 w-full h-full opacity-0 translate-y-10 pointer-events-none duration-500 -z-50">
+		<div class="deal-modal-inner bg-white absolute bottom-0 left-1/2 -translate-x-1/2 lg:aspect-16/9 w-[95%] h-[85%] md:w-4/5">
 			<div class="toggle-deal-modal absolute top-2 right-4 p-4 flex items-center gap-2 cursor-pointer">
 				{% include "icons/cross.twig" with { class: "stroke-white" } %}
 				<span class="text-black">Close</span>
 			</div>
-			<div class="py-20 container">
-				<div class="block-content items-center">
-					<h3>Deal name</h3>
-					<p class="text-lg">from $2000 per person</p>
-				</div>
+			<div class="py-20 container overflow-y-scroll">
+				{% for item in fields.deals %}
+					<div data-deal-content="{{ loop.index }}" class="deal-content block-content items-center text-center !hidden mx-auto max-w-[900px]">
+						<h3>{{ item.title }}</h3>
+						<p class="text-lg font-medium">{{ item.price }}</p>
+						<p>{{ item.details }}</p>
+						<a href="/contact-us" class="button">Book now</a>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
