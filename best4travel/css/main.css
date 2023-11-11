@@ -201,6 +201,12 @@ header.scrolling {
 	}
 } */
 
+.travel-types-grid {
+	a:last-child {
+		@apply max-sm:col-span-2 max-sm:w-1/2 max-sm:mx-auto;
+	}
+}
+
 .tax-travel-types {
 	.tease-destination {
 		&:nth-child(2) {

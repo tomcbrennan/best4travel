@@ -1,7 +1,7 @@
 <section class="bg-brandBackground relative">
 	<div class="container flex flex-col gap-10 items-center">
         <h3 class="is-h5 large-heading">Select your travel type:</h3>
-		<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-10 w-full">
+		<div class="travel-types-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-10 w-full">
 			{% for item in travel_types %}
 				{% if item.slug != 'uncategorized' %}
 					{% include "tease-travel-type.twig" %}
