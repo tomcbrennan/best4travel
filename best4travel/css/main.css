@@ -48,6 +48,10 @@ html.lenis {
 	@apply fixed top-0 left-0 w-screen h-0 opacity-0 pointer-events-none;
 }
 
+.home .destinations-slider .tease-destination h3 {
+	@apply max-md:text-2xl;
+}
+
 .destinations-toggle > a {
 	@apply cursor-pointer;
 }
