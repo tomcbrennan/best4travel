@@ -127,12 +127,6 @@ const toggleDealModal = () => {
 		})
 
 		chatbot.classList.toggle('hidden')
-
-		if (dealModal.classList.contains('active')) {
-			lenis.stop()
-		} else {
-			lenis.start()
-		}
 	}
 }
 
