@@ -2,11 +2,11 @@
 	<div data-curtain class="absolute bottom-0 left-0 z-[1000000] w-screen h-0 bg-white pointer-events-none"></div>
 	{% include "partial/image.twig" with { image: Image(fields.banner.background ?: post.thumbnail ?: null).src, alt: fields.banner.background.alt ?: post.thumbnail.alt ?: null , class: "image-parallax h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto object-center object-cover" } %}
 	<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
-	<svg data-fade width="275" height="538" viewbox="0 0 275 538" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden absolute bottom-0 left-0">
+	<svg data-fade width="275" height="538" viewbox="0 0 275 538" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden absolute bottom-0 left-0 pointer-events-none">
 		<animate attributename="stroke-dashoffset" values="100;0" dur="3s" calcmode="linear" repeatcount="indefinite"/>
 		<path d="M109.511 545.403L134.911 509.653L101.981 467.859L114.647 422.897L169.106 414.032L224.833 407.066L264 376L273.5 326L203.5 266L112.5 229.5L101.981 176L153 141L134.911 93.5L61.9999 72.5L-7.00011 1.14944" stroke="white" stroke-opacity="0.5" stroke-dasharray="10 10"/>
 	</svg>
-	<svg data-fade width="315" height="621" viewbox="0 0 315 621" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden absolute bottom-0 right-0">
+	<svg data-fade width="315" height="621" viewbox="0 0 315 621" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden absolute bottom-0 right-0 pointer-events-none">
 		<animate attributename="stroke-dashoffset" values="100;0" dur="3s" calcmode="linear" repeatcount="indefinite"/>
 		<path d="M328.938 0.214436L300.511 84.1494L228.32 122.778L201.09 198.135L218.821 276.026L263.782 332.385L254.917 388.745L213.122 448.904L163 459L123.833 490.066L68.1066 497.032L13.6467 505.897L0.981526 550.859L33.9108 592.653L8.51135 628.403" stroke="white" stroke-opacity="0.5" stroke-dasharray="10 10"/>
 	</svg>

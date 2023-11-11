@@ -149,3 +149,27 @@
 		</div>
 	</div>
 </footer>
+
+<div class="deal-modal bg-black bg-opacity-75 fixed top-0 left-0 flex items-center justify-center w-screen h-screen opacity-0 pointer-events-none duration-500 -z-50">
+	<div class="deal-modal-inner relative bg-white w-[95%] mt-20 h-full md:w-4/5 translate-y-10 duration-500">
+		<div class="toggle-deal-modal absolute z-50 top-4 right-4 p-4 flex items-center gap-2 cursor-pointer">
+			{% include "icons/cross.twig" with { class: "relative stroke-white" } %}
+			<span class="text-black">Close</span>
+		</div>
+		<div class="relative py-20 container">
+			{% for item in fields.deals %}
+				<div data-deal-content="{{ loop.index }}" class="deal-content block-content items-center !hidden mx-auto">
+					{% if item.background %}
+						{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "w-full aspect-[5/1] object-center object-cover pointer-events-none" } %}
+					{% endif %}
+					<div class="block-content items-center text-center max-w-[900px]">
+						<h3>{{ item.title }}</h3>
+						<p class="text-lg font-medium">{{ item.price }}</p>
+						<p>{{ item.details }}</p>
+						<a href="/contact-us" class="button">Book now</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

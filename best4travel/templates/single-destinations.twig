@@ -22,19 +22,34 @@
 						<div data-fade-left class="deals-slider">
 							<div class="swiper-wrapper cursor-grab !h-[450px] 2xl:!h-[550px]">
 								{% for item in fields.deals %}
-									<div class="swiper-slide !flex !items-end bg-cover bg-bottom duration-500 bg-[#b1b1b1]" style="background-image:url({{ item.thumbnail }})">
-										<div class="w-full px-6 py-7 block-content text-white">
+									<div class="swiper-slide relative overflow-hidden !flex !items-end bg-cover bg-bottom duration-500 bg-[#b1b1b1]">
+										{% if item.background %}
+											<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent z-10"></div>
+											{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "absolute top-0 left-0 w-full h-full object-center object-cover" } %}
+										{% endif %}
+										<div class="relative z-20 w-full px-6 py-7 block-content text-white">
 											<div class="flex flex-col gap-3">
 												<h6 class="large-heading">{{ item.title }}</h6>
 												<p>{{ item.price }}</p>
 											</div>
-											<button data-deal-button="{{ loop.index }}" class="toggle-deal-modal button arrow">
-												<span class="pointer-events-none">View details</span>
-												<svg class="pointer-events-none" width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
-													<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
-												</svg>
-											</button>
+											{% if item.link_deal_to_external_website == true %}
+												<a href="{{ item.website_url }}" class="button arrow" target="_blank">
+													<span class="pointer-events-none">Visit website</span>
+													<svg class="pointer-events-none" width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
+														<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
+													</svg>
+													</a>
+											{% else %}
+
+												<button data-deal-button="{{ loop.index }}" class="toggle-deal-modal button arrow">
+													<span class="pointer-events-none">View details</span>
+													<svg class="pointer-events-none" width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
+														<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
+													</svg>
+												</button>
+											{% endif %}
 										</div>
 									</div>
 								{% endfor %}
@@ -93,23 +108,4 @@
 				Travel</a>
 		</div>
 	</section>
-
-	<div class="deal-modal bg-black bg-opacity-75 fixed top-0 left-0 w-full h-full opacity-0 translate-y-10 pointer-events-none duration-500 -z-50">
-		<div class="deal-modal-inner bg-white absolute bottom-0 left-1/2 -translate-x-1/2 lg:aspect-16/9 w-[95%] h-[85%] md:w-4/5">
-			<div class="toggle-deal-modal absolute top-2 right-4 p-4 flex items-center gap-2 cursor-pointer">
-				{% include "icons/cross.twig" with { class: "stroke-white" } %}
-				<span class="text-black">Close</span>
-			</div>
-			<div class="py-20 container overflow-y-scroll">
-				{% for item in fields.deals %}
-					<div data-deal-content="{{ loop.index }}" class="deal-content block-content items-center text-center !hidden mx-auto max-w-[900px]">
-						<h3>{{ item.title }}</h3>
-						<p class="text-lg font-medium">{{ item.price }}</p>
-						<p>{{ item.details }}</p>
-						<a href="/contact-us" class="button">Book now</a>
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
 {% endblock %}

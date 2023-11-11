@@ -23,7 +23,11 @@
 	</ul>
 	{# Mobile #}
 	{% include "icons/hamburger.twig" %}
-	<ul data-menu class="mt-[63px] bg-white flex flex-col gap-6 p-12 z-30 duration-700 ease lg:hidden">
+	<ul data-menu class="mt-[63px] relative bg-white flex flex-col gap-6 p-12 z-30 duration-700 ease lg:hidden">
+		<svg data-fade width="315" height="621" viewbox="0 0 315 621" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute -bottom-20 -right-10 rotate-[20deg] pointer-events-none">
+			<animate attributename="stroke-dashoffset" values="100;0" dur="3s" calcmode="linear" repeatcount="indefinite"/>
+			<path d="M328.938 0.214436L300.511 84.1494L228.32 122.778L201.09 198.135L218.821 276.026L263.782 332.385L254.917 388.745L213.122 448.904L163 459L123.833 490.066L68.1066 497.032L13.6467 505.897L0.981526 550.859L33.9108 592.653L8.51135 628.403" stroke="#000000" stroke-opacity="0.75" stroke-dasharray="10 10"/>
+		</svg>
 		<div data-animate-stagger-menu class="flex-grow flex flex-col">
 			{% for item in mobile_menu.get_items %}
 				<div data-mobile-menu-item>
@@ -47,6 +51,25 @@
 					{% endif %}
 				</div>
 			{% endfor %}
+			<div class="flex items-center gap-3 mt-6">
+				{% if options.social_media.facebook %}
+					<a href="{{ options.social_media.facebook }}" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 24 24" fill="#1773AE"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
+					</a>
+				{% endif %}
+				{% if options.social_media.instagram %}
+					<a href="{{ options.social_media.instagram }}" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 24 24" fill="#1773AE"><path d="M17.833 6.595v1.476c0 .237-.193.429-.435.429h-1.465c-.238 0-.434-.192-.434-.429v-1.476c0-.237.195-.428.434-.428h1.465c.242 0 .435.191.435.428zm-5.833 7.498c1.121 0 2.028-.908 2.028-2.029s-.907-2.029-2.028-2.029-2.028.908-2.028 2.029.907 2.029 2.028 2.029zm12-2.093c0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12 12 5.373 12 12zm-5-1.75h-3.953c.316.533.508 1.149.508 1.813 0 1.968-1.596 3.564-3.563 3.564-1.969 0-3.564-1.596-3.564-3.564 0-.665.191-1.281.509-1.813h-3.937v5.996c0 1.521 1.27 2.754 2.791 2.754h8.454c1.521 0 2.755-1.233 2.755-2.754v-5.996zm-7.009 4.559c1.515 0 2.745-1.232 2.745-2.746 0-.822-.364-1.56-.937-2.063-.202-.177-.429-.324-.677-.437-.346-.157-.729-.245-1.132-.245-.405 0-.788.088-1.133.245-.246.112-.474.26-.675.437-.574.503-.938 1.242-.938 2.063.001 1.514 1.234 2.746 2.747 2.746zm7.009-7.055c0-1.521-1.234-2.754-2.755-2.754h-7.162v2.917h-.583v-2.917h-.583v2.917h-.584v-2.872c-.202.033-.397.083-.583.157v2.715h-.583v-2.393c-.702.5-1.167 1.31-1.167 2.23v1.913h4.359c.681-.748 1.633-1.167 2.632-1.167 1.004 0 1.954.422 2.631 1.167h4.378v-1.913z"/></svg>
+					</a>
+				{% endif %}
+				{% if options.social_media.linkedin %}
+					<a href="{{ options.social_media.linkedin }}" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 24 24" fill="#1773AE">
+							<path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+						</svg>
+					</a>
+				{% endif %}
+			</div>
 		</div>
 	</ul>
 {% endif %}
