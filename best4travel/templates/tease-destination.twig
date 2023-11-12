@@ -1,7 +1,7 @@
 <a href="{{ item.link }}" class="tease-destination group overflow-hidden bg-brandBlueLight relative aspect-5/7 w-full duration-500 ease-in-out {{ class }}">
 	<div class="h-full w-full absolute -top-14 sm:top-0 left-0">
 		{% if item.thumbnail %}
-			{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnail.alt, class: "image-parallax max-md:h-[150%] h-[120%] w-full h-full object-center object-cover" } %}
+			{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnail.alt, class: "image-parallax max-md:h-[150%] h-[120%] w-full object-center object-cover" } %}
 		{% endif %}
 	</div>
 	<div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent"></div>

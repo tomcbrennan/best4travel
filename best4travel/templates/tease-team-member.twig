@@ -1,11 +1,11 @@
-<div class="tease-team-member block-content">
-	<div class="relative bg-brandBackground aspect-1/1 ">
+<div class="tease-team-member flex flex-col gap-4">
+	<div class="relative bg-brandBackground aspect-1/1">
 		{% if item.thumbnail %}
 			{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnaik.alt, class: "absolute top-0 left-0 w-full h-full object-center object-cover" } %}
 		{% endif %}
 	</div>
 	<div class="flex flex-col gap-2">
-		<h5>{{ item.title }}</h5>
+		<h6 class="max-sm:!text-[1.25rem]">{{ item.title }}</h6>
 		{% if item.role %}
 			<p>{{ item.role }}</p>
 		{% endif %}

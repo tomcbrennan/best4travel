@@ -62,7 +62,7 @@ export default function animateOnScroll() {
 		gsap.fromTo(
 			image,
 			{
-				y: -75,
+				y: -100,
 			},
 			{
 				scrollTrigger: {
@@ -298,7 +298,7 @@ export default function animateOnScroll() {
 			},
 			autoAlpha: 0,
 			delay: 0.2,
-			duration: 2,
+			duration: 1,
 		}
 
 		gsap.from(element, settings)

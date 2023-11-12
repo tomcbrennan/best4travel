@@ -1,0 +1,34 @@
+<section class="footer-testimonials !py-12 lg:!py-20 bg-white overflow-hidden">
+	<div class="container-small block-content">
+		<div class="mx-auto relative">
+			<h5 class="large-heading font-semibold">From our loyal clients</h5>
+			<div data-animate-reveal-right class="absolute top-1/2 -translate-y-1/2 left-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
+			<div data-animate-reveal-left class="absolute top-1/2 -translate-y-1/2 right-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
+		</div>
+		<div class="testimonials-slider">
+			<div class="swiper-wrapper">
+				{% for item in options.testimonials %}
+					<div class="swiper-slide text-center font-light !flex flex-col gap-3">
+						<p>{{ item.content }}</p>
+						<p class="font-heading text-xl">{{ item.name }}</p>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="swiper-pagination !mt-6 !relative"></div>
+			<div class="relative w-20 mx-auto mt-6">
+				<div class="swiper-button-prev after:hidden">
+					<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
+						<path d="M12 25L17 27.8867L17 22.1132L12 25ZM37 24.5L16.5 24.5L16.5 25.5L37 25.5L37 24.5Z" fill="#1C63A0"/>
+					</svg>
+				</div>
+				<div class="swiper-button-next after:hidden">
+					<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
+						<path d="M37 25L32 22.1133L32 27.8868L37 25ZM12 25.5L32.5 25.5L32.5 24.5L12 24.5L12 25.5Z" fill="#1C63A0"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

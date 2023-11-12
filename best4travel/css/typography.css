@@ -53,7 +53,7 @@ h4,
 
 h5,
 .is-h5 {
-	@apply leading-tight font-normal text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2rem];
+	@apply leading-tight font-normal text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2rem];
 }
 
 h6,

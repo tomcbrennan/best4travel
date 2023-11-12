@@ -1,61 +1,11 @@
-<section class="footer-testimonials !py-12 lg:!py-20 bg-white overflow-hidden">
-	<div class="container-small block-content">
-		<div class="mx-auto relative">
-			<h4 class="large-heading font-semibold">From our loyal clients</h4>
-			<div data-animate-reveal-right class="absolute top-1/2 -translate-y-1/2 left-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
-			<div data-animate-reveal-left class="absolute top-1/2 -translate-y-1/2 right-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-40"></div>
-		</div>
-		<div class="testimonials-slider">
-			<div class="swiper-wrapper">
-				{% for item in options.testimonials %}
-					<div class="swiper-slide text-center font-light !flex flex-col gap-3">
-						<p>{{ item.content }}</p>
-						<p class="font-heading text-xl">{{ item.name }}</p>
-					</div>
-				{% endfor %}
-			</div>
-			<div class="swiper-pagination !mt-6 !relative"></div>
-			<div class="relative w-20 mx-auto mt-6">
-				<div class="swiper-button-prev after:hidden">
-					<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
-						<path d="M12 25L17 27.8867L17 22.1132L12 25ZM37 24.5L16.5 24.5L16.5 25.5L37 25.5L37 24.5Z" fill="#1C63A0"/>
-					</svg>
-				</div>
-				<div class="swiper-button-next after:hidden">
-					<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
-						<path d="M37 25L32 22.1133L32 27.8868L37 25ZM12 25.5L32.5 25.5L32.5 24.5L12 24.5L12 25.5Z" fill="#1C63A0"/>
-					</svg>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+{% include "footer/testimonials.twig" %}
 
-<section class="footer-contact small-padding bg-brandBackground">
-	<div class="container-small grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-2 max-sm:justify-center max-sm:gap-6 lg:gap-20 items-center">
-		<div class="max-sm:col-span-1 max-lg:col-span-2 flex flex-col max-sm:text-center max-sm:items-center gap-3">
-			<h6 class="large-heading font-semibold">Get in touch with our team</h6>
-			<p class="font-light">We are always prepared to help with any travel enquiries.</p>
-		</div>
-		<div class="max-sm:col-span-1 max-lg:col-span-3 flex tems-center justify-center sm:justify-end gap-6">
-			<a href="tel:{{ options.company_details.phone }}" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-36 h-36 md:h-44 md:w-44 text-center p-6">
-				{% include "icons/phone.twig" with { class: "!w-8" } %}
-				<span class="max-lg:text-sm font-light">Call us during open hours</span>
-			</a>
-			<a href="/contact-us" class="hover-spin flex flex-col items-center justify-center gap-3 rounded-full aspect-1/1 w-36 h-36 md:h-44 md:w-44 text-center p-6">
-				{% include "icons/mail.twig" with { class: "!w-8" } %}
-				<span class="max-lg:text-sm font-light">Send us an enquiry</span>
-			</a>
-		</div>
-	</div>
-</section>
+{% include "footer/contact.twig" %}
 
 <footer class="bg-brandBlueDark text-white">
 	<div class="container-small py-12 block-content items-center">
 		<span class="max-md:text-xs mb-2 uppercase font-normal">Proudly West Australian</span>
-		<div data-animate-stagger-up class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 place-items-center w-full">
+		<div class="grid grid-cols-2 md:grid-cols-4 items-center gap-6 place-items-center w-full">
 			{% for item in options.accreditations %}
 				<div><img src="{{ item.accreditation.url }}" alt="{{ item.accreditation.alt }}" class="h-14 object-contain"></div>
 			{% endfor %}
@@ -151,27 +101,4 @@
 	</div>
 </footer>
 
-<div data-lenis-prevent class="deal-modal fixed top-0 left-0 flex items-center justify-center w-screen h-full opacity-0 pointer-events-none duration-500 -z-50 overflow-y-scroll">
-	<div class="toggle-deal-modal fixed top-0 left-0 w-screen h-full bg-opacity-75 bg-black"></div>
-	<div class="deal-modal-inner relative w-[95%] mt-10 md:mt-20 h-full md:w-4/5 translate-y-10 duration-500">
-		<div class="toggle-deal-modal absolute z-50 top-4 right-4 p-4 flex items-center gap-2 cursor-pointer">
-			{% include "icons/cross.twig" with { class: "relative stroke-white" } %}
-			<span class="text-black">Close</span>
-		</div>
-		<div class="relative bg-white h-full">
-			{% for item in fields.deals %}
-				<div data-deal-content="{{ loop.index }}" class="deal-content block-content items-center !hidden mx-auto py-20 container bg-white">
-					{% if item.background %}
-						{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "w-full aspect-[4/1] object-center object-cover pointer-events-none" } %}
-					{% endif %}
-					<div class="block-content items-center text-center max-w-[900px]">
-						<h3>{{ item.title }}</h3>
-						<p class="text-lg font-medium">{{ item.price }}</p>
-						<p>{{ item.details }}</p>
-						<a href="/contact-us" class="button">Book now</a>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
-	</div>
-</div>
+{% include "footer/deal-modal.twig" %}
