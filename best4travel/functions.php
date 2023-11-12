@@ -295,29 +295,10 @@ function run_curl_after_submission($entry, $form) {
     if ($result === false) {
         $error = curl_error($curl);
         error_log('cURL request failed with error: ' . $error);
+		return;
     } else {
-        // Assuming the response is in JSON format
-        $response = json_decode($result, true);
-
-        if ($response && isset($response['success']) && $response['success'] === true) {
-			// For success
-			$confirmation_message = '<div class="block-content items-center">
-										<h4>Thanks for subscribing to our Newsletter!</h4>
-										<p>Keep an eye on your inbox for Travel updates.</p>
-									</div>';
-		} else {
-			// For failure or unsuccessful response
-			$confirmation_message = '<div class="block-content items-center">
-										<h4>Something went wrong!</h4>
-										<p>Please refresh the page and try again, or contact us directly.</p>
-									</div>';
-		}
-
-		// Set the confirmation message
-		add_filter('gform_confirmation', 'custom_confirmation_message', 10, 4);
-		function custom_confirmation_message($confirmation, $form, $entry, $ajax) {
-			return $confirmation_message;
-		}
+		error_log('cURL request successful - New Subscriber created');
+		return;
     }
 
     // Close cURL session
