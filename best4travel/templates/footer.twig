@@ -150,15 +150,15 @@
 	</div>
 </footer>
 
-<div class="deal-modal bg-black bg-opacity-75 fixed top-0 left-0 flex items-center justify-center w-screen h-full opacity-0 pointer-events-none duration-500 -z-50">
-	<div class="deal-modal-inner relative bg-white w-[95%] mt-10 md:mt-20 h-full md:w-4/5 translate-y-10 duration-500">
+<div data-lenis-prevent class="deal-modal bg-black bg-opacity-75 fixed top-0 left-0 flex items-center justify-center w-screen h-full opacity-0 pointer-events-none duration-500 -z-50 overflow-y-scroll pb">
+	<div class="deal-modal-inner relative w-[95%] mt-10 md:mt-20 h-full md:w-4/5 translate-y-10 duration-500">
 		<div class="toggle-deal-modal absolute z-50 top-4 right-4 p-4 flex items-center gap-2 cursor-pointer">
 			{% include "icons/cross.twig" with { class: "relative stroke-white" } %}
 			<span class="text-black">Close</span>
 		</div>
-		<div class="relative pt-20 pb-20 md:pb-32 container h-full">
+		<div class="relative py-20 container bg-white">
 			{% for item in fields.deals %}
-				<div data-lenis-prevent data-deal-content="{{ loop.index }}" class="deal-content block-content items-center !hidden mx-auto h-full overflow-y-scroll">
+				<div data-deal-content="{{ loop.index }}" class="deal-content block-content items-center !hidden mx-auto">
 					{% if item.background %}
 						{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "w-full aspect-[4/1] object-center object-cover pointer-events-none" } %}
 					{% endif %}

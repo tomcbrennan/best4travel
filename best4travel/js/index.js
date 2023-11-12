@@ -116,7 +116,6 @@ const toggleDealModal = () => {
 
 		const selectedDeal = e.target.getAttribute('data-deal-button')
 		const allDealsContent = document.querySelectorAll('.deal-content')
-		const chatbot = document.querySelector('.ht-ctc')
 
 		allDealsContent.forEach((dealContent) => {
 			if (dealContent.getAttribute('data-deal-content') === selectedDeal) {
@@ -125,8 +124,6 @@ const toggleDealModal = () => {
 				dealContent.classList.add('!hidden')
 			}
 		})
-
-		chatbot.classList.toggle('hidden')
 	}
 }
 

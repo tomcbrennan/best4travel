@@ -12,7 +12,6 @@ export default function animateOnScroll() {
 	 */
 	const header = document.querySelector('header')
 	const destinationsMenu = document.querySelector('.destinations-menu')
-	const chatbot = document.querySelector('#ht-ctc-chat')
 
 	window.addEventListener('scroll', () => {
 		const scrollPosition = window.scrollY
@@ -27,12 +26,10 @@ export default function animateOnScroll() {
 
 		if (documentHeight - scrollPosition - windowHeight < 100) {
 			// HIDE CHATBOT
-			chatbot.style.pointerEvents = 'none'
-			chatbot.style.opacity = '0'
+			document.body.classList.add('hide-chatbot')
 		} else {
 			// SHOW CHATBOT
-			chatbot.style.pointerEvents = 'auto'
-			chatbot.style.opacity = '1'
+			document.body.classList.remove('hide-chatbot')
 		}
 	})
 
