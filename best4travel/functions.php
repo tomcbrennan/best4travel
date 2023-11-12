@@ -269,26 +269,41 @@ function run_curl_after_submission($entry, $form) {
     $last_name = rgar($entry, 3);
     $email = rgar($entry, 1);
 
-    // Build the cURL command
-    $curl_command = "curl -X POST \
-        -H 'Client: 0fe9a19cd2b611e8aee6736572766572' \
-        -H 'Key: dEad513c30rc1c11e7a856365' \
-        -d 'list=7e44adb89df94b7daf8c9488b4d0b236' \
-        -d 'first_name=$first_name' \
-        -d 'last_name=$last_name' \
-        -d 'email=$email' \
-        https://portal.genesysmarketing.com/api/subscribe";
+    // Initialize cURL session
+    $curl = curl_init();
 
-    // Execute the cURL command
-    exec($curl_command, $output, $return_var);
+    // Set cURL options
+    $url = 'https://portal.genesysmarketing.com/api/subscribe';
+    $data = array(
+        'list' => '7e44adb89df94b7daf8c9488b4d0b236',
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'email' => $email
+    );
 
-    // Log the result
-    if ($return_var !== 0) {
-        error_log('cURL command failed with error code: ' . $return_var);
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Client: 0fe9a19cd2b611e8aee6736572766572',
+        'Key: dEad513c30rc1c11e7a856365'
+    ));
+
+    // Execute cURL request
+    $result = curl_exec($curl);
+
+    // Check for errors
+    if ($result === false) {
+        $error = curl_error($curl);
+        error_log('cURL request failed with error: ' . $error);
     } else {
-        error_log('cURL command executed successfully. Output: ' . implode("\n", $output));
+        error_log('cURL request executed successfully. Output: ' . $result);
     }
+
+    // Close cURL session
+    curl_close($curl);
 }
+
 
 
 // add_action('gform_after_submission_2', 'send_data_to_api', 10, 2);
