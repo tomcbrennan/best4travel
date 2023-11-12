@@ -324,4 +324,7 @@ function run_curl_after_submission($entry, $form) {
     curl_close($curl);
 }
 
+// STOP AJAX GRAVITY FORMS SCROLLING
+add_filter( 'gform_confirmation_anchor', '__return_false' );
+
 new TomDotCom();
