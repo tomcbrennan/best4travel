@@ -209,6 +209,7 @@ header.scrolling {
 
 .tax-travel-types {
 	.tease-destination {
+
 		&:nth-child(2) {
 			@apply lg:mt-32;
 		}

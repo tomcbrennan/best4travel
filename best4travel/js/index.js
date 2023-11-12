@@ -125,6 +125,12 @@ const toggleDealModal = () => {
 			}
 		})
 
+		if (dealModal.classList.contains('active')) {
+			lenis.stop()
+		} else {
+			lenis.start()
+		}
+
 		document.addEventListener('keydown', (e) => {
 			if (e.key === 'Escape' && dealModal.classList.contains('active')) {
 				dealModal.classList.toggle('active')
