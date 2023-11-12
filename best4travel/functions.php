@@ -298,7 +298,6 @@ function run_curl_after_submission($entry, $form) {
 		return;
     } else {
 		error_log('cURL request successful - New Subscriber created');
-		return;
     }
 
     // Close cURL session
