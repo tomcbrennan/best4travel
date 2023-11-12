@@ -40,7 +40,7 @@ export default function initSliders() {
 				},
 				loop: true,
 				direction: 'horizontal',
-				speed: 1000,
+				speed: 700,
 				slidesPerView: 1,
 				spaceBetween: 20,
 				centeredSlides: true,
@@ -48,6 +48,9 @@ export default function initSliders() {
 				navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
 				},
 			})
 		})

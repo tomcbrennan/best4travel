@@ -256,6 +256,16 @@ header.scrolling {
 				@apply fill-white;
 			}
 		}
+
+		&.swiper-button-disabled {
+			@apply !opacity-100 !pointer-events-auto !cursor-pointer;
+		}
+	}
+
+	.swiper-pagination {
+		.swiper-pagination-bullet-active {
+			@apply !bg-brandBlueDark;
+		}
 	}
 }
 
