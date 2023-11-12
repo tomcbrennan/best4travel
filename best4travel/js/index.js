@@ -124,6 +124,15 @@ const toggleDealModal = () => {
 				dealContent.classList.add('!hidden')
 			}
 		})
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && dealModal.classList.contains('active')) {
+				dealModal.classList.toggle('active')
+				allDealsContent.forEach((dealContent) => {
+					dealContent.classList.add('!hidden')
+				})
+			}
+		})
 	}
 }
 
