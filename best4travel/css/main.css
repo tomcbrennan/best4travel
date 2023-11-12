@@ -188,18 +188,8 @@ header.scrolling {
 }
 
 .hide {
-	@apply opacity-0 -translate-x-3;
+	@apply opacity-0 -translate-x-6;
 }
-
-/* .local-getaways {
-	.tease-destination {
-		&:first-of-type {
-			@apply md:col-span-3;
-		}
-
-		@apply md:col-span-2;
-	}
-} */
 
 .travel-types-grid {
 	a:last-child {
@@ -311,14 +301,11 @@ header.scrolling {
 	-o-object-fit: cover;
 }
 
-.destinations-slider {
+.destinations-slider, .deals-slider {
 	&:active {
 		.swiper-slide {
 			@apply lg:scale-[0.96];
 		}
-	}
-	> .swiper-wrapper {
-		transition-timing-function: linear;
 	}
 }
 

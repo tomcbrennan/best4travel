@@ -60,7 +60,7 @@ export default function initSliders() {
 		const dealsSlider = new Swiper('.deals-slider', {
 			direction: 'horizontal',
 			loop: false,
-			speed: 500,
+			speed: 600,
 			slidesPerView: 1.1,
 			spaceBetween: 20,
 			breakpoints: {
@@ -75,6 +75,7 @@ export default function initSliders() {
 				},
 				1200: {
 					slidesPerView: 2,
+					slidesPerGroup: 2,
 				},
 			},
 			navigation: {

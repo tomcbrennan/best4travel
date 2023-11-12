@@ -24,7 +24,7 @@
 								{% for item in fields.deals %}
 									<div class="swiper-slide relative overflow-hidden !flex !items-end bg-cover bg-bottom duration-500 bg-[#b1b1b1]">
 										{% if item.background %}
-											<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent z-10"></div>
+											<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-[rgba(0,0,0,0.5)] to-transparent z-10"></div>
 											{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "absolute top-0 left-0 w-full h-full object-center object-cover" } %}
 										{% endif %}
 										<div class="relative z-20 w-full px-6 py-7 block-content text-white">
