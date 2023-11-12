@@ -39,7 +39,7 @@
 														<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
 														<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
 													</svg>
-													</a>
+												</a>
 											{% else %}
 
 												<button data-deal-button="{{ loop.index }}" class="toggle-deal-modal button arrow">
@@ -55,6 +55,22 @@
 								{% endfor %}
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="destinations-slider-nav relative w-28 ml-auto mt-14">
+					<div class="absolute top-1/2 -translate-y-1/2 right-[calc(100%+40px)] w-screen h-[1px] bg-[#1C63A0] bg-opacity-20"></div>
+					<div class="swiper-button-prev after:hidden !h-[40px] !w-[40px]">
+						<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
+							<path d="M12 25L17 27.8867L17 22.1132L12 25ZM37 24.5L16.5 24.5L16.5 25.5L37 25.5L37 24.5Z" fill="#1C63A0"/>
+						</svg>
+
+					</div>
+					<div class="swiper-button-next after:hidden !h-[40px] !w-[40px]">
+						<svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="25" cy="25" r="24.5" fill="white" stroke="#1C63A0"/>
+							<path d="M37 25L32 22.1133L32 27.8868L37 25ZM12 25.5L32.5 25.5L32.5 24.5L12 24.5L12 25.5Z" fill="#1C63A0"/>
+						</svg>
 					</div>
 				</div>
 			</div>

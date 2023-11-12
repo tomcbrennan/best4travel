@@ -239,7 +239,7 @@ header.scrolling {
 	}
 }
 
-.footer-testimonials {
+.footer-testimonials, .destinations-slider-nav {
 	.swiper-button-prev,
 	.swiper-button-next {
 		svg > circle,
@@ -249,7 +249,7 @@ header.scrolling {
 
 		&:hover {
 			svg > circle {
-				@apply fill-brandBlueLight;
+				@apply fill-brandBlueDark;
 			}
 
 			svg > path {
