@@ -297,48 +297,19 @@ function run_curl_after_submission($entry, $form) {
         $error = curl_error($curl);
         error_log('cURL request failed with error: ' . $error);
     } else {
-        error_log('cURL request executed successfully. Output: ' . $result);
+        // Assuming the response is in JSON format
+        $response = json_decode($result, true);
+
+        if ($response && isset($response['success']) && $response['success'] === true) {
+			// DON'T SHOW OUTPUT
+        } else {
+            // Handle error or unsuccessful response here
+            error_log('API request was not successful.');
+        }
     }
 
     // Close cURL session
     curl_close($curl);
 }
-
-
-
-// add_action('gform_after_submission_2', 'send_data_to_api', 10, 2);
-
-// function send_data_to_api($entry, $form) {
-
-//     $api_url = 'https://portal.genesysmarketing.com/api/subscribe';
-
-// 	$headers = array(
-//         'Client' => '0fe9a19cd2b611e8aee6736572766572',
-//         'Key' => 'dEad513c30rc1c11e7a856365',
-//     );
-
-//     $body = array(
-//         'list' => '7e44adb89df94b7daf8c9488b4d0b236',
-//         'first_name' => rgar($entry, 2),
-//         'last_name' => rgar($entry, 3),
-//         'email' => rgar($entry, 1),
-//     );
-
-//     $response = wp_remote_request(
-//         $api_url,
-//         array(
-//             'method' => 'POST',
-//             'headers' => $headers,
-//             'body' => $body,
-//         )
-//     );
-
-//     if (is_wp_error($response)) {
-//         error_log('API request failed: ' . $response->get_error_message());
-//     } else {
-//         error_log('API response: ' . wp_remote_retrieve_body($response));
-//     }
-// }
-
 
 new TomDotCom();
