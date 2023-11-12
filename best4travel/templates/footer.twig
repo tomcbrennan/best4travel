@@ -156,9 +156,9 @@
 			{% include "icons/cross.twig" with { class: "relative stroke-white" } %}
 			<span class="text-black">Close</span>
 		</div>
-		<div class="relative py-20 container bg-white">
+		<div class="relative bg-white h-full">
 			{% for item in fields.deals %}
-				<div data-deal-content="{{ loop.index }}" class="deal-content block-content items-center !hidden mx-auto">
+				<div data-deal-content="{{ loop.index }}" class="deal-content block-content items-center !hidden mx-auto py-20 container bg-white">
 					{% if item.background %}
 						{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "w-full aspect-[4/1] object-center object-cover pointer-events-none" } %}
 					{% endif %}
