@@ -260,7 +260,6 @@ add_action('login_enqueue_scripts', 'custom_login_logo');
 
 // POST SUBSCRIBE FORM DATA TO GENESYS
 
-// Add a custom action to run after Gravity Forms submission
 add_action('gform_after_submission_2', 'run_curl_after_submission', 10, 2);
 
 function run_curl_after_submission($entry, $form) {
@@ -301,11 +300,24 @@ function run_curl_after_submission($entry, $form) {
         $response = json_decode($result, true);
 
         if ($response && isset($response['success']) && $response['success'] === true) {
-			// DON'T SHOW OUTPUT
-        } else {
-            // Handle error or unsuccessful response here
-            error_log('API request was not successful.');
-        }
+			// For success
+			$confirmation_message = '<div class="block-content items-center">
+										<h4>Thanks for subscribing to our Newsletter!</h4>
+										<p>Keep an eye on your inbox for Travel updates.</p>
+									</div>';
+		} else {
+			// For failure or unsuccessful response
+			$confirmation_message = '<div class="block-content items-center">
+										<h4>Something went wrong!</h4>
+										<p>Please refresh the page and try again, or contact us directly.</p>
+									</div>';
+		}
+
+		// Set the confirmation message
+		add_filter('gform_confirmation', 'custom_confirmation_message', 10, 4);
+		function custom_confirmation_message($confirmation, $form, $entry, $ajax) {
+			return $confirmation_message;
+		}
     }
 
     // Close cURL session
