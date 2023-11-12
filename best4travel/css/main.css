@@ -214,7 +214,7 @@ header.scrolling {
 	}
 }
 
-[data-block='team_members'] {
+/* [data-block='team_members'] {
 	.tease-team-member {
 		&:nth-child(2) {
 			@apply lg:mt-32;
@@ -228,7 +228,7 @@ header.scrolling {
 			@apply lg:-mt-32;
 		}
 	}
-}
+} */
 
 .footer-testimonials, .destinations-slider-nav {
 	.swiper-button-prev,

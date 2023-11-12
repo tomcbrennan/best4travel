@@ -390,7 +390,9 @@ export default function animateOnScroll() {
 				trigger: stagger,
 				start: START,
 			},
-			...staggerProperties,
+			autoAlpha: 0,
+			delay: 0.2,
+			stagger: 0.25,
 		})
 	})
 
