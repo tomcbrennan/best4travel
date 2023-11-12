@@ -256,16 +256,18 @@ header.scrolling {
 				@apply fill-white;
 			}
 		}
-
-		&.swiper-button-disabled {
-			@apply !opacity-100 !pointer-events-auto !cursor-pointer;
-		}
 	}
 
 	.swiper-pagination {
 		.swiper-pagination-bullet-active {
 			@apply !bg-brandBlueDark;
 		}
+	}
+}
+
+.footer-testimonials {
+	&.swiper-button-disabled {
+		@apply !opacity-100 !pointer-events-auto !cursor-pointer;
 	}
 }
 
@@ -285,7 +287,7 @@ header.scrolling {
 
 .deals:before {
 	content: '';
-	@apply bg-brandBackground h-[80%] w-full absolute top-0 left-0;
+	@apply bg-brandBackground h-[75%] w-full absolute top-0 left-0;
 }
 
 /* ANIMATION STUFF */
