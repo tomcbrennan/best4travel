@@ -170,6 +170,35 @@
                     "parent_repeater": "field_653e6def9532b"
                 },
                 {
+                    "key": "field_653e6e539532d",
+                    "label": "Price",
+                    "name": "price",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_654f3ae6b58dc",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_653e6def9532b"
+                },
+                {
                     "key": "field_654121aa1a3ba",
                     "label": "Background",
                     "name": "background",
@@ -220,35 +249,6 @@
                     "open": 0,
                     "multi_expand": 0,
                     "endpoint": 0,
-                    "parent_repeater": "field_653e6def9532b"
-                },
-                {
-                    "key": "field_653e6e539532d",
-                    "label": "Price",
-                    "name": "price",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_654f3ae6b58dc",
-                                "operator": "!=",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
                     "parent_repeater": "field_653e6def9532b"
                 },
                 {
@@ -421,5 +421,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699759297
+    "modified": 1699955084
 }
