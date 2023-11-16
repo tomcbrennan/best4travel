@@ -60,6 +60,54 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_6556278634780",
+            "label": "Remove \"No Deals\" Section",
+            "name": "remove_no_deals_section",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Select this option to remove the default \"no deals available right now\" section. This will be replaced with a customisable text block to add a description.",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_655628e380626",
+            "label": "Replaced content",
+            "name": "replaced_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6556278634780",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_654cbf442bfbf",
             "label": "Deals",
             "name": "",
@@ -421,5 +469,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699955084
+    "modified": 1700145450
 }

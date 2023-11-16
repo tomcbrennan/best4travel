@@ -75,7 +75,7 @@
 				</div>
 			</div>
 		</section>
-	{% else %}
+	{% elseif fields.remove_no_deals_section == false %}
 		<section class="relative bg-brandBackground">
 			<div class="container">
 				<div class="block-content items-center text-center">
@@ -84,6 +84,14 @@
 						available right now.</h3>
 					<h6>Please get in touch to discover what's on offer.</h6>
 					<a href="/contact-us" class="button">Contact Us</a>
+				</div>
+			</div>
+		</section>
+	{% elseif fields.remove_no_deals_section == true %}
+		<section class="relative bg-brandBackground">
+			<div class="container-small">
+				<div class="block-content">
+					{{ fields.replaced_content }}
 				</div>
 			</div>
 		</section>
