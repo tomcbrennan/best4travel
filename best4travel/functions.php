@@ -264,9 +264,6 @@ add_action('gform_after_submission_2', 'run_curl_after_submission', 10, 2);
 
 function run_curl_after_submission($entry, $form) {
 
-	$client_id = '0fe9a19cd2b611e8aee6736572766572';
-	$key = 'dEad513c30rc1c11e7a856365';
-
     // Extract values from the Gravity Forms entry
     $first_name = rgar($entry, 2);
     $last_name = rgar($entry, 3);
@@ -287,9 +284,9 @@ function run_curl_after_submission($entry, $form) {
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-		'Client: ' . $clientID,
-		'Key: ' . $key
-	));
+        'Client: 0fe9a19cd2b611e8aee6736572766572',
+        'Key: dEad513c30rc1c11e7a856365'
+    ));
 
     $result = curl_exec($curl);
 
