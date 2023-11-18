@@ -79,6 +79,14 @@ const toggleMenu = () => {
 				})
 			} else {
 				lenis.start()
+
+				const scrollPosition = window.scrollY
+
+				if (scrollPosition > 75) {
+					header.classList.add('scrolling')
+				} else {
+					header.classList.remove('scrolling')
+				}
 			}
 		})
 	})
@@ -148,13 +156,20 @@ const toggleDestinations = () => {
 	const destinationsMenu = document.querySelector('.destinations-menu')
 	const header = document.querySelector('header')
 
+	const scrollPosition = window.scrollY
+
 	destinationsLink.classList.toggle('active')
 	destinationsMenu.classList.toggle('active')
-	header.classList.toggle('scrolling')
 
-	// STOP PAGE SCROLLING IF ACTIVE
 	if (destinationsMenu.classList.contains('active')) {
+		header.classList.remove('scrolling')
 		lenis.stop()
+	} else if (
+		!destinationsMenu.classList.contains('active') &&
+		scrollPosition > 75
+	) {
+		header.classList.add('scrolling')
+		lenis.start()
 	} else {
 		lenis.start()
 	}
