@@ -150,15 +150,30 @@ const toggleDestinations = () => {
 
 	destinationsLink.classList.toggle('active')
 	destinationsMenu.classList.toggle('active')
-	document.documentElement.classList.toggle('overflow-hidden')
 	header.classList.toggle('scrolling')
 
 	// STOP PAGE SCROLLING IF ACTIVE
-	if (document.documentElement.classList.contains('overflow-hidden')) {
+	if (destinationsMenu.classList.contains('active')) {
 		lenis.stop()
 	} else {
 		lenis.start()
 	}
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && destinationsMenu.classList.contains('active')) {
+			destinationsLink.classList.toggle('active')
+			destinationsMenu.classList.toggle('active')
+			lenis.start()
+
+			const scrollPosition = window.scrollY
+
+			if (scrollPosition > 75) {
+				header.classList.add('scrolling')
+			} else {
+				header.classList.remove('scrolling')
+			}
+		}
+	})
 }
 
 /**
