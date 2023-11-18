@@ -1,4 +1,4 @@
-# The StartDigital Starter Theme
+# The Timber Starter Theme
 
 This theme makes use of Advanced Custom Fields Pro to create a block-based page-builder experience.
 All styling is done using TailwindCSS.
