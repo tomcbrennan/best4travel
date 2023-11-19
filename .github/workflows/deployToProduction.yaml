@@ -37,7 +37,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: 10.232.143.22
-          username: best4tra
+          username: tomdotcom@best4travel.com.au
           password: ${{ secrets.PROD_FTP_PASS }}
-          server-dir: public_html/wp-content/themes/
+          server-dir: wp-content/themes/
           protocol: ftps
