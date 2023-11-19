@@ -59,13 +59,15 @@
 			</div>
 		</section>
 	{% elseif fields.remove_no_deals_section == true %}
-		<section class="relative bg-brandBackground">
-			<div class="container-small">
-				<div class="block-content items-center text-center">
-					{{ fields.replaced_content }}
+		{% if fields.replaced_content %}
+			<section class="relative bg-brandBackground">
+				<div class="container-small">
+					<div class="block-content items-center text-center">
+						{{ fields.replaced_content }}
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		{% endif %}
 	{% endif %}
 
 
