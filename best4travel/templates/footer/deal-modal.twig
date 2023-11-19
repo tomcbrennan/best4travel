@@ -13,7 +13,9 @@
 					{% endif %}
 					<div class="block-content items-center text-center max-w-[900px]">
 						<h3>{{ item.title }}</h3>
-						<p class="text-lg font-medium">{{ item.price }}</p>
+						{% if item.price %}
+							<p class="text-lg font-medium">{{ item.price }}</p>
+						{% endif %}
 						<p>{{ item.details }}</p>
 						<a href="/contact-us" class="button">Enquire now</a>
 					</div>
