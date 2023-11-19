@@ -22,36 +22,7 @@
 						<div data-fade-left class="deals-slider">
 							<div class="swiper-wrapper cursor-grab !h-[450px] 2xl:!h-[550px]">
 								{% for item in fields.deals %}
-									<div class="swiper-slide relative overflow-hidden !flex !items-end bg-cover bg-bottom duration-500 bg-[#b1b1b1]">
-										{% if item.background %}
-											<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-[rgba(0,0,0,0.5)] to-transparent z-10"></div>
-											{% include "partial/image.twig" with { image: Image(item.background).src, alt: item.background.alt, class: "image-parallax max-md:h-[150%] h-[120%] absolute top-0 left-0 w-full object-center object-cover" } %}
-										{% endif %}
-										<div class="relative z-20 w-full px-6 py-7 block-content text-white">
-											<div class="flex flex-col gap-3">
-												<h6 class="large-heading">{{ item.title }}</h6>
-												<p>{{ item.price }}</p>
-											</div>
-											{% if item.link_deal_to_external_website == true %}
-												<a href="{{ item.website_url }}" class="button arrow" target="_blank">
-													<span class="pointer-events-none">Visit website</span>
-													<svg class="pointer-events-none" width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
-														<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
-													</svg>
-												</a>
-											{% else %}
-
-												<button data-deal-button="{{ loop.index }}" class="toggle-deal-modal button arrow">
-													<span class="pointer-events-none">View details</span>
-													<svg class="pointer-events-none" width="37" height="37" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<circle cx="18.5" cy="18.5" r="18" stroke="white" stroke-dasharray="2 2"/>
-														<path d="M27.2652 19.2652C27.4116 19.1187 27.4116 18.8813 27.2652 18.7348L24.8787 16.3483C24.7322 16.2019 24.4948 16.2019 24.3483 16.3483C24.2019 16.4948 24.2019 16.7322 24.3483 16.8787L26.4697 19L24.3483 21.1213C24.2019 21.2678 24.2019 21.5052 24.3483 21.6517C24.4948 21.7981 24.7322 21.7981 24.8787 21.6517L27.2652 19.2652ZM9 19.375L27 19.375V18.625L9 18.625V19.375Z" fill="white"/>
-													</svg>
-												</button>
-											{% endif %}
-										</div>
-									</div>
+									{% include "tease-deal.twig" with { class: "swiper-slide" } %}
 								{% endfor %}
 							</div>
 						</div>
