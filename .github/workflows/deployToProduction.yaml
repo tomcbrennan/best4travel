@@ -36,8 +36,8 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: 10.232.143.22
-          username: tomdotcom@best4travel.com.au
+          server: 110.232.143.22
+          username: best4tra
           password: ${{ secrets.PROD_FTP_PASS }}
-          server-dir: wp-content/themes/
+          server-dir: public_html/wp-content/themes/
           protocol: ftps
