@@ -36,7 +36,7 @@ export default function animateOnScroll() {
 	/**
 	 * PARALLAX IMAGE
 	 */
-	mediaSize.add('(min-width: 1024px)', () => {
+	mediaSize.add('(min-width: 1180px)', () => {
 		gsap.utils.toArray('.image-parallax').forEach((image) => {
 			gsap.fromTo(
 				image,
@@ -53,39 +53,39 @@ export default function animateOnScroll() {
 				}
 			)
 		})
-	})
 
-	/**
-	 * PARALLAX IMAGE - SMALL
-	 */
-	gsap.utils.toArray('.image-parallax-small').forEach((image) => {
-		gsap.fromTo(
-			image,
-			{
-				y: -100,
-			},
-			{
+		/**
+		 * PARALLAX IMAGE - SMALL
+		 */
+		gsap.utils.toArray('.image-parallax-small').forEach((image) => {
+			gsap.fromTo(
+				image,
+				{
+					y: -100,
+				},
+				{
+					scrollTrigger: {
+						trigger: image,
+						scrub: true,
+					},
+					y: 0,
+					ease: 'none',
+				}
+			)
+		})
+
+		/**
+		 * PARALLAX TEXT
+		 */
+		gsap.utils.toArray('.text-parallax').forEach((text) => {
+			gsap.to(text, {
 				scrollTrigger: {
-					trigger: image,
+					trigger: text,
 					scrub: true,
 				},
-				y: 0,
+				y: -100,
 				ease: 'none',
-			}
-		)
-	})
-
-	/**
-	 * PARALLAX TEXT
-	 */
-	gsap.utils.toArray('.text-parallax').forEach((text) => {
-		gsap.to(text, {
-			scrollTrigger: {
-				trigger: text,
-				scrub: true,
-			},
-			y: -100,
-			ease: 'none',
+			})
 		})
 	})
 
