@@ -1,7 +1,7 @@
 <a href="/travel-types/{{ item.slug }}" class="tease-travel-type hover-spin !duration-500 group rounded-full aspect-1/1 w-full flex items-center justify-center text-center p-4 bg-white overflow-hidden">
 	<div class="flex flex-col gap-2 sm:gap-4 items-center">
 		{% if item.icon %}
-			<img class="opacity-25" src="{{ item.icon.url }}" alt="{{ item.icon.alt }}">
+			<img class="md:opacity-25" src="{{ item.icon.url }}" alt="{{ item.icon.alt }}">
 		{% endif %}
 		<span class="font-heading text-base sm:text-xl xl:text-2xl relative duration-200">{{ item.name }}</span>
 	</div>
