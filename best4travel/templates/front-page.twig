@@ -3,8 +3,9 @@
 {% block banner %}
 	<section class="home-banner relative h-[650px] lg:h-[800px] 2xl:h-[1100px] overflow-hidden">
 		<div data-curtain class="absolute bottom-0 left-0 z-[1000000] w-screen h-0 bg-white pointer-events-none"></div>
+		{% include "partial/image.twig" with { image: Image(fields.home_banner.video_poster).src, alt: fields.home_banner.video_poster.alt, class: "h-full w-full absolute top-0 left-0 object-center object-cover" } %}
 		<video class="absolute top-0 left-0 z-10 h-full object-cover w-full" preload="auto" loop autoplay muted playsinline>
-			<source class="absolute top-0 left-0 h-full w-full" src="{{ fields.home_banner.background_video_link }}" type="video/mp4" poster="{{ fields.home_banner.video_poster.url }}">
+			<source class="absolute top-0 left-0 h-full w-full" src="{{ fields.home_banner.background_video_link }}" type="video/mp4">
 			Your browser does not support the video tag.
 		</video>
 		<div class="absolute z-10 top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
