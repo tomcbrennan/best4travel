@@ -10,7 +10,7 @@
 
 {% if image_id %}
 	{% set image_srcset = fn('wp_get_attachment_image_srcset', image_id, image_size) %}
-	{% set image_sizes = "(max-width: 767px) 100vw, (max-width: 2000px) 50vw, 50vw" %}
+	{% set image_sizes = "(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 50vw" %}
 	{# Adjust this to match your layout breakpoints and sizes #}
 	{% set bg_position_desktop = fn('get_post_meta', image_id)['bg_pos_desktop'][0] %}
 	{% set bg_position_mobile = fn('get_post_meta', image_id)['bg_pos_mobile'][0] %}
